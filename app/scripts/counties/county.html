@@ -1,0 +1,38 @@
+<div corridors-indicator corridors="County.attributes.corridors" active="{{County.corridorId}}"></div>
+
+<h3 style="display: inline-block;">{{County.attributes.name}} County</h3>
+<div style="display: inline-block; margin-left: 20px;">
+	<div tiers-indicator tier="County.attributes.tier"></div>
+</div>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs">
+	<li ng-class="{active:tabset.isActive('overview')}">
+		<a ng-click="tabset.setActive('overview')" data-toggle="tab">Overview</a>
+	</li>
+	<li ng-class="{active:tabset.isActive('offices'), disabled:tabset.isEmpty(County.propertiesCount.offices)}">
+		<a ng-click="tabset.setActive('offices')" data-toggle="tab">Offices <span class="badge loading loading-small" field-to-watch="{{County.propertiesCount.offices}}">{{County.propertiesCount.offices||'0'}}</span></a>
+	</li>
+	<li ng-class="{active:tabset.isActive('industrial'), disabled:tabset.isEmpty(County.propertiesCount.industrial)}">
+		<a ng-click="tabset.setActive('industrial')" data-toggle="tab">Industrial Buildings <span class="badge loading loading-small" field-to-watch="{{County.propertiesCount.industrial}}">{{County.propertiesCount.industrial||'0'}}</span></a>
+	</li>
+	<li ng-class="{active:tabset.isActive('sites'), disabled:tabset.isEmpty(County.propertiesCount.sites)}">
+		<a ng-click="tabset.setActive('sites')" data-toggle="tab" >Sites <span class="badge loading loading-small" field-to-watch="{{County.propertiesCount.sites}}">{{County.propertiesCount.sites||'0'}}</span></a>
+	</li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div class="tab-pane" ng-class="{active:tabset.isActive('overview')}">
+		<div ng-include="'scripts/counties/overview.html'"></div>
+	</div>
+	<div class="tab-pane" ng-class="{active:tabset.isActive('offices')}">
+		<div ng-include="'scripts/properties/offices/office-list.html'"></div>
+	</div>
+	<div class="tab-pane" ng-class="{active:tabset.isActive('industrial')}">
+		<div ng-include="'scripts/properties/industrial/industrial-list.html'"></div>
+	</div>
+	<div class="tab-pane" ng-class="{active:tabset.isActive('sites')}">
+		<div ng-include="'scripts/properties/sites/site-list.html'"></div>
+	</div>
+</div>

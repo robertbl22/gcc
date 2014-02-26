@@ -1,0 +1,5 @@
+<ol class="breadcrumb">
+	<li><a href="/"><i class="icon-home"></i></a></li>
+	<li>Tools</li>
+	<li ng-repeat="Crumb in Breadcrumbs" ng-class="{active:$last}" class="rb-fadein"><a ng-hide="$last" ng-href="{{Crumb.url}}">{{Crumb.name}}</a><span ng-show="$last">{{Crumb.name}}</span></li>
+</ol>

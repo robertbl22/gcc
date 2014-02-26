@@ -1,0 +1,356 @@
+[
+	{
+		"id" : "bibb", 
+		"name" : "Bibb",
+		"tier" : "Tier 3",
+		"corridors" : 
+		[
+			{
+				"id": "i-16",
+				"name": "I-16 Corridor"
+			}
+		]
+	},
+	{
+		"id" : "wilkinson", 
+		"name" : "Wilkinson",
+		"tier" : "Tier 1",
+		"corridors" : 
+		[
+			{
+				"id": "i-16",
+				"name": "I-16 Corridor"
+			}
+
+		]
+	},
+	{
+		"id" : "twiggs", 
+		"name" : "Twiggs",
+		"tier" : "Tier 1",
+		"corridors" : 
+		[
+			{
+				"id": "i-16",
+				"name": "I-16 Corridor"
+			}
+
+		]
+	},
+	{
+		"id" : "bleckley", 
+		"name" : "Bleckley",
+		"tier" : "Tier 2",
+		"corridors" : 
+		[
+			{
+				"id": "i-16",
+				"name": "I-16 Corridor"
+			}
+
+		]
+	},
+	{
+		"id" : "laurens", 
+		"name" : "Laurens",
+		"tier" : "Tier 2",
+		"corridors" : 
+		[
+			{
+				"id": "i-16",
+				"name": "I-16 Corridor"
+			}
+
+		]
+	},
+	{
+		"id" : "treutlen", 
+		"name" : "Treutlen",
+		"tier" : "Tier 1",
+		"corridors" : 
+		[
+			{
+				"id": "i-16",
+				"name": "I-16 Corridor"
+			}
+
+		]
+	},
+	{
+		"id" : "emanuel", 
+		"name" : "Emanuel",
+		"tier" : "Tier 1",
+		"corridors" : 
+		[
+			{
+				"id": "i-16",
+				"name": "I-16 Corridor"
+			}
+
+		]
+	},
+	{
+		"id" : "candler", 
+		"name" : "Candler",
+		"tier" : "Tier 1",
+		"corridors" : 
+		[
+			{
+				"id": "i-16",
+				"name": "I-16 Corridor"
+			}
+
+		]
+	},
+	{
+		"id" : "bulloch", 
+		"name" : "Bulloch",
+		"tier" : "Tier 1",
+		"corridors" : 
+		[
+			{
+				"id": "i-16",
+				"name": "I-16 Corridor"
+			},
+			{
+				"id": "srp",
+				"name": "Savannah River Parkway Corridor"
+			}
+		]
+	},
+	{
+		"id" : "bryan", 
+		"name" : "Bryan",
+		"tier" : "Tier 1",
+		"corridors" : 
+		[
+			{
+				"id": "i-16",
+				"name": "I-16 Corridor"
+			},
+			{
+				"id": "i-95",
+				"name": "I-95 Corridor"
+			}
+		]
+	},
+	{
+		"id" : "effingham", 
+		"name" : "Effingham",
+		"tier" : "Tier 4",
+		"corridors" : 
+		[
+			{
+				"id": "i-16",
+				"name": "I-16 Corridor"
+			},
+			{
+				"id": "srp",
+				"name": "Savannah River Parkway Corridor"
+			}
+		]
+	},
+	{
+		"id" : "houston", 
+		"name" : "Houston",
+		"tier" : "Tier 4",
+		"corridors" : 
+		[
+			{
+				"id": "341-alliance",
+				"name": "341 Alliance Corridor"
+			}
+		]
+	},
+	{
+		"id" : "pulaski", 
+		"name" : "Pulaski",
+		"tier" : "Tier 3",
+		"corridors" : 
+		[
+			{
+				"id": "341-alliance",
+				"name": "341 Alliance Corridor"
+			}
+		]
+	},
+	{
+		"id" : "dodge", 
+		"name" : "Dodge",
+		"tier" : "Tier 1",
+		"corridors" : 
+		[
+			{
+				"id": "341-alliance",
+				"name": "341 Alliance Corridor"
+			}
+		]
+	},
+	{
+		"id" : "telfair", 
+		"name" : "Telfair",
+		"tier" : "Tier 1",
+		"corridors" : 
+		[
+			{
+				"id": "341-alliance",
+				"name": "341 Alliance Corridor"
+			}
+		]
+	},
+	{
+		"id" : "jeff-davis", 
+		"name" : "Jeff Davis",
+		"tier" : "Tier 1",
+		"corridors" : 
+		[
+			{
+				"id": "341-alliance",
+				"name": "341 Alliance Corridor"
+			}
+		]
+	},
+	{
+		"id" : "appling", 
+		"name" : "Appling",
+		"tier" : "Tier 1",
+		"corridors" : 
+		[
+			{
+				"id": "341-alliance",
+				"name": "341 Alliance Corridor"
+			}
+		]
+	},
+	{
+		"id" : "wayne", 
+		"name" : "Wayne",
+		"tier" : "Tier 1",
+		"corridors" : 
+		[
+			{
+				"id": "341-alliance",
+				"name": "341 Alliance Corridor"
+			}
+		]
+	},
+	{
+		"id" : "richmond", 
+		"name" : "Richmond",
+		"tier" : "Tier 2",
+		"corridors" : 
+		[
+			{
+				"id": "srp",
+				"name": "Savannah River Parkway Corridor"
+			}
+		]
+	},
+	{
+		"id" : "burke", 
+		"name" : "Burke",
+		"tier" : "Tier 1",
+		"corridors" : 
+		[
+			{
+				"id": "srp",
+				"name": "Savannah River Parkway Corridor"
+			}
+		]
+	},
+	{
+		"id" : "jenkins", 
+		"name" : "Jenkins",
+		"tier" : "Tier 1",
+		"corridors" : 
+		[
+			{
+				"id": "srp",
+				"name": "Savannah River Parkway Corridor"
+			}
+		]
+	},
+	{
+		"id" : "screven", 
+		"name" : "Screven",
+		"tier" : "Tier 1",
+		"corridors" : 
+		[
+			{
+				"id": "srp",
+				"name": "Savannah River Parkway Corridor"
+			}
+		]
+	},
+	{
+		"id" : "chatham", 
+		"name" : "Chatham",
+		"tier" : "Tier 4",
+		"corridors" : 
+		[
+			{
+				"id": "i-16",
+				"name": "I-16 Corridor"
+			},
+			{
+				"id": "srp",
+				"name": "Savannah River Parkway Corridor"
+			}, {
+				"id": "i-95",
+				"name": "I-95 Corridor"
+			}
+		]
+	},
+	{
+		"id" : "liberty", 
+		"name" : "Liberty",
+		"tier" : "Tier 3",
+		"corridors" : 
+		[
+			{
+				"id": "i-95",
+				"name": "I-95 Corridor"
+			}
+		]
+	},
+	{
+		"id" : "mcintosh", 
+		"name" : "McIntosh",
+		"tier" : "Tier 2",
+		"corridors" : 
+		[
+			{
+				"id": "i-95",
+				"name": "I-95 Corridor"
+			}
+		]
+	},
+	{
+		"id" : "glynn", 
+		"name" : "Glynn",
+		"tier" : "Tier 4",
+		"corridors" : 
+		[
+			{
+				"id": "i-95",
+				"name": "I-95 Corridor"
+			},
+			{
+				"id": "341-alliance",
+				"name": "341 Alliance Corridor"
+			}
+		]
+	},
+	{
+		"id" : "camden", 
+		"name" : "Camden",
+		"tier" : "Tier 3",
+		"corridors" : 
+		[
+			{
+				"id": "i-95",
+				"name": "I-95 Corridor"
+			}
+		]
+	}
+]

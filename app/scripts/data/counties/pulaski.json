@@ -1,0 +1,14 @@
+{
+	"id" : "pulaski", 
+	"name" : "Pulaski",
+	"tier" : 3,
+	"summary" : "Pulaski County is home to one of the largest harness racing training facilities in the country and is rich with history. The Ocmulgee River runs through this county and the area is an important center for transporting freight. Hawkinsville, the seat of Pulaski County, lies 126 miles southeast of Atlanta and 155 miles northwest of Savannah. Hawkinsville is located in the Mcon metropolitan area.",
+	"corridors" : 
+	[
+		{
+			"id": "341-alliance",
+			"name": "341 Alliance Corridor"
+		}
+	],
+	"geometry" : [{"lat":32.388,"lng":-83.483},{"lat":32.272,"lng":-83.34699999999998},{"lat":32.25,"lng":-83.37400000000002},{"lat":32.179,"lng":-83.291},{"lat":32.15,"lng":-83.32499999999999},{"lat":32.133,"lng":-83.305},{"lat":32.126,"lng":-83.30899999999997},{"lat":32.106,"lng":-83.33699999999999},{"lat":32.106,"lng":-83.35899999999998},{"lat":32.113,"lng":-83.351},{"lat":32.124,"lng":-83.36099999999999},{"lat":32.124,"lng":-83.39699999999999},{"lat":32.133,"lng":-83.39699999999999},{"lat":32.133,"lng":-83.416},{"lat":32.125,"lng":-83.41700000000003},{"lat":32.125,"lng":-83.43600000000004},{"lat":32.117,"lng":-83.43600000000004},{"lat":32.118,"lng":-83.54200000000003},{"lat":32.126,"lng":-83.541},{"lat":32.126,"lng":-83.55099999999999},{"lat":32.118,"lng":-83.55099999999999},{"lat":32.118,"lng":-83.60899999999998},{"lat":32.238,"lng":-83.60699999999997},{"lat":32.242,"lng":-83.61599999999999},{"lat":32.251,"lng":-83.61599999999999},{"lat":32.251,"lng":-83.606},{"lat":32.288,"lng":-83.606},{"lat":32.289,"lng":-83.61599999999999},{"lat":32.402,"lng":-83.524},{"lat":32.389,"lng":-83.507},{"lat":32.402,"lng":-83.49799999999999},{"lat":32.388,"lng":-83.483}]
+}

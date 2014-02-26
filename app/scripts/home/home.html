@@ -1,0 +1,23 @@
+<h3>Opportunity is just down the road</h3>
+<div class="well">
+	<p><strong>Where you do business can be just as important as what you do.</strong> Selection of the best site depends on many factors, including incentives, work force, utilities, and transportation options. With Georgia’s Commercial Corridors tool, finding the best location is now easier than ever. County information, photos, and building and property site specs are regularly updated to ensure you have the right information to make the right decision.</p>
+	<p>
+		<strong>Browse the corridors:</strong><br/>
+		<span ng-repeat="Corridor in Corridors">
+			<a ng-href="#/corridor/{{Corridor.id}}" >{{Corridor.name}}</a><span ng-hide="$last">,&nbsp;</span>
+		</span>
+	</p>
+	<p><a href="#/search" class="btn btn-primary">Search Properties</a></p>
+</div>
+<h4>Georgia&rsquo;s BEST Legislation</h4>
+<div class="row">
+	<div class="col-sm-8">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, animi, dignissimos, consequatur quasi quo sit dolorum consequuntur optio ex illum cum rem laboriosam amet nobis sequi quidem velit? Fuga, sunt?</p>
+	</div>
+	<div class="col-sm-4">
+		<span class="label label-warning" style="display:inline-block;margin-bottom:3px;">&nbsp;Tier 1&nbsp;</span><br/>
+		<span class="label label-success" style="display:inline-block;margin-bottom:3px;">&nbsp;Tier 2&nbsp;</span><br/>
+		<span class="label label-danger" style="display:inline-block;margin-bottom:3px;">&nbsp;Tier 3&nbsp;</span><br/>
+		<span class="label label-primary">&nbsp;Tier 4&nbsp;</span>
+	</div>
+</div>

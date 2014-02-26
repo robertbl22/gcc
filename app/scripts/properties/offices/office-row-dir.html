@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col-sm-4">
+		<div property-thumbnail title="{{property.NAME}}" photosrc="{{property.PHOTO_LINK}}" link="{{currentPath}}/office/{{property.BUILDING_ID}}"></div>
+	</div>
+	<div class="gcc-vertical-gutter visible-xs"></div>
+	<div class="col-sm-5">
+		<p class="small">
+			<a ng-href="{{currentPath}}/office/{{property.BUILDING_ID}}"><strong>{{property.NAME}}</strong></a><br/>
+			{{property.ADDRESS}}<br/>
+			{{property.CITY}}, GA&nbsp;&nbsp;{{property.ZIP_CODE}}<br/>
+		</p>
+		<p>
+			<div bookmark-button item-id="{{property.OBJECTID}}" item="property" item-type="office"></div>
+		</p>
+		<p>
+			<a ng-href="{{currentPath}}/office/{{property.BUILDING_ID}}" class="btn btn-default btn-sm">View details</a>
+		</p>
+	</div>
+	<div class="col-sm-3">
+		<strong>Sale/Lease:</strong> {{property.SALE_LEASE}}<br/>
+		<span ng-show="{{property.YEAR_BUILT}}"><strong>Year:</strong> {{property.YEAR_BUILT}}</span><br/>
+		<span ng-show="{{property.SPACE_AVAILABLE}}">{{property.SPACE_AVAILABLE | number}} sq. ft.</span>
+	</div>
+</div>
+<div class="gcc-hrule"></div>
+<div class="gcc-vertical-gutter visible-xs"></div>

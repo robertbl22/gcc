@@ -1,0 +1,170 @@
+[
+	{
+		"id" : "i-16",
+		"name" : "I-16 Corridor",
+		"shortname" : "I-16 Corridor",
+		"tiers" : {"tier1": true, "tier2": true, "tier3": true, "tier4": true},
+		"counties" : 
+		[
+		{
+			"id" : "bibb", 
+			"name" : "Bibb"
+		},
+		{
+			"id" : "wilkinson", 
+			"name" : "Wilkinson"
+		},
+		{
+			"id" : "twiggs", 
+			"name" : "Twiggs"
+		},
+		{
+			"id" : "bleckley", 
+			"name" : "Bleckley"
+		},
+		{
+			"id" : "laurens", 
+			"name" : "Laurens"
+		},
+		{
+			"id" : "treutlen", 
+			"name" : "Treutlen"
+		},
+		{
+			"id" : "emanuel", 
+			"name" : "Emanuel"
+		},
+		{
+			"id" : "candler", 
+			"name" : "Candler"
+		},
+		{
+			"id" : "bulloch", 
+			"name" : "Bulloch"
+		},
+		{
+			"id" : "bryan", 
+			"name" : "Bryan"
+		},
+		{
+			"id" : "effingham", 
+			"name" : "Effingham"
+		},
+		{
+			"id" : "chatham", 
+			"name" : "Chatham"
+		}
+		]
+	},
+	{
+		"id" : "341-alliance",
+		"name" : "341 Alliance Corridor",
+		"shortname" : "341 Corridor",
+		"tiers" : {"tier1": true, "tier2": true, "tier3": true, "tier4": true},
+		"counties" : 
+		[
+		{
+			"id" : "houston", 
+			"name" : "Houston"
+		},
+		{
+			"id" : "pulaski", 
+			"name" : "Pulaski"
+		},
+		{
+			"id" : "dodge", 
+			"name" : "Dodge"
+		},
+		{
+			"id" : "telfair", 
+			"name" : "Telfair"
+		},
+		{
+			"id" : "jeff-davis", 
+			"name" : "Jeff Davis"
+		},
+		{
+			"id" : "appling", 
+			"name" : "Appling"
+		},
+		{
+			"id" : "wayne", 
+			"name" : "Wayne"
+		},
+		{
+			"id" : "glynn", 
+			"name" : "Glynn"
+		}
+		]
+	},
+	{
+		"id" : "srp",
+		"name" : "Savannah River Parkway Corridor",
+		"shortname" : "SRP Corridor",
+		"tiers" : {"tier1": true, "tier2": true, "tier3": false, "tier4": true},
+		"counties" : 
+		[
+		{
+			"id" : "richmond", 
+			"name" : "Richmond"
+		},
+		{
+			"id" : "burke", 
+			"name" : "Burke"
+		},
+		{
+			"id" : "jenkins", 
+			"name" : "Jenkins"
+		},
+		{
+			"id" : "screven", 
+			"name" : "Screven"
+		},
+		{
+			"id" : "bulloch", 
+			"name" : "Bulloch"
+		},
+		{
+			"id" : "effingham", 
+			"name" : "Effingham"
+		},
+		{
+			"id" : "chatham", 
+			"name" : "Chatham"
+		}
+		]
+	},
+	{
+		"id" : "i-95",
+		"name" : "I-95 Corridor",
+		"shortname" : "I-95 Corridor",
+		"tiers" : {"tier1": true, "tier2": true, "tier3": true, "tier4": true},
+		"counties" : 
+		[
+		{
+			"id" : "chatham", 
+			"name" : "Chatham"
+		},
+		{
+			"id" : "bryan", 
+			"name" : "Bryan"
+		},
+		{
+			"id" : "liberty", 
+			"name" : "Liberty"
+		},
+		{
+			"id" : "mcintosh", 
+			"name" : "McIntosh"
+		},
+		{
+			"id" : "glynn", 
+			"name" : "Glynn"
+		},
+		{
+			"id" : "camden", 
+			"name" : "Camden"
+		}
+		]
+	}
+]

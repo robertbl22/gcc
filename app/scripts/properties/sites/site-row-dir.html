@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-sm-4">
+		<div property-thumbnail title="{{property.NAME}}" photosrc="{{property.LINK}}" link="{{currentPath}}/site/{{property.SITE_ID}}"></div>
+	</div>
+	<div class="gcc-vertical-gutter visible-xs"></div>
+	<div class="col-sm-5">
+		<p class="small">
+			<a ng-href="{{currentPath}}/site/{{property.SITE_ID}}"><strong>{{property.NAME}}</strong></a><br/>
+			{{property.CITY}}, GA&nbsp;&nbsp;{{property.ZIP_CODE}}<br/>
+		</p>
+		<p>
+			<div bookmark-button item-id="{{property.OBJECTID}}" item="property" item-type="site"></div>
+		</p>
+		<p>
+			<a ng-href="{{currentPath}}/site/{{property.SITE_ID}}" class="btn btn-default btn-sm">View details</a>
+		</p>
+	</div>
+	<div class="col-sm-3">
+		<strong>Sale/Lease:</strong> {{property.SALE_LEASE}}<br/>
+		<span><strong>Zoned:</strong> {{property.ZONING_DESCRIPTION}}</span><br/>
+		<span ng-show="{{property.REMAINING_ACRES}}"><strong>Size:</strong> {{property.REMAINING_ACRES | number}} acres</span><br/>
+		<span><strong>Rail:</strong> {{property.RAIL_SERVED | yesno}}</span><br/>
+		<span><strong>Sewer:</strong> {{property.SEWER_ON_SITE | yesno}}</span><br/>
+		<span><strong>Water:</strong> {{property.WATER_ON_SITE | yesno}}</span>
+	</div>
+</div>
+<div class="gcc-hrule"></div>
+<div class="gcc-vertical-gutter visible-xs"></div>

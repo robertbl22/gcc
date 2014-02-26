@@ -1,0 +1,226 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-gf', 'yo' ]
+2 info using npm@1.4.2
+3 info using node@v0.10.25
+4 warn using --force I sure hope you know what you are doing.
+5 verbose cache add [ 'yo', null ]
+6 verbose cache add name=undefined spec="yo" args=["yo",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'yo',
+7 verbose parsed url   path: 'yo',
+7 verbose parsed url   href: 'yo' }
+8 silly lockFile c41975d1-yo yo
+9 verbose lock yo /Users/realmadvertising/.npm/c41975d1-yo.lock
+10 silly lockFile c41975d1-yo yo
+11 silly lockFile c41975d1-yo yo
+12 verbose addNamed [ 'yo', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile d937c28e-yo yo@
+15 verbose lock yo@ /Users/realmadvertising/.npm/d937c28e-yo.lock
+16 silly addNameRange { name: 'yo', range: '*', hasData: false }
+17 verbose url raw yo
+18 verbose url resolving [ 'https://registry.npmjs.org/', './yo' ]
+19 verbose url resolved https://registry.npmjs.org/yo
+20 info trying registry request attempt 1 at 12:41:40
+21 verbose etag "5W8RBDF0BXO6BWLZSRBQRG7Q7"
+22 http GET https://registry.npmjs.org/yo
+23 http 304 https://registry.npmjs.org/yo
+24 silly registry.get cb [ 304,
+24 silly registry.get   { date: 'Fri, 14 Feb 2014 17:41:41 GMT',
+24 silly registry.get     server: 'Apache',
+24 silly registry.get     connection: 'Keep-Alive',
+24 silly registry.get     'keep-alive': 'timeout=10, max=50',
+24 silly registry.get     etag: '"5W8RBDF0BXO6BWLZSRBQRG7Q7"',
+24 silly registry.get     'cache-control': 'max-age=1',
+24 silly registry.get     vary: 'Accept' } ]
+25 verbose etag yo from cache
+26 silly addNameRange number 2 { name: 'yo', range: '*', hasData: true }
+27 silly addNameRange versions [ 'yo',
+27 silly addNameRange   [ '1.0.0-beta.1',
+27 silly addNameRange     '1.0.0-beta.2',
+27 silly addNameRange     '1.0.0-beta.3',
+27 silly addNameRange     '1.0.0-beta.4',
+27 silly addNameRange     '1.0.0-beta.5',
+27 silly addNameRange     '1.0.0-beta.6',
+27 silly addNameRange     '1.0.0-beta.7',
+27 silly addNameRange     '1.0.0-rc.1',
+27 silly addNameRange     '1.0.0-rc.1.1',
+27 silly addNameRange     '1.0.0-rc.1.2',
+27 silly addNameRange     '1.0.0-rc.1.3',
+27 silly addNameRange     '1.0.0-rc.1.4',
+27 silly addNameRange     '1.0.0',
+27 silly addNameRange     '1.0.1',
+27 silly addNameRange     '1.0.2',
+27 silly addNameRange     '1.0.3',
+27 silly addNameRange     '1.0.4',
+27 silly addNameRange     '1.0.5',
+27 silly addNameRange     '1.0.6',
+27 silly addNameRange     '1.0.7-pre.1',
+27 silly addNameRange     '1.0.7-pre.2',
+27 silly addNameRange     '1.0.7-pre.3',
+27 silly addNameRange     '1.1.0',
+27 silly addNameRange     '1.1.1',
+27 silly addNameRange     '1.1.2' ] ]
+28 verbose addNamed [ 'yo', '1.1.2' ]
+29 verbose addNamed [ '1.1.2', '1.1.2' ]
+30 silly lockFile c4df5c1e-yo-1-1-2 yo@1.1.2
+31 verbose lock yo@1.1.2 /Users/realmadvertising/.npm/c4df5c1e-yo-1-1-2.lock
+32 silly lockFile b65dd06a-gistry-npmjs-org-yo-yo-1-1-2-tgz https://registry.npmjs.org/yo/-/yo-1.1.2.tgz
+33 verbose lock https://registry.npmjs.org/yo/-/yo-1.1.2.tgz /Users/realmadvertising/.npm/b65dd06a-gistry-npmjs-org-yo-yo-1-1-2-tgz.lock
+34 verbose addRemoteTarball [ 'https://registry.npmjs.org/yo/-/yo-1.1.2.tgz',
+34 verbose addRemoteTarball   'a0d4da72e83fa0e0dbfe1d0ba258881b240ab854' ]
+35 info retry fetch attempt 1 at 12:41:41
+36 verbose fetch to= /var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/tmp.tgz
+37 http GET https://registry.npmjs.org/yo/-/yo-1.1.2.tgz
+38 http 200 https://registry.npmjs.org/yo/-/yo-1.1.2.tgz
+39 verbose tar unpack /var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/tmp.tgz
+40 silly lockFile c89d00ea-1519-0-13580317911691964-package tar:///var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/package
+41 verbose lock tar:///var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/package /Users/realmadvertising/.npm/c89d00ea-1519-0-13580317911691964-package.lock
+42 silly lockFile bd4589c6-1519-0-13580317911691964-tmp-tgz tar:///var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/tmp.tgz
+43 verbose lock tar:///var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/tmp.tgz /Users/realmadvertising/.npm/bd4589c6-1519-0-13580317911691964-tmp-tgz.lock
+44 silly gunzTarPerm modes [ '755', '644' ]
+45 silly gunzTarPerm extractEntry package.json
+46 silly gunzTarPerm extractEntry cli.js
+47 silly gunzTarPerm extractEntry yoyo.js
+48 silly gunzTarPerm extractEntry readme.md
+49 silly gunzTarPerm extractEntry scripts/doctor.js
+50 silly gunzTarPerm extractEntry yeoman.txt
+51 silly lockFile c89d00ea-1519-0-13580317911691964-package tar:///var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/package
+52 silly lockFile c89d00ea-1519-0-13580317911691964-package tar:///var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/package
+53 silly lockFile bd4589c6-1519-0-13580317911691964-tmp-tgz tar:///var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/tmp.tgz
+54 silly lockFile bd4589c6-1519-0-13580317911691964-tmp-tgz tar:///var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/tmp.tgz
+55 verbose tar pack [ '/Users/realmadvertising/.npm/yo/1.1.2/package.tgz',
+55 verbose tar pack   '/var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/package' ]
+56 verbose tarball /Users/realmadvertising/.npm/yo/1.1.2/package.tgz
+57 verbose folder /var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/package
+58 silly lockFile c89d00ea-1519-0-13580317911691964-package tar:///var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/package
+59 verbose lock tar:///var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/package /Users/realmadvertising/.npm/c89d00ea-1519-0-13580317911691964-package.lock
+60 silly lockFile 1c69f4c4-rtising-npm-yo-1-1-2-package-tgz tar:///Users/realmadvertising/.npm/yo/1.1.2/package.tgz
+61 verbose lock tar:///Users/realmadvertising/.npm/yo/1.1.2/package.tgz /Users/realmadvertising/.npm/1c69f4c4-rtising-npm-yo-1-1-2-package-tgz.lock
+62 silly lockFile c89d00ea-1519-0-13580317911691964-package tar:///var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/package
+63 silly lockFile c89d00ea-1519-0-13580317911691964-package tar:///var/folders/xc/s718lct12ys_5_hqn41wkjqw0000gn/T/npm-88219-k5-mzRr0/1392399701519-0.13580317911691964/package
+64 silly lockFile 1c69f4c4-rtising-npm-yo-1-1-2-package-tgz tar:///Users/realmadvertising/.npm/yo/1.1.2/package.tgz
+65 silly lockFile 1c69f4c4-rtising-npm-yo-1-1-2-package-tgz tar:///Users/realmadvertising/.npm/yo/1.1.2/package.tgz
+66 silly lockFile d714bc67-advertising-npm-yo-1-1-2-package /Users/realmadvertising/.npm/yo/1.1.2/package
+67 verbose lock /Users/realmadvertising/.npm/yo/1.1.2/package /Users/realmadvertising/.npm/d714bc67-advertising-npm-yo-1-1-2-package.lock
+68 silly lockFile d714bc67-advertising-npm-yo-1-1-2-package /Users/realmadvertising/.npm/yo/1.1.2/package
+69 silly lockFile d714bc67-advertising-npm-yo-1-1-2-package /Users/realmadvertising/.npm/yo/1.1.2/package
+70 verbose tar unpack /Users/realmadvertising/.npm/yo/1.1.2/package.tgz
+71 silly lockFile ad2b30e1-advertising-npm-yo-1-1-2-package tar:///Users/realmadvertising/.npm/yo/1.1.2/package
+72 verbose lock tar:///Users/realmadvertising/.npm/yo/1.1.2/package /Users/realmadvertising/.npm/ad2b30e1-advertising-npm-yo-1-1-2-package.lock
+73 silly lockFile 1c69f4c4-rtising-npm-yo-1-1-2-package-tgz tar:///Users/realmadvertising/.npm/yo/1.1.2/package.tgz
+74 verbose lock tar:///Users/realmadvertising/.npm/yo/1.1.2/package.tgz /Users/realmadvertising/.npm/1c69f4c4-rtising-npm-yo-1-1-2-package-tgz.lock
+75 silly gunzTarPerm modes [ '755', '644' ]
+76 silly gunzTarPerm extractEntry package.json
+77 silly gunzTarPerm extractEntry cli.js
+78 silly gunzTarPerm extractEntry yoyo.js
+79 silly gunzTarPerm extractEntry readme.md
+80 silly gunzTarPerm extractEntry scripts/doctor.js
+81 silly gunzTarPerm extractEntry yeoman.txt
+82 silly lockFile ad2b30e1-advertising-npm-yo-1-1-2-package tar:///Users/realmadvertising/.npm/yo/1.1.2/package
+83 silly lockFile ad2b30e1-advertising-npm-yo-1-1-2-package tar:///Users/realmadvertising/.npm/yo/1.1.2/package
+84 silly lockFile 1c69f4c4-rtising-npm-yo-1-1-2-package-tgz tar:///Users/realmadvertising/.npm/yo/1.1.2/package.tgz
+85 silly lockFile 1c69f4c4-rtising-npm-yo-1-1-2-package-tgz tar:///Users/realmadvertising/.npm/yo/1.1.2/package.tgz
+86 verbose chmod /Users/realmadvertising/.npm/yo/1.1.2/package.tgz 644
+87 verbose chown /Users/realmadvertising/.npm/yo/1.1.2/package.tgz [ 501, 20 ]
+88 silly lockFile b65dd06a-gistry-npmjs-org-yo-yo-1-1-2-tgz https://registry.npmjs.org/yo/-/yo-1.1.2.tgz
+89 silly lockFile b65dd06a-gistry-npmjs-org-yo-yo-1-1-2-tgz https://registry.npmjs.org/yo/-/yo-1.1.2.tgz
+90 silly lockFile c4df5c1e-yo-1-1-2 yo@1.1.2
+91 silly lockFile c4df5c1e-yo-1-1-2 yo@1.1.2
+92 silly lockFile d937c28e-yo yo@
+93 silly lockFile d937c28e-yo yo@
+94 silly resolved [ { name: 'yo',
+94 silly resolved     version: '1.1.2',
+94 silly resolved     description: 'CLI tool for scaffolding out Yeoman projects',
+94 silly resolved     license: 'MIT',
+94 silly resolved     bin: { yo: 'cli.js' },
+94 silly resolved     repository: { type: 'git', url: 'git://github.com/yeoman/yo' },
+94 silly resolved     homepage: 'http://yeoman.io',
+94 silly resolved     author: { name: 'Chrome Developer Relations' },
+94 silly resolved     engines: { node: '>=0.8.0', npm: '>=1.2.10' },
+94 silly resolved     scripts:
+94 silly resolved      { test: 'grunt',
+94 silly resolved        postinstall: 'node ./scripts/doctor',
+94 silly resolved        postupdate: 'node ./scripts/doctor' },
+94 silly resolved     files: [ 'cli.js', 'yoyo.js', 'yeoman.txt', 'scripts/' ],
+94 silly resolved     keywords:
+94 silly resolved      [ 'front-end',
+94 silly resolved        'development',
+94 silly resolved        'dev',
+94 silly resolved        'build',
+94 silly resolved        'web',
+94 silly resolved        'tool',
+94 silly resolved        'cli',
+94 silly resolved        'scaffold',
+94 silly resolved        'stack' ],
+94 silly resolved     dependencies:
+94 silly resolved      { 'yeoman-generator': '~0.16.0',
+94 silly resolved        nopt: '~2.1.1',
+94 silly resolved        lodash: '~2.4.1',
+94 silly resolved        'update-notifier': '~0.1.3',
+94 silly resolved        insight: '~0.3.0',
+94 silly resolved        'sudo-block': '~0.3.0',
+94 silly resolved        async: '~0.2.9',
+94 silly resolved        open: '0.0.4',
+94 silly resolved        chalk: '~0.4.0',
+94 silly resolved        findup: '~0.1.3',
+94 silly resolved        shelljs: '~0.2.6' },
+94 silly resolved     peerDependencies: { 'grunt-cli': '~0.1.7', bower: '>=0.9.0' },
+94 silly resolved     devDependencies:
+94 silly resolved      { grunt: '~0.4.2',
+94 silly resolved        mockery: '~1.4.0',
+94 silly resolved        'grunt-contrib-jshint': '~0.8.0',
+94 silly resolved        'grunt-contrib-watch': '~0.5.3',
+94 silly resolved        'grunt-mocha-test': '~0.8.1' },
+94 silly resolved     engineStrict: true,
+94 silly resolved     preferGlobal: true,
+94 silly resolved     readme: '# yo [![Build Status](https://secure.travis-ci.org/yeoman/yo.png?branch=master)](http://travis-ci.org/yeoman/yo)\n\nCLI tool for scaffolding out [Yeoman](https://github.com/yeoman/yeoman) projects.\n\n![](screenshot.png)\n\n\n## [Documentation](https://github.com/yeoman/yeoman/wiki)\n\n\n## Options\n\n- `--no-color` flag to disable colors.\n\n- `--[no-]insight` to toggle anonymous [Insight](https://github.com/yeoman/insight) tracking which helps us improve Yeoman. Using either of these flags on the first run will prevent you from being prompted about it interactively. The flags can also be used to change it later on.\n\n\n## Troubleshooting\n\nRunning `yo doctor` command can help you troubleshoot common issues.\n\nIf `doctor` doesn\'t help, then check opened issues for a similar problem. Open a new issue if your problem haven\'t been reported yet. Make sure to always include the version of `yo` (`yo --version`) and Node.js (`node --version`) you use.\n\nIf your issue only occur using a generator, please report the issues on the generator\'s repository.\n\n## Contribute\n\nSee the [contributing docs](https://github.com/yeoman/yeoman/blob/master/contributing.md).\n\n\n## License\n\n[BSD license](http://opensource.org/licenses/bsd-license.php) and copyright Google.\n',
+94 silly resolved     readmeFilename: 'readme.md',
+94 silly resolved     bugs: { url: 'https://github.com/yeoman/yo/issues' },
+94 silly resolved     _id: 'yo@1.1.2',
+94 silly resolved     dist: { shasum: 'a0d4da72e83fa0e0dbfe1d0ba258881b240ab854' },
+94 silly resolved     _from: 'yo@',
+94 silly resolved     _resolved: 'https://registry.npmjs.org/yo/-/yo-1.1.2.tgz' } ]
+95 info install yo@1.1.2 into /usr/local/lib
+96 info installOne yo@1.1.2
+97 info /usr/local/lib/node_modules/yo unbuild
+98 info preuninstall yo@1.1.2
+99 info uninstall yo@1.1.2
+100 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild yo@1.1.2
+101 verbose /usr/local/bin,[object Object] binRoot
+102 info postuninstall yo@1.1.2
+103 info /usr/local/lib/node_modules/yo unbuild
+104 info preuninstall yo@1.1.2
+105 info uninstall yo@1.1.2
+106 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild yo@1.1.2
+107 verbose /usr/local/bin,[object Object] binRoot
+108 info postuninstall yo@1.1.2
+109 error error rolling back Error: EACCES, unlink '/usr/local/lib/node_modules/yo'
+109 error error rolling back  yo@1.1.2 { [Error: EACCES, unlink '/usr/local/lib/node_modules/yo']
+109 error error rolling back   errno: 3,
+109 error error rolling back   code: 'EACCES',
+109 error error rolling back   path: '/usr/local/lib/node_modules/yo' }
+110 error Error: EACCES, unlink '/usr/local/lib/node_modules/yo'
+110 error  { [Error: EACCES, unlink '/usr/local/lib/node_modules/yo']
+110 error   errno: 3,
+110 error   code: 'EACCES',
+110 error   path: '/usr/local/lib/node_modules/yo' }
+111 error Please try running this command again as root/Administrator.
+112 error System Darwin 12.5.0
+113 error command "node" "/usr/local/bin/npm" "install" "-gf" "yo"
+114 error cwd /Users/realmadvertising/Sites/GPA/gcc
+115 error node -v v0.10.25
+116 error npm -v 1.4.2
+117 error path /usr/local/lib/node_modules/yo
+118 error code EACCES
+119 error errno 3
+120 error stack Error: EACCES, unlink '/usr/local/lib/node_modules/yo'
+121 verbose exit [ 3, true ]

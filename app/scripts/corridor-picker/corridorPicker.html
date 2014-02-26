@@ -1,0 +1,7 @@
+<div style="margin-bottom:5px;" class="hidden-xs">
+	<a href="#/corridor/i-16"><img ng-src="http://placehold.it/358x450&text=Map+of+Georgia" alt="Georgia" title="Georgia" class="img-responsive"></a>
+</div>
+
+<div class="list-group">
+	<a ng-href="#/corridor/{{Corridor.id}}" class="list-group-item" ng-class="{active:isActive(Corridor.id)}" ng-repeat="Corridor in Corridors" ng-cloak>{{Corridor.name}}</a>
+</div>

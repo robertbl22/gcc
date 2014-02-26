@@ -1,0 +1,51 @@
+<div class="row">
+	<div class="col-sm-8">
+		<h3><i class="icon-bookmark"></i> Bookmarked Properties <ng-pluralize class="small" count="BookmarksIndex.count"
+		when="{'0': '', '1': '(1 item)', 'other': '({} items)'}">
+		</ng-pluralize></h3>
+	</div>
+	<div class="col-sm-4" style="padding-top:20px;line-height:24px;">
+		<a href="" data-toggle="modal" data-target="#ConfirmDeleteAllModal" class="small pull-right" ng-show="Bookmarks.length > 0"><i class="icon-remove-sign"></i> Remove all bookmarks</a>
+	</div>
+</div>
+<p>&nbsp;</p>
+
+<!-- PROPERTY ROWS -->
+<div ng-show="Bookmarks.length > 0" ng-repeat="property in Bookmarks" class="animate-repeat">
+	<div ng-switch on="property.type">
+		<div ng-switch-when="office">
+			<div office-row property="property" current-path="#/bookmarks"></div>
+		</div>
+		<div ng-switch-when="industrial">
+			<div industrial-row property="property" current-path="#/bookmarks"></div>
+		</div>
+		<div ng-switch-when="site">
+			<div site-row property="property" current-path="#/bookmarks"></div>
+		</div>
+	</div>
+</div>
+
+<!-- NO RECORDS MESSAGE -->
+<div class="alert alert-info" ng-hide="Bookmarks.length > 0">
+	<i class="icon-info-sign icon-large"></i>&nbsp;&nbsp;You do not have any bookmarks.<br/>
+	<small>To add bookmarks, browse for properties on the <a href="#/" style="text-decoration:underline;">Georgia corridors</a> and click the <strong>Bookmark this</strong> link.</small>
+</div>
+
+<!-- Delete Confirmation modal -->
+<div id="ConfirmDeleteAllModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content alert-danger">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<div>Please confirm</div>
+			</div>
+			<div class="modal-body">
+				<h4><i class="icon-exclamation-sign icon-large"></i> Are you sure you want to remove all bookmarks?</h4>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="deleteAllBookmarks()">Yes</button>
+			</div>
+		</div>
+	</div>
+</div>

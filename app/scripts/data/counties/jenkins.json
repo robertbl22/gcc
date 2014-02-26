@@ -1,0 +1,14 @@
+{
+	"id" : "jenkins", 
+	"name" : "Jenkins",
+	"tier" : 1,
+	"summary" : "Jenkins County named after former Governor Charles J. Jenkins has 6 Highway pass through it and is home to many historical sites.  Millen, the seat of Jenkins County, 191 miles southeast of Atlanta and 85 miles northwest of Savannah.",
+	"corridors" : 
+	[
+		{
+			"id": "srp",
+			"name": "Savannah River Parkway Corridor"
+		}
+	],
+	"geometry" : [{"lat":32.954,"lng":-81.858},{"lat":32.942,"lng":-81.82900000000001},{"lat":32.946,"lng":-81.81900000000002},{"lat":32.937,"lng":-81.815},{"lat":32.928,"lng":-81.78399999999999},{"lat":32.909,"lng":-81.76800000000003},{"lat":32.681,"lng":-81.868},{"lat":32.663,"lng":-81.86599999999999},{"lat":32.649,"lng":-81.84100000000001},{"lat":32.607,"lng":-82.00099999999998},{"lat":32.663,"lng":-82.08299999999997},{"lat":32.82,"lng":-82.14800000000002},{"lat":32.884,"lng":-82.12400000000002},{"lat":32.917,"lng":-82.08100000000002},{"lat":32.924,"lng":-81.95600000000002},{"lat":32.954,"lng":-81.858}]
+}

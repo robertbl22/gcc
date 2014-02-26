@@ -1,0 +1,15 @@
+{
+	"id" : "candler", 
+	"name" : "Candler",
+	"tier" : 1,
+	"summary" : "Candler County is located in Southeast Georgia. There are two municipalities within the county: Metter and Pulaski.",
+	"corridors" : 
+	[
+		{
+			"id": "i-16",
+			"name": "I-16 Corridor"
+		}
+
+	],
+	"geometry" : [{"lat":32.526,"lng":-82},{"lat":32.513,"lng":-81.971},{"lat":32.501,"lng":-81.98000000000002},{"lat":32.47,"lng":-81.97399999999999},{"lat":32.437,"lng":-81.94100000000003},{"lat":32.423,"lng":-81.93700000000001},{"lat":32.415,"lng":-81.91899999999998},{"lat":32.286,"lng":-81.957},{"lat":32.269,"lng":-81.969},{"lat":32.32,"lng":-82.23500000000001},{"lat":32.345,"lng":-82.238},{"lat":32.351,"lng":-82.255},{"lat":32.434,"lng":-82.18799999999999},{"lat":32.474,"lng":-82.18099999999998},{"lat":32.52,"lng":-82.14800000000002},{"lat":32.56,"lng":-82.07999999999998},{"lat":32.526,"lng":-82}]
+}

@@ -1,0 +1,14 @@
+<p>&nbsp;</p>
+<div class="row" ng-controller="SiteListCtrl">
+	<div class="col-sm-12">
+
+		<div ng-show="Properties.length > 0" ng-repeat="property in Properties">
+			<div site-row property="property.attributes" current-path="{{currentPath}}"></div>
+		</div>
+
+		<div class="alert alert-info" ng-hide="Properties.length > 0">
+			<i class="icon-info-sign icon-large"></i>&nbsp;&nbsp;No properties available at this time.
+		</div>
+
+	</div>
+</div>

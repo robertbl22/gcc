@@ -1,0 +1,10 @@
+MapLabel for Google Maps V3
+http://google-maps-utility-library-v3.googlecode.com/svn/trunk/maplabel/docs/reference.html
+
+note this fix on line 120
+
+panes.mapPane.appendChild(canvas);
+to
+panes.overlayLayer.appendChild(canvas);
+
+http://stackoverflow.com/questions/12714031/google-maps-javascript-api-v3-map-label-and-polygons

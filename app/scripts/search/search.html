@@ -1,0 +1,21 @@
+<h3><i class="icon-search"></i> Search Properties on the Corridors</h3>
+<form role="form" name="SearchForm">
+	<div class="row">
+		<div class="col-sm-6">
+			<div ng-include="'scripts/search/subforms/property-type.html'"></div>
+			<div ng-include="'scripts/search/subforms/location.html'"></div>
+		</div>
+		<div class="col-sm-6">
+			<div class="rb-fadein" ng-include="Form.Property.TemplateUrl"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<p>
+				<button type="button" class="btn btn-default" ng-click="Form.reset()">Reset Form</button>
+				<button type="button" class="btn btn-primary" ng-click="Form.submit()">Search</button>
+			</p>
+			<p>&nbsp;</p>
+		</div>
+	</div>
+</form>

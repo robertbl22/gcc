@@ -1,0 +1,201 @@
+<div class="row loading" field-to-watch="{{property.NAME}}" spinner-offset-y="200px">
+	<div corridors-indicator corridors="county.corridors" active="{{county.corridorId}}"></div>
+
+	<h3 class="headline-links">{{property.NAME}}</h3>
+	<div ng-show="hasPreviousPath()" class="small headline-links"><a ng-href="{{previousPath}}"><i class="icon-level-up"></i> Return</a></div>
+
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="well">
+				<p><strong>{{property.SALE_LEASE | salelease}}</strong></p>
+				<p>
+					<i class="icon-map-marker"></i> Lat. {{property.LATITUDE | number:5}}&deg;, Long. {{property.LONGITUDE | number:5}}&deg;<br/>
+					{{property.CITY}}, GA&nbsp;&nbsp;{{property.ZIP_CODE}}
+				</p>
+				<p><a ng-href="{{currentPath}}">{{property.COUNTY}} County</a> </p>
+				<p>
+					<div bookmark-button item-id="{{property.OBJECTID}}" item="property" item-type="site"></div>
+				</p>
+			</div>
+
+
+			<table class="table table-striped">
+				<tr>
+					<td>
+						<strong>{{fieldAliases.TOTAL_ACRES}}:</strong>
+					</td>
+					<td>
+						{{property.TOTAL_ACRES | number}} acres
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>{{fieldAliases.REMAINING_ACRES}}:</strong>
+					</td>
+					<td>
+						{{property.REMAINING_ACRES | number}} acres
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>{{fieldAliases.LARGEST_TRACT}}:</strong>
+					</td>
+					<td>
+						{{property.LARGEST_TRACT | number}} acres
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>Rail:</strong>
+					</td>
+					<td ng-show="property.RAIL_SERVED==='Y'">
+						{{property.RAIL_PROVIDER_1}}
+					</td>
+					<td ng-show="property.RAIL_SERVED==='N'">
+						None
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>{{fieldAliases.LARGEST_RAIL_TRACT}}:</strong>
+					</td>
+					<td>
+						{{property.LARGEST_RAIL_TRACT | number}} acres
+					</td>
+				</tr>
+			</table>
+
+
+			<p>&nbsp;</p>
+			<h4>Government Planning</h4>
+			<table class="table table-striped">
+				<tr>
+					<td>
+						<strong>{{fieldAliases.COUNTY_FIPS_CODE}}:</strong>
+					</td>
+					<td>
+						{{property.COUNTY_FIPS_CODE}}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>{{fieldAliases.ZONING_DESCRIPTION}}:</strong>
+					</td>
+					<td>
+						{{property.ZONING_DESCRIPTION}}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>{{fieldAliases.GRAD_SITE}}:</strong>
+					</td>
+					<td>
+						{{property.GRAD_SITE | yesno}}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>{{fieldAliases.INCORPORATED}}:</strong>
+					</td>
+					<td>
+						{{property.INCORPORATED | yesno}}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>Brownfield Site:</strong>
+					</td>
+					<td>
+						{{property.BROWNFIELD_SITE | yesno}}
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>Jobs Tax Credit:</strong>
+					</td>
+					<td>
+						{{property.JOBS_TAX_CREDIT | dollars}}
+					</td>
+				</tr>
+			</table>
+
+
+			<p>&nbsp;</p>
+			<h4>Utilities</h4>
+			<table class="table table-striped">
+				<tr>
+					<td>
+						<strong>Electric:</strong>
+					</td>
+					<td>
+						{{property.ELECTRIC_PROVIDER_1}}<br/>
+						{{property.TRANS_VOLTAGE}} V
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>Water:</strong>
+					</td>
+					<td ng-show="property.WATER_ON_SITE==='Y'">
+						{{property.WATER_MAIN_SIZE}} in. main
+					</td>
+					<td ng-show="property.WATER_ON_SITE==='N'">
+						None
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>Sewer:</strong>
+					</td>
+					<td ng-show="property.SEWER_ON_SITE==='Y'">
+						{{property.SEWER_MAIN_SIZE}} in. main
+					</td>
+					<td ng-show="property.SEWER_ON_SITE==='N'">
+						None
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>Gas</strong>
+					</td>
+					<td ng-show="property.GAS_ON_SITE==='Y'">
+						{{property.GAS_MAIN_SIZE}} in. main
+					</td>
+					<td ng-show="property.GAS_ON_SITE==='N'">
+						None
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+
+
+		<div class="col-sm-6">
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs">
+				<li  ng-class="{active:detailsTab==='aerial'}"><a href="" ng-click="detailsTab='aerial'"><i class="icon-camera"></i> Aerial</a></li>
+				<li ng-class="{active:detailsTab==='map'}"><a href="" ng-click="detailsTab='map'"><i class="icon-map-marker"></i> Map</a></li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div ng-class="{active:detailsTab==='aerial'}" class="tab-pane" style="padding-top:5px;">
+					<div property-photo title="{{property.NAME}}" photosrc="{{property.LINK}}" link="#"></div>
+				</div>
+				<div ng-class="{active:detailsTab==='map'}" class="tab-pane" style="padding-top:5px;">
+					<div site-map lat="{{property.LATITUDE}}" lng="{{property.LONGITUDE}}" name="{{property.NAME}}" geometry="geometry"></div>
+				</div>
+			</div>
+
+			<p>&nbsp;</p>
+			<p ng-hide="property.PARK_PLAN === 'No Flyer'">
+				<a ng-href="{{property.PARK_PLAN}}" target="_blank"><i class="icon-cloud-download" style="margin-right:4px;"></i>Download the park plan</a>
+			</p>
+		</div>
+
+	</div>
+</div>
+
+
+
