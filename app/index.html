@@ -113,10 +113,7 @@
       <script src="scripts/config.js"></script>
       <script src="scripts/main.js"></script>
 
-      <!-- Data Provider -->
-      <script src="scripts/data-provider/selectGeorgia-svc.js"></script>
-
-      <!-- Generic Services -->
+      <!-- General Services -->
       <script src="scripts/services/toastr-svc.js"></script>
       <script src="scripts/services/color-svc.js"></script>
 
@@ -129,66 +126,70 @@
       <script src="scripts/animations/rbCrossfade.js"></script>
       <script src="scripts/animations/rbFadein.js"></script>
 
-      <!-- Home -->
-      <script src="scripts/home/home-ctrl.js"></script>
-
-      <!-- Bookmarks -->
-      <script src="scripts/bookmarks/bookmarks-svc.js"></script>
-      <script src="scripts/bookmarks/bookmarks-list-ctrl.js"></script>
-      <script src="scripts/bookmarks/bookmarkButton-dir.js"></script>
-
-      <!-- General Directives -->
-      <script src="scripts/directives/loading-dir.js"></script>
-      <script src="scripts/directives/tiersIndicator-dir.js"></script>
-
-      <!-- Breadcrumb -->
-      <script src="scripts/breadcrumb/breadcrumb-svc.js"></script>
-      <script src="scripts/breadcrumb/breadcrumb-ctrl.js"></script>
-      <script src="scripts/breadcrumb/breadcrumb-dir.js"></script>
-
-      <!-- Search -->
-      <script src="scripts/search/search-svc.js"></script>
-      <script src="scripts/search/search-ctrl.js"></script>
-
       <!-- Maps -->
       <script src="scripts/maps/googleMap-svc.js"></script>
       <script src="scripts/maps/corridorMap-dir.js"></script>
       <script src="scripts/maps/countyMap-dir.js"></script>
       <script src="scripts/maps/siteMap-dir.js"></script>
-      <!-- <script src="scripts/maps/countyMap-dir (latlng to json).js"></script> -->
 
-      <!-- Corridors -->
-      <script src="scripts/corridors/corridors-svc.js"></script>
-      <script src="scripts/corridors/corridor-ctrl.js"></script>
-      <script src="scripts/corridors/corridorsIndicator-dir.js"></script>
 
+      <!-- Views *********************************-->
+      <script src="scripts/views/home/home-ctrl.js"></script>
+      <script src="scripts/views/search/search-svc.js"></script>
+      <script src="scripts/views/search/search-ctrl.js"></script>
+      <!-- Bookmarks -->
+      <script src="scripts/views/bookmarks/bookmarks-svc.js"></script>
+      <script src="scripts/views/bookmarks/bookmarks-list-ctrl.js"></script>
+
+
+      <!-- Data Providers *********************************-->
+      <script src="scripts/data-provider/local-data-provider/localDataProvider-svc.js"></script>
+      <!-- Local Provider -->
+      <script src="scripts/data-provider/local-data-provider/corridors-svc.js"></script>
+      <script src="scripts/data-provider/local-data-provider/counties-svc.js"></script>
+      <!-- SelectGeorgia Provider -->
+      <script src="scripts/data-provider/selectGeorgia-data-provider/selectGeorgia-svc.js"></script>
+      <script src="scripts/data-provider/selectGeorgia-data-provider/gp-counties-svc.js"></script>
+      <script src="scripts/data-provider/selectGeorgia-data-provider/properties-svc.js"></script>
+      <script src="scripts/data-provider/selectGeorgia-data-provider/industrial-svc.js"></script>
+      <script src="scripts/data-provider/selectGeorgia-data-provider/offices-svc.js"></script>
+      <script src="scripts/data-provider/selectGeorgia-data-provider/sites-svc.js"></script>
+
+
+      <!-- WIDGETS ************************************** -->
+      <script src="scripts/widgets/bookmark-button/bookmarkButton-dir.js"></script>
+      <script src="scripts/widgets/loading/loading-dir.js"></script>
+      <script src="scripts/widgets/tiers-indicator/tiersIndicator-dir.js"></script>
+      <!-- Breadcrumb -->
+      <script src="scripts/widgets/breadcrumb/breadcrumb-svc.js"></script>
+      <script src="scripts/widgets/breadcrumb/breadcrumb-ctrl.js"></script>
+      <script src="scripts/widgets/breadcrumb/breadcrumb-dir.js"></script>
       <!-- Corridor Picker -->
-      <script src="scripts/corridor-picker/corridorPicker-ctrl.js"></script>
-      <script src="scripts/corridor-picker/corridorPicker-dir.js"></script>
+      <script src="scripts/widgets/corridor-picker/corridorPicker-ctrl.js"></script>
+      <script src="scripts/widgets/corridor-picker/corridorPicker-dir.js"></script>
 
+
+      <!-- Entities ********************************** -->
+      <!-- Corridors -->
+      <script src="scripts/entities/corridors/corridor-ctrl.js"></script>
+      <script src="scripts/entities/corridors/corridorsIndicator-dir.js"></script>
       <!-- Counties -->
-      <script src="scripts/counties/counties-svc.js"></script>
-      <script src="scripts/counties/county-ctrl.js"></script>
-
+      <script src="scripts/entities/counties/county-ctrl.js"></script>
       <!-- Properties -->
-      <script src="scripts/properties/properties-svc.js"></script>
-      <script src="scripts/properties/propertyThumbnail-dir.js"></script>
-      <script src="scripts/properties/propertyPhoto-dir.js"></script>
-
-      <script src="scripts/properties/industrial/industrial-svc.js"></script>
-      <script src="scripts/properties/industrial/industrial-list-ctrl.js"></script>
-      <script src="scripts/properties/industrial/industrial-detail-ctrl.js"></script>
-      <script src="scripts/properties/industrial/industrial-row-dir.js"></script>
-
-      <script src="scripts/properties/offices/offices-svc.js"></script>
-      <script src="scripts/properties/offices/office-list-ctrl.js"></script>
-      <script src="scripts/properties/offices/office-detail-ctrl.js"></script>
-      <script src="scripts/properties/offices/office-row-dir.js"></script>
-
-      <script src="scripts/properties/sites/sites-svc.js"></script>
-      <script src="scripts/properties/sites/site-list-ctrl.js"></script>
-      <script src="scripts/properties/sites/site-detail-ctrl.js"></script>
-      <script src="scripts/properties/sites/site-row-dir.js"></script>
+      <script src="scripts/entities/properties/propertyThumbnail-dir.js"></script>
+      <script src="scripts/entities/properties/propertyPhoto-dir.js"></script>
+      <!-- Properties - Industrial -->
+      <script src="scripts/entities/properties/industrial/industrial-list-ctrl.js"></script>
+      <script src="scripts/entities/properties/industrial/industrial-detail-ctrl.js"></script>
+      <script src="scripts/entities/properties/industrial/industrial-row-dir.js"></script>
+      <!-- Properties - Office -->
+      <script src="scripts/entities/properties/offices/office-list-ctrl.js"></script>
+      <script src="scripts/entities/properties/offices/office-detail-ctrl.js"></script>
+      <script src="scripts/entities/properties/offices/office-row-dir.js"></script>
+      <!-- Properties - Site -->
+      <script src="scripts/entities/properties/sites/site-list-ctrl.js"></script>
+      <script src="scripts/entities/properties/sites/site-detail-ctrl.js"></script>
+      <script src="scripts/entities/properties/sites/site-row-dir.js"></script>
 
       <!-- endbuild -->
     </body>

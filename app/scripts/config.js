@@ -3,50 +3,58 @@
 angular.module('gccApp')
 .config(function ($routeProvider) {
   $routeProvider
+
+  /* Views */
   .when('/', {
-    templateUrl: 'scripts/home/home.html',
+    templateUrl: 'scripts/views/home/home.html',
     controller: 'HomeCtrl'
   })
-  .when('/corridor/:corridorId', {
-    templateUrl: 'scripts/corridors/corridor.html',
-    controller: 'CorridorCtrl'
-  })
-  .when('/corridor/:corridorId/county/:countyId', {
-    templateUrl: 'scripts/counties/county.html',
-    controller: 'CountyCtrl'
-  })
-  .when('/corridor/:corridorId/county/:countyId/office/:propertyId', {
-    templateUrl: 'scripts/properties/offices/office-detail.html',
-    controller: 'OfficeDetailCtrl'
-  })
-  .when('/corridor/:corridorId/county/:countyId/industrial/:propertyId', {
-    templateUrl: 'scripts/properties/industrial/industrial-detail.html',
-    controller: 'IndustrialDetailCtrl'
-  })
-  .when('/corridor/:corridorId/county/:countyId/site/:propertyId', {
-    templateUrl: 'scripts/properties/sites/site-detail.html',
-    controller: 'SiteDetailCtrl'
-  })
   .when('/search', {
-    templateUrl: 'scripts/search/search.html',
+    templateUrl: 'scripts/views/search/search.html',
     controller: 'SearchCtrl'
   })
   .when('/bookmarks', {
-    templateUrl: 'scripts/bookmarks/bookmarks-list.html',
+    templateUrl: 'scripts/views/bookmarks/bookmarks-list.html',
     controller: 'BookmarksListCtrl'
   })
+
+  /* Corridors and Counties */
+  .when('/corridor/:corridorId', {
+    templateUrl: 'scripts/entities/corridors/corridor.html',
+    controller: 'CorridorCtrl'
+  })
+  .when('/corridor/:corridorId/county/:countyId', {
+    templateUrl: 'scripts/entities/counties/county.html',
+    controller: 'CountyCtrl'
+  })
+  .when('/corridor/:corridorId/county/:countyId/office/:propertyId', {
+    templateUrl: 'scripts/entities/properties/offices/office-detail.html',
+    controller: 'OfficeDetailCtrl'
+  })
+  .when('/corridor/:corridorId/county/:countyId/industrial/:propertyId', {
+    templateUrl: 'scripts/entities/properties/industrial/industrial-detail.html',
+    controller: 'IndustrialDetailCtrl'
+  })
+  .when('/corridor/:corridorId/county/:countyId/site/:propertyId', {
+    templateUrl: 'scripts/entities/properties/sites/site-detail.html',
+    controller: 'SiteDetailCtrl'
+  })
+
+  /* Properties */
   .when('/bookmarks/office/:propertyId', {
-    templateUrl: 'scripts/properties/offices/office-detail.html',
+    templateUrl: 'scripts/entities/properties/offices/office-detail.html',
     controller: 'OfficeDetailCtrl'
   })
   .when('/bookmarks/industrial/:propertyId', {
-    templateUrl: 'scripts/properties/industrial/industrial-detail.html',
+    templateUrl: 'scripts/entities/properties/industrial/industrial-detail.html',
     controller: 'IndustrialDetailCtrl'
   })
   .when('/bookmarks/site/:propertyId', {
-    templateUrl: 'scripts/properties/sites/site-detail.html',
+    templateUrl: 'scripts/entities/properties/sites/site-detail.html',
     controller: 'SiteDetailCtrl'
   })
+
+  /* Default */
   .otherwise({
     redirectTo: '/'
   });

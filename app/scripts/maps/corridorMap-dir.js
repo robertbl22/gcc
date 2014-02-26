@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.directive('corridorMap', function(CorridorsSvc, ColorSvc, GoogleMapSvc) {
+.directive('corridorMap', function(LocalDataProvider_CorridorsSvc, ColorSvc, GoogleMapSvc) {
 	return {
 		restrict: 'A',
 		template: '<div class="map"></div>',
@@ -11,7 +11,7 @@ angular.module('gccApp')
 		},
 		link: function(scope, element, attrs) {
 
-			CorridorsSvc.get(scope.corridorId).success(function(data) {
+			LocalDataProvider_CorridorsSvc.get(scope.corridorId).success(function(data) {
 				drawGoogleMap(data.counties, element[0]);
 			});
 
