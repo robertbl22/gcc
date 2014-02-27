@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('gccApp')
-.controller('SearchCtrl', function ($scope, LocalDataProvider_CountiesSvc, SearchSvc, ToastrSvc) {
+.controller('SearchCtrl', function ($scope, LocalDataSvc, SearchSvc, ToastrSvc) {
 
 	$scope.Search = SearchSvc.fields;
 	$scope.Form = {'Property': {}};
 
-	LocalDataProvider_CountiesSvc.get().success(function(data) {
+	LocalDataSvc.Counties.get().success(function(data) {
 		$scope.Counties = data;
 	});
 

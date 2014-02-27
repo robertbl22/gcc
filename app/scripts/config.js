@@ -20,37 +20,37 @@ angular.module('gccApp')
 
   /* Corridors and Counties */
   .when('/corridor/:corridorId', {
-    templateUrl: 'scripts/entities/corridors/corridor.html',
+    templateUrl: 'scripts/views/corridors/corridor.html',
     controller: 'CorridorCtrl'
   })
   .when('/corridor/:corridorId/county/:countyId', {
-    templateUrl: 'scripts/entities/counties/county.html',
+    templateUrl: 'scripts/views/counties/county.html',
     controller: 'CountyCtrl'
   })
   .when('/corridor/:corridorId/county/:countyId/office/:propertyId', {
-    templateUrl: 'scripts/entities/properties/offices/office-detail.html',
+    templateUrl: 'scripts/views/offices/office-detail.html',
     controller: 'OfficeDetailCtrl'
   })
   .when('/corridor/:corridorId/county/:countyId/industrial/:propertyId', {
-    templateUrl: 'scripts/entities/properties/industrial/industrial-detail.html',
+    templateUrl: 'scripts/views/industrial/industrial-detail.html',
     controller: 'IndustrialDetailCtrl'
   })
   .when('/corridor/:corridorId/county/:countyId/site/:propertyId', {
-    templateUrl: 'scripts/entities/properties/sites/site-detail.html',
+    templateUrl: 'scripts/views/sites/site-detail.html',
     controller: 'SiteDetailCtrl'
   })
 
   /* Properties */
   .when('/bookmarks/office/:propertyId', {
-    templateUrl: 'scripts/entities/properties/offices/office-detail.html',
+    templateUrl: 'scripts/views/offices/office-detail.html',
     controller: 'OfficeDetailCtrl'
   })
   .when('/bookmarks/industrial/:propertyId', {
-    templateUrl: 'scripts/entities/properties/industrial/industrial-detail.html',
+    templateUrl: 'scripts/views/industrial/industrial-detail.html',
     controller: 'IndustrialDetailCtrl'
   })
   .when('/bookmarks/site/:propertyId', {
-    templateUrl: 'scripts/entities/properties/sites/site-detail.html',
+    templateUrl: 'scripts/views/sites/site-detail.html',
     controller: 'SiteDetailCtrl'
   })
 
