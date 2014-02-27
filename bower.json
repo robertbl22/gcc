@@ -17,7 +17,6 @@
     "angular-scenario": "~1.2.0"
   },
   "resolutions": {
-    "angular": "1.2.7-build.2026+sha.7d6e5a2",
-    "angular-ui-utils": "bower-event"
+    "angular": "1.2.13"
   }
 }

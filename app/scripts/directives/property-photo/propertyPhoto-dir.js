@@ -6,8 +6,8 @@ angular.module('gccApp')
 		templateUrl: 'scripts/directives/property-photo/propertyPhoto-dir.html',
 		restrict: 'A',
 		scope: {
-			photosrc: '@',
-			title: '@',
+			photoSrc: '@',
+			name: '@',
 			link: '@'
 		}
 	}

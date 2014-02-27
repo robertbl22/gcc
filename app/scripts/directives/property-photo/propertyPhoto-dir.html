@@ -1,32 +1,32 @@
-<a ng-hide="photosrc==='No Photo'" href="" data-toggle="modal" data-target="#PropertyPhotoModal">
+<a ng-hide="photoSrc==='No Photo'" href="" data-toggle="modal" data-target="#PropertyPhotoModal">
 	<img 
-	ng-src="{{photosrc}}" 
-	alt="{{title}}" 
-	title="{{title}}" 
+	ng-src="{{photoSrc}}" 
+	alt="{{name}}" 
+	title="{{name}}" 
 	class="img-responsive img-thumbnail"><br/>
 	<small><i class="icon-search" style="margin-right:4px;"></i>View larger</small>
 </a>
 <img 
-ng-show="photosrc==='No Photo'" 
+ng-show="photoSrc==='No Photo'" 
 ng-src="images/no-photo.jpg" 
-alt="{{title}}" 
-title="{{title}}" 
+alt="{{name}}" 
+title="{{name}}" 
 class="img-responsive img-thumbnail">
 
 <!-- Modal -->
-<div ng-hide="photosrc==='No Photo'" class="modal fade" id="PropertyPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div ng-hide="photoSrc==='No Photo'" class="modal fade" id="PropertyPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title" id="myModalLabel">{{title}}</h4>
+				<h4 class="modal-title" id="myModalLabel">{{name}}</h4>
 			</div>
 			<div class="modal-body" style="text-align:center;">
 				<img 
-				ng-hide="photosrc==='No Photo'" 
-				ng-src="{{photosrc}}" 
-				alt="{{title}}" 
-				title="{{title}}" 
+				ng-hide="photoSrc==='No Photo'" 
+				ng-src="{{photoSrc}}" 
+				alt="{{name}}" 
+				title="{{name}}" 
 				class="img-responsive" 
 				style="border:solid 1px lightgray; margin:0 auto; width:100%;">
 			</div>

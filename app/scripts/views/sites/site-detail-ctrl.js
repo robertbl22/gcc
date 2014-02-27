@@ -1,15 +1,12 @@
 'use strict';
 
 var app = angular.module('gccApp')
-.controller('SiteDetailCtrl', function ($scope, $routeParams, LocalDataSvc, BreadcrumbSvc, SelectGeorgiaSvc, ToastrSvc) {
+.controller('SiteDetailCtrl', function ($scope, $routeParams, LocalDataSvc, SiteSvc, BreadcrumbSvc, ToastrSvc) {
 
 	$scope.corridorId = $routeParams.corridorId;
 	$scope.countyId = $routeParams.countyId;
-	//$scope.currentPath = '#/corridor/' + $routeParams.corridorId + '/county/' + $routeParams.countyId;
-
-
 	var propertyId = $routeParams.propertyId;
-	$scope.detailsTab = 'map';
+	//$scope.detailsTab = 'map';
 
 	/* Local data for "corridors-indicator" */
 	LocalDataSvc.Counties.get($routeParams.countyId).success(function(data) {
@@ -18,7 +15,7 @@ var app = angular.module('gccApp')
 	});
 
 	/* SelectGeorgia data */
-	SelectGeorgiaSvc.site.get(propertyId)
+	SiteSvc.get(propertyId)
 	.then(function(data){
 		$scope.property = data.features[0].attributes;
 		$scope.geometry = data.features[0].geometry[0];

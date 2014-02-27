@@ -1,7 +1,7 @@
 'use strict';
 
 var app = angular.module('gccApp')
-.controller('CountyCtrl', function ($scope, $routeParams, LocalDataSvc, AggregatedCountySvc, GPPropertiesCountSvc) {
+.controller('CountyCtrl', function ($scope, $routeParams, LocalDataSvc, sgCountiesSvc) {
 
 	$scope.county = {};
 	$scope.corridorId = $routeParams.corridorId;
@@ -23,17 +23,27 @@ var app = angular.module('gccApp')
 	};
 
 
-	LocalDataSvc.Counties.get($scope.countyId).success(function(data) {
-		$scope.county = data;
+	LocalDataSvc.Counties.get($scope.countyId).success(function(county) {
+		$scope.county = county;
+
+		/* SelectGeorgia data */
+		sgCountiesSvc.get(county.name)
+		.then(function(data){
+			$scope.county.attributes = data.features[0].attributes;
+			$scope.fieldAliases = data.fieldAliases;
+		}).catch(function(e){
+			ToastrSvc.error('Sorry, there was an error while loading the data.');
+		});
+
 	});
 
-	AggregatedCountySvc.get($scope.countyId).success(function(data) {
+	/*AggregatedCountySvc.get($scope.countyId).success(function(data) {
 		$scope.county.attributes = data;
-	});
+	});*/
 
-	GPPropertiesCountSvc.get($scope.countyId).then(function(data) {
+	/*GPPropertiesCountSvc.get($scope.countyId).then(function(data) {
 		$scope.propertiesCount = data;		
-	});
+	});*/
 
 });
 

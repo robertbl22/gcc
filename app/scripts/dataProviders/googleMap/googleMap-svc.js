@@ -41,6 +41,11 @@ angular.module('gccApp')
 		return true;
 	};
 
+	this.addMarkerToMap = function(cfg) {
+		var marker = new this.maps.Marker(cfg);
+		return marker;
+	};
+
 	this.getLabelOptions = function(text, center, map, ColorSet) {
 		return {
 			text: text,
@@ -94,6 +99,15 @@ angular.module('gccApp')
 		});
 		this.maps.event.addListener(polygon,'mouseout',function(){
 			this.setOptions({fillColor: ColorSet.mouseout});
+		});
+	};
+
+	this.addMarkerInfoWindow = function(map, name, marker) {
+		var infowindow = new this.maps.InfoWindow({
+			content: name
+		});
+		this.maps.event.addListener(marker, 'click', function() {
+			infowindow.open(map,marker);
 		});
 	};
 

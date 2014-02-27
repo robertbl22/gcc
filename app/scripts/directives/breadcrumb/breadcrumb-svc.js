@@ -18,7 +18,7 @@ Site Selection > Bookmarked Properties
 */
 
 angular.module('gccApp')
-.factory('BreadcrumbSvc', function ($q, LocalDataSvc, PropertySvc) {
+.factory('BreadcrumbSvc', function ($q, LocalDataSvc, OfficesSvc, IndustrialSvc, SitesSvc) {
 
 	var breadcrumbsArray = [{
 		name: 'Site Selection',
@@ -56,14 +56,28 @@ angular.module('gccApp')
 	};
 
 	var getPropertyCrumb = function(propertyType, propertyId, previousPath) {
+		var name;
+		switch(propertyType) {
+			case 'Office' : name = OfficesSvc.currentPropertyName; break;
+			case 'Industrial' : name = IndustrialSvc.currentPropertyName; break;
+			case 'Site' : name = SitesSvc.currentPropertyName; break;
+		};
+		var crumb = makeCrumb(propertyId, data.name, previousPath, propertyType);
+
 		var deferred = $q.defer();
+		deferred.resolve(function() {
+			return crumb;
+		});
+		return deferred.promise;
+
+		/*var deferred = $q.defer();
 		PropertySvc.get(propertyType, propertyId).success(function(data) {
 			deferred.resolve(function() {
 				var crumb = makeCrumb(propertyId, data.name, previousPath, propertyType);
 				return crumb;
 			}());
 		});
-		return deferred.promise;
+		return deferred.promise;*/
 	};
 
 	var spliceBookmarksCrumb = function(section) {

@@ -14,14 +14,14 @@
 					{{property.CITY}}, GA&nbsp;&nbsp;{{property.ZIP_CODE}}
 				</p>
 				<p>
-					<div county-link county-id="{{countyId}}" corridor-id="{{corridorId}}" name="property.COUNTY_NAME"></div>
+					<div county-link county-id="{{countyId}}" corridor-id="{{corridorId}}" name="{{property.COUNTY_NAME}}"></div>
 				</p>
 				<p>
 					<div bookmark-button item-id="{{property.OBJECTID}}" item="property" item-type="office"></div>
 				</p>
 			</div>
 
-			<table class="table table-striped">
+			<table class="table">
 				<tr ng-show="property.SUBMARKET">
 					<td>
 						<strong>{{fieldAliases.SUBMARKET}}:</strong>
@@ -129,7 +129,7 @@
 			</table>
 
 			<h4>Government Planning</h4>
-			<table class="table table-striped">
+			<table class="table">
 				<tr>
 					<td>
 						<strong>{{fieldAliases.COUNTY_FIPS_CODE}}:</strong>
@@ -157,7 +157,7 @@
 			</table>
 
 			<h4>Utilities</h4>
-			<table class="table table-striped">
+			<table class="table">
 				<tr>
 					<td>
 						<strong>{{fieldAliases.ELECTRIC_PROVIDER}}:</strong>
@@ -172,15 +172,18 @@
 
 		</div>
 		<div class="col-sm-6">
-			<div property-photo title="{{property.NAME}}" photosrc="{{property.PHOTO_LINK}}" link="#"></div>
-			<p>&nbsp;</p>
+			
+			<div building-viewer name="{{property.NAME}}" photo-src="{{property.PHOTO_LINK}}" lat="{{property.LATITUDE}}" lng="{{property.LONGITUDE}}" flyer-link="{{property.FLYER_LINK}}"></div>
+
+			<!-- <div property-photo name="{{property.NAME}}" photo-src="{{property.PHOTO_LINK}}" link="#"></div> -->
+			<!-- <p>&nbsp;</p>
 			<p ng-hide="property.FLYER_LINK === 'No Flyer'">
 				<a ng-href="{{property.FLYER_LINK}}" target="_blank"><i class="icon-cloud-download" style="margin-right:4px;"></i>Download the flyer</a>
-			</p>
-			<div>
+			</p> -->
+			<!-- <div>
 				[map: {{property.LATITUDE | number:3}} lat.,
 				{{property.LONGITUDE | number:3}} long.]
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>

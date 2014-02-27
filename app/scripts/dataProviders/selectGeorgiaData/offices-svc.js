@@ -1,19 +1,43 @@
 'use strict';
 
-var app = angular.module('gccApp');
+angular.module('gccApp')
+.factory('OfficesSvc', function(SelectGeorgiaSvc) {
 
-app.factory('OfficesSvc', function(PropertySvc) {
-	return {
-		get: function(CountyId) {
-			return PropertySvc.get('Office', CountyId, 'CountyId');
-		}
+	this.currentPropertyName;
+	
+	this.get = function(propertyId) {
+		var queryParams = {
+			returnGeometry: false,
+			where: 'BUILDING_ID = \'' + propertyId + '\'',
+			outFields: '*'
+		};
+		var layerId = SelectGeorgiaSvc.layerId.OFFICES;
+		var queryKey = 'OFFICE_' + propertyId;
+		return SelectGeorgiaSvc.get(layerId, queryParams, queryKey);
 	};
-});
 
-app.factory('OfficeSvc', function(PropertySvc) {
-	return {
-		get: function(PropertyId) {
-			return PropertySvc.get('Office', PropertyId, 'PropertyId');
-		}
-	};
+	this.getByCounty = function(countyName) {
+		var queryParams = {
+			returnGeometry: false,
+			where: 'COUNTY_NAME = \'' + countyName + '\'',
+			outFields: [
+			'OBJECTID',
+			'BUILDING_ID',
+			'NAME',
+			'PHOTO_LINK',
+			'ADDRESS',
+			'CITY',
+			'ZIP_CODE',
+			'SALE_LEASE',
+			'YEAR_BUILT',
+			'SPACE_AVAILABLE'
+			]
+		};
+		var layerId = SelectGeorgiaSvc.layerId.OFFICES;
+		var queryKey = 'OFFICE_' + countyName;
+		return SelectGeorgiaSvc.get(layerId, queryParams, queryKey);
+	}
+
+	return this;
+
 });

@@ -1,0 +1,24 @@
+<div>
+
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs">
+		<li  ng-class="{active:detailsTab==='photo'}"><a href="" ng-click="detailsTab='photo'"><i class="icon-camera"></i> Aerial</a></li>
+		<li ng-class="{active:detailsTab==='map'}"><a href="" ng-click="detailsTab='map'"><i class="icon-map-marker"></i> Map</a></li>
+	</ul>
+
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<div ng-class="{active:detailsTab==='photo'}" class="tab-pane" style="padding-top:5px;">
+			<div property-photo name="{{name}}" photo-src="{{photoSrc}}" link="#"></div>
+		</div>
+		<div ng-class="{active:detailsTab==='map'}" class="tab-pane" style="padding-top:5px;">
+			<div site-map lat="{{lat}}" lng="{{lng}}" name="{{name}}" geometry="geometry"></div>
+		</div>
+	</div>
+
+	<p>&nbsp;</p>
+	<p ng-hide="flyerLink === 'No Flyer'||flyerLink === 'N'">
+		<a ng-href="{{flyerLink}}" target="_blank"><i class="icon-cloud-download" style="margin-right:4px;"></i>Download the park plan</a>
+	</p>
+
+</div>

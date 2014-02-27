@@ -7,7 +7,7 @@ angular.module('gccApp')
 		scope : {
 			countyId: '@',
 			corridorId: '@',
-			name: '='
+			name: '@'
 		},
 		restrict: 'A',
 		link: function (scope, element, attrs) {
