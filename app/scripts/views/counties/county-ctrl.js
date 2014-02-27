@@ -25,25 +25,23 @@ var app = angular.module('gccApp')
 
 	LocalDataSvc.Counties.get($scope.countyId).success(function(county) {
 		$scope.county = county;
-
-		/* SelectGeorgia data */
-		sgCountiesSvc.get(county.name)
-		.then(function(data){
-			$scope.county.attributes = data.features[0].attributes;
-			$scope.fieldAliases = data.fieldAliases;
-		}).catch(function(e){
-			ToastrSvc.error('Sorry, there was an error while loading the data.');
-		});
-
 	});
 
-	/*AggregatedCountySvc.get($scope.countyId).success(function(data) {
-		$scope.county.attributes = data;
-	});*/
+	/* SelectGeorgia data */
+	sgCountiesSvc.get($scope.countyId)
+	.then(function(data){
+		$scope.county.attributes = data.features[0].attributes;
+		$scope.fieldAliases = data.fieldAliases;
+	}).catch(function(e){
+		ToastrSvc.error('Sorry, there was an error while loading the data.');
+	});
 
-	/*GPPropertiesCountSvc.get($scope.countyId).then(function(data) {
-		$scope.propertiesCount = data;		
-	});*/
+	sgCountiesSvc.getPropertiesCount($scope.countyId)
+	.then(function(data){
+		$scope.propertiesCount = data;
+	}).catch(function(e){
+		$scope.propertiesCount = {offices:'?',industrial:'?',sites:'?'};
+	});
 
 });
 

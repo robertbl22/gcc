@@ -6,7 +6,6 @@ var app = angular.module('gccApp', [
   'ngSanitize',
   'ngRoute',
   'ngAnimate',
-  'LocalStorageModule'
-  /*'google-maps',*/
-  /*'ui.map'*/
+  'LocalStorageModule',
+  'ui.router'
 ]);

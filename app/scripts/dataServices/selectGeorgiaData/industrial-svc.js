@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.factory('IndustrialSvc', function(SelectGeorgiaSvc) {
+.factory('IndustrialSvc', function(SelectGeorgiaSvc, sgCountiesSvc) {
 
 	this.currentPropertyName;
 	
@@ -16,7 +16,12 @@ angular.module('gccApp')
 		return SelectGeorgiaSvc.get(layerId, queryParams, queryKey);
 	};
 
-	this.getByCounty = function(countyName) {
+	this.getByCountyId = function(countyId) {
+		var countyName = sgCountiesSvc.countyIdToCountyName(countyId);
+		return _getByCountyName(countyName);
+	};
+
+	var _getByCountyName = function(countyName) {
 		var queryParams = {
 			returnGeometry: false,
 			where: 'COUNTY_NAME = \'' + countyName + '\'',

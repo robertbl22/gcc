@@ -9,7 +9,7 @@ var app = angular.module('gccApp')
 		$scope.Properties = data.features;
 	});*/
 
-	IndustrialSvc.getByCounty($routeParams.countyId)
+	IndustrialSvc.getByCountyId($routeParams.countyId)
 	.then(function(data){
 		$scope.Properties = data.features;
 	}).catch(function(e){

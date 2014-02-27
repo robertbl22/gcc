@@ -13,7 +13,7 @@ app.controller('MainCtrl', function ($scope, BookmarksSvc, BreadcrumbSvc) {
 	
 });
 
-app.value('GpRestSvcConfig', {
+/*app.value('GpRestSvcConfig', {
 	'ServiceRoot' : 'http://maps.selectgeorgia.com/arcgis/rest/services/GISPlanningLayers/MapServer/',
 	getPropertyKey : function(PropertyType, FilterBy) {
 		var key = {};
@@ -43,4 +43,4 @@ app.value('GpRestSvcConfig', {
 		return key;
 	}
 
-});
+});*/
