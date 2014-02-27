@@ -1,17 +1,17 @@
 'use strict';
 
 var app = angular.module('gccApp')
-.controller('OfficeDetailCtrl', function ($scope, $routeParams, LocalDataSvc, OfficesSvc, BreadcrumbSvc, ToastrSvc) {
+.controller('OfficeDetailCtrl', function ($scope, $stateParams, LocalDataSvc, OfficesSvc, BreadcrumbSvc, ToastrSvc) {
 
-	$scope.corridorId = $routeParams.corridorId;
-	$scope.countyId = $routeParams.countyId;
-	var propertyId = $routeParams.propertyId;
+	$scope.corridorId = $stateParams.corridorId;
+	$scope.countyId = $stateParams.countyId;
+	var propertyId = $stateParams.propertyId;
 	//$scope.detailsTab = 'map';
 
 	/* Local data for "corridors-indicator" */
-	LocalDataSvc.Counties.get($routeParams.countyId).success(function(data) {
+	LocalDataSvc.Counties.get($stateParams.countyId).success(function(data) {
 		$scope.county = data;
-		$scope.county.corridorId = $routeParams.corridorId;
+		$scope.county.corridorId = $stateParams.corridorId;
 	});
 
 	/* SelectGeorgia data */
@@ -35,14 +35,14 @@ var app = angular.module('gccApp')
 
 	///////////////////////////////////////////////
 
-	/*OfficeSvc.get($routeParams.propertyId).success(function(data) {
+	/*OfficeSvc.get($stateParams.propertyId).success(function(data) {
 		$scope.property = data.features[0].attributes;
 		$scope.fieldAliases = data.fieldAliases;
 	});
 
-	LocalDataSvc.Counties.get($routeParams.countyId).success(function(data) {
+	LocalDataSvc.Counties.get($stateParams.countyId).success(function(data) {
 		$scope.county = data;
-		$scope.county.corridorId = $routeParams.corridorId;
+		$scope.county.corridorId = $stateParams.corridorId;
 	});
 
 	$scope.previousPath = BreadcrumbSvc.previousPath;

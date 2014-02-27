@@ -1,11 +1,11 @@
 'use strict';
 
 var app = angular.module('gccApp')
-.controller('CountyCtrl', function ($scope, $routeParams, LocalDataSvc, sgCountiesSvc) {
+.controller('CountyCtrl', function ($scope, $stateParams, LocalDataSvc, sgCountiesSvc) {
 
 	$scope.county = {};
-	$scope.corridorId = $routeParams.corridorId;
-	$scope.countyId = $routeParams.countyId;
+	$scope.corridorId = $stateParams.corridorId;
+	$scope.countyId = $stateParams.countyId;
 
 
 	/* Tab set stuff */

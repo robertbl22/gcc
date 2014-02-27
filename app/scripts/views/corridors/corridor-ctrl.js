@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('gccApp')
-.controller('CorridorCtrl', function ($scope, $routeParams, LocalDataSvc) {
+.controller('CorridorCtrl', function ($scope, $stateParams, LocalDataSvc) {
 
-	$scope.corridorId = $routeParams.corridorId;
+	$scope.corridorId = $stateParams.corridorId;
 
-	LocalDataSvc.Corridors.get($routeParams.corridorId).success(function(data) {
+	LocalDataSvc.Corridors.get($stateParams.corridorId).success(function(data) {
 		$scope.Corridor = data;
 	});
 

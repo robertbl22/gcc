@@ -1,15 +1,15 @@
 'use strict';
 
 var app = angular.module('gccApp')
-.controller('OfficeListCtrl', function ($scope, $routeParams, OfficesSvc) {
+.controller('OfficeListCtrl', function ($scope, $stateParams, OfficesSvc) {
 
-	$scope.currentPath = '#/corridor/' + $routeParams.corridorId + '/county/' + $routeParams.countyId;
+	$scope.currentPath = '#/corridor/' + $stateParams.corridorId + '/county/' + $stateParams.countyId;
 
-	/*OfficesSvc.get($routeParams.countyId).success(function(data) {
+	/*OfficesSvc.get($stateParams.countyId).success(function(data) {
 		$scope.Properties = data.features;
 	});*/
 
-	OfficesSvc.getByCountyId($routeParams.countyId)
+	OfficesSvc.getByCountyId($stateParams.countyId)
 	.then(function(data){
 		$scope.Properties = data.features;
 	}).catch(function(e){

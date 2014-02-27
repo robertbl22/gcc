@@ -42,15 +42,15 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-4 col-md-3">
             <p>
               <a href="#/search" type="button" class="btn btn-default"><i class="icon-search"></i> Search Properties</a>
             </p>
-            <p><a href="#/bookmarks" ng-cloak><i class="icon-bookmark"></i> View bookmarked properties ({{BookmarksIndex.count}})</a></p>
+            <p><a href="#/bookmarks" ng-cloak><i class="icon-bookmark"></i> View bookmarks ({{BookmarksIndex.count}})</a></p>
             <div corridor-picker></div>
           </div>
-          <div class="col-sm-8">
-            <div class="rb-crossfade col-sm-12" ng-view></div>
+          <div class="col-sm-8 col-md-9">
+            <div class="rb-crossfade col-sm-12" ui-view autoscroll="false"></div>
           </div>
         </div>
       </div>

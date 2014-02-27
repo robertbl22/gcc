@@ -1,15 +1,15 @@
 'use strict';
 
 var app = angular.module('gccApp')
-.controller('IndustrialListCtrl', function ($scope, $routeParams, IndustrialSvc) {
+.controller('IndustrialListCtrl', function ($scope, $stateParams, IndustrialSvc) {
 
-	$scope.currentPath = '#/corridor/' + $routeParams.corridorId + '/county/' + $routeParams.countyId;
+	$scope.currentPath = '#/corridor/' + $stateParams.corridorId + '/county/' + $stateParams.countyId;
 
-	/*IndustrialsSvc.get($routeParams.countyId).success(function(data) {
+	/*IndustrialsSvc.get($stateParams.countyId).success(function(data) {
 		$scope.Properties = data.features;
 	});*/
 
-	IndustrialSvc.getByCountyId($routeParams.countyId)
+	IndustrialSvc.getByCountyId($stateParams.countyId)
 	.then(function(data){
 		$scope.Properties = data.features;
 	}).catch(function(e){
