@@ -3,7 +3,8 @@
 	ng-src="{{photoSrc}}" 
 	alt="{{name}}" 
 	title="{{name}}" 
-	class="img-responsive img-thumbnail"><br/>
+	class="img-responsive img-thumbnail"
+	imageload><br/>
 	<small><i class="icon-search" style="margin-right:4px;"></i>View larger</small>
 </a>
 <img 
@@ -11,7 +12,8 @@ ng-show="photoSrc==='No Photo'"
 ng-src="images/no-photo.jpg" 
 alt="{{name}}" 
 title="{{name}}" 
-class="img-responsive img-thumbnail">
+class="img-responsive img-thumbnail"
+imageload>
 
 <!-- Modal -->
 <div ng-hide="photoSrc==='No Photo'" class="modal fade" id="PropertyPhotoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

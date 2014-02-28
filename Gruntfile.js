@@ -265,6 +265,11 @@ module.exports = function (grunt) {
           src: [
             'generated/*'
           ]
+        }, { //RWB added this block
+          expand: true, 
+          cwd: '<%= yeoman.app %>/bower_components/font-awesome/font/', 
+          src: ['**'], 
+          dest: '<%= yeoman.dist %>/font/'
         }]
       },
       styles: {

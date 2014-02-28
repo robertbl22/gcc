@@ -7,17 +7,17 @@
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
-	<li ng-class="{active:tabset.isActive('overview')}">
-		<a ng-click="tabset.setActive('overview')" data-toggle="tab">Overview</a>
+	<li ui-sref-active="active">
+		<a ui-sref="corridor.county" ng-click="tabset.setActive('overview')">Overview</a>
 	</li>
-	<li ng-class="{active:tabset.isActive('offices'), disabled:tabset.isEmpty(propertiesCount.offices)}">
-		<a ng-click="tabset.setActive('offices')" data-toggle="tab">Offices <span class="badge loading loading-small" field-to-watch="{{propertiesCount.offices}}">{{propertiesCount.offices||'0'}}</span></a>
+	<li ui-sref-active="active" ng-class="{disabled:tabset.isEmpty(propertiesCount.offices)}">
+		<a  ui-sref="corridor.county.officeList">Offices <span class="badge loading loading-small" field-to-watch="{{propertiesCount.offices}}">{{propertiesCount.offices||'0'}}</span></a>
 	</li>
-	<li ng-class="{active:tabset.isActive('industrial'), disabled:tabset.isEmpty(propertiesCount.industrial)}">
-		<a ng-click="tabset.setActive('industrial')" data-toggle="tab">Industrial Buildings <span class="badge loading loading-small" field-to-watch="{{propertiesCount.industrial}}">{{propertiesCount.industrial||'0'}}</span></a>
+	<li ui-sref-active="active" ng-class="{disabled:tabset.isEmpty(propertiesCount.industrial)}">
+		<a  ui-sref="corridor.county.industrialList">Industrial Buildings <span class="badge loading loading-small" field-to-watch="{{propertiesCount.industrial}}">{{propertiesCount.industrial||'0'}}</span></a>
 	</li>
-	<li ng-class="{active:tabset.isActive('sites'), disabled:tabset.isEmpty(propertiesCount.sites)}">
-		<a ng-click="tabset.setActive('sites')" data-toggle="tab" >Sites <span class="badge loading loading-small" field-to-watch="{{propertiesCount.sites}}">{{propertiesCount.sites||'0'}}</span></a>
+	<li ui-sref-active="active" ng-class="{disabled:tabset.isEmpty(propertiesCount.sites)}">
+		<a  ui-sref="corridor.county.siteList">Sites <span class="badge loading loading-small" field-to-watch="{{propertiesCount.sites}}">{{propertiesCount.sites||'0'}}</span></a>
 	</li>
 </ul>
 

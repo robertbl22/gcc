@@ -2,6 +2,6 @@
 	<a href="#/corridor/i-16"><img ng-src="http://placehold.it/358x450&text=Map+of+Georgia" alt="Georgia" title="Georgia" class="img-responsive"></a>
 </div>
 
-<div class="list-group">
-	<a ng-href="#/corridor/{{Corridor.id}}" class="list-group-item" ng-class="{active:isActive(Corridor.id)}" ng-repeat="Corridor in Corridors" ng-cloak>{{Corridor.name}}</a>
+<div class="btn-group-vertical btn-group-sm">
+	<a ng-href="#/corridor/{{Corridor.id}}" class="btn btn-default" ng-class="{active:isActive(Corridor.id)}" ng-repeat="Corridor in Corridors" ng-cloak style="text-align:left;">{{Corridor.name}}</a>
 </div>

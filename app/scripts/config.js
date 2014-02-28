@@ -73,12 +73,7 @@ angular.module('gccApp')
       '@': {
         templateUrl: 'scripts/views/counties/county.html',
         controller: 'CountyCtrl'
-      }
-    }
-  })
-  .state('corridor.county.overview', {
-    url: '/',
-    views: {
+      },
       'countyTabs@corridor.county': {
         templateUrl: 'scripts/views/counties/overview.html',
         controller: 'CountyCtrl'

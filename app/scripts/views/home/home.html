@@ -1,23 +1,38 @@
 <h3>Opportunity is just down the road</h3>
 <div class="well">
-	<p><strong>Where you do business can be just as important as what you do.</strong> Selection of the best site depends on many factors, including incentives, work force, utilities, and transportation options. With Georgia’s Commercial Corridors tool, finding the best location is now easier than ever. County information, photos, and building and property site specs are regularly updated to ensure you have the right information to make the right decision.</p>
+	<p>
+		<strong>Where you do business can be just as important as what you do.</strong> Selection of the best site depends on many factors, including incentives, work force, utilities, and transportation options. With Georgia’s Commercial Corridors tool, finding the best location is now easier than ever. County information, photos, and building and property site specs are regularly updated to ensure you have the right information to make the right decision.
+	</p>
 	<p>
 		<strong>Browse the corridors:</strong><br/>
 		<span ng-repeat="Corridor in Corridors">
 			<a ng-href="#/corridor/{{Corridor.id}}" >{{Corridor.name}}</a><span ng-hide="$last">,&nbsp;</span>
 		</span>
 	</p>
-	<p><a href="#/search" class="btn btn-primary">Search Properties</a></p>
+	<p>
+		<a href="#/search" class="btn btn-primary"><i class="icon-play"></i> Search Properties</a>
+	</p>
 </div>
-<h4>Georgia&rsquo;s BEST Legislation</h4>
-<div class="row">
-	<div class="col-sm-8">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, animi, dignissimos, consequatur quasi quo sit dolorum consequuntur optio ex illum cum rem laboriosam amet nobis sequi quidem velit? Fuga, sunt?</p>
-	</div>
-	<div class="col-sm-4">
-		<span class="label label-warning" style="display:inline-block;margin-bottom:3px;">&nbsp;Tier 1&nbsp;</span><br/>
-		<span class="label label-success" style="display:inline-block;margin-bottom:3px;">&nbsp;Tier 2&nbsp;</span><br/>
-		<span class="label label-danger" style="display:inline-block;margin-bottom:3px;">&nbsp;Tier 3&nbsp;</span><br/>
-		<span class="label label-primary">&nbsp;Tier 4&nbsp;</span>
-	</div>
-</div>
+<h3><em class="icon-info-sign"></em> Georgia&rsquo;s BEST Legislation</h3>
+<p>
+	<div tiers-indicator tiers="{'tier1': true, 'tier2': true, 'tier3': true, 'tier4': true}"></div>
+</p>
+<p>
+	<strong>Georgia&rsquo;s &ldquo;Port Tax Bonus&rdquo;</strong> is available for industries that locate or expand, in Georgia and utilize Georgia&rsquo;s ports. This incentive offers additional job tax credits to businesses for each of 4 tiers of counties that add the required threshold of jobs and increase their port traffic through Georgia&rsquo;s port facilities by 10% in one year from the base level.
+</p>
+<p>&nbsp;</p>
+<h4>
+	UPDATES:
+</h4>
+<p>
+	To register for updates to the Georgia&rsquo;s Commercial Corridors tool, email&nbsp;
+	<a href="mailto:prichardson@gaports.com">prichardson@gaports.com</a>. Or call 800.342.8012 (ext. 3996) or 912.964.3996.
+</p>
+
+<h4>
+	MORE INFORMATION
+</h4>
+<p>Additional electronic tools and marketing information are available via email at <a href="mailto:marketing@gaports.com">marketing@gaports.com</a>.</p>
+
+<hr style="margin:45px 0"/>
+

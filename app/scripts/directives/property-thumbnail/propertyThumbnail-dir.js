@@ -9,13 +9,13 @@ angular.module('gccApp')
 		ng-src="{{photosrc}}" \
 		alt="{{title}}" \
 		title="{{title}}" \
-		class="img-responsive img-thumbnail"> \
+		class="img-responsive img-thumbnail" imageload> \
 		<img \
 		ng-show="{{photosrc===\'No Photo\'}}" \
 		ng-src="images/no-photo.jpg" \
 		alt="{{title}}" \
 		title="{{title}}" \
-		class="img-responsive img-thumbnail"> \
+		class="img-responsive img-thumbnail" imageload> \
 		</a>',
 		restrict: 'A',
 		scope: {
