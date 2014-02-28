@@ -1,0 +1,26 @@
+HOW TO UPDATE THE CORRIDOR PICKER MAP
+
+
+1.) There should be an Illustrator file that has the vector art in layers. Make changes there. Corridors shapes MUST be one path, not grouped, not a Compound path. (NOTE: Can you add alt tag and href links in Illustrator?)
+
+2.) Open the Illustrator file into Fireworks.
+
+3.) Trim the canvas to fit.
+
+4.) Resize the image to 390px wide.
+
+5.) On each corridor shape, right-click and choose "Insert as Hotspot". (NOTE: Can you add alt tag and href links in Fireworks?)
+
+6.) Export as HTML with images.
+
+7.) Copy generated 'map' element into corridorPicker.html. Rename the map element ID to match the "usemap" attribute. Update the GIF in images directory. NOTE: If no changes are needed to the rollover hot spots, then just update the GIF image. Add the appropriate href link and alt tag for each corridor.
+
+
+See also...
+
+http://help.adobe.com/en_US/fireworks/cs/using/WS4c25cfbb1410b0021e63e3d1152b00d35d-7fe6.html
+
+
+Info about the responsive image map hover plugin for jQuery:
+http://www.outsharked.com/imagemapster/
+
