@@ -3,14 +3,14 @@
 angular.module('gccApp')
 .directive('countyLink', function() {
 	return {
-		template: '<a ng-href="{{currentPath}}">{{name}} County</a>',
+		template: '<a ui-sref="corridor.county">{{name}} County</a>',
 		scope : {
 			countyId: '@',
 			corridorId: '@',
 			name: '@'
 		},
-		restrict: 'A',
-		link: function (scope, element, attrs) {
+		restrict: 'A'
+		/*,link: function (scope, element, attrs) {
 			
 			var hasPath = false;
 			scope.currentPath = '#';
@@ -30,6 +30,6 @@ angular.module('gccApp')
 				});
 			}
 			
-		}
+		}*/
 	};
 });

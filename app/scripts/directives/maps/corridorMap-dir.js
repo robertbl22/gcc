@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.directive('corridorMap', function(LocalDataSvc, ColorSvc, GoogleMapSvc) {
+.directive('corridorMap', function(CountyZoomSvc, LocalDataSvc, ColorSvc, GoogleMapSvc) {
 	return {
 		restrict: 'A',
 		template: '<div class="map"></div>',
@@ -45,9 +45,7 @@ angular.module('gccApp')
 			var addBehaviors = function(polygon, corridorId, countyId, PolygonColors) {
 				var currentPath = '#/corridor/' + corridorId + '/county/';
 				GoogleMapSvc.maps.event.addListener(polygon, 'click', function(evt) {
-					var polygon = this;
-					var url = currentPath + countyId;
-					document.location = url;
+					scope.$apply(CountyZoomSvc.zoom(corridorId, countyId));
 				});
 				GoogleMapSvc.addPolygonHover(polygon, PolygonColors);
 			};

@@ -9,7 +9,8 @@
 	<div class="col-sm-6">
 		<p><strong>Counties:</strong><br/>
 			<span ng-repeat="county in Corridor.counties | orderBy:'name'">
-				<a ng-href="#/corridor/{{Corridor.id}}/county/{{county.id}}" style="white-space:nowrap;">{{county.name}}</a><span ng-hide="$last">,&nbsp;</span>
+				<!-- <a ng-href="#/corridor/{{Corridor.id}}/county/{{county.id}}" style="white-space:nowrap;">{{county.name}}</a> -->
+				<a href="" ng-click="zoomToCounty(county.id)" style="white-space:nowrap;">{{county.name}}</a><span ng-hide="$last">,&nbsp;</span>
 			</span>
 		</p>
 	</div>

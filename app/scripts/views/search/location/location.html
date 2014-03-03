@@ -1,4 +1,4 @@
-<div class="panel panel-default">
+<div class="panel panel-default" ng-controller="SearchLocationCtrl">
 	<div class="panel-heading">Location</div>
 	<div class="panel-body">
 
@@ -6,36 +6,36 @@
 		<div class="form-group">
 			<label for="ddlCorridor">Interstate/highway corridor:</label>
 			<select id="ddlCorridor" class="form-control" ng-model="Search.Location.Corridor">
-				<option value="all">All Corridors</option>
-				<option value="i16">I-16 Corridor</option>
-				<option value="341a">341 Alliance Corridor</option>
+				<option value="">All Corridors</option>
+				<option value="i-16">I-16 Corridor</option>
+				<option value="341-alliance">341 Alliance Corridor</option>
 				<option value="srp">Savannah River Parkway Corridor</option>
-				<option value="i95">I-95 Corridor</option>
+				<option value="i-95">I-95 Corridor</option>
 			</select>
 		</div>
 
 		<div class="form-group">
-			<label for="ddlCorridor">Jobs Tax Credit Tier:</label>
+			<label for="ddlCorridor">Georgia&rsquo;s BEST Legislation Tier:</label>
 			<select id="ddlCorridor" class="form-control" ng-model="Search.Location.Tier">
-				<option value="all">Any Tier</option>
-				<option value="tier1">Tier 1</option>
-				<option value="tier2">Tier 2</option>
-				<option value="tier3">Tier 3</option>
-				<option value="tier4">Tier 4</option>
+				<option value="">Any Tier</option>
+				<option value="1">Tier 1</option>
+				<option value="2">Tier 2</option>
+				<option value="3">Tier 3</option>
+				<option value="4">Tier 4</option>
 			</select>
 		</div>
 
 		<div class="form-group">
 			<label for="ddlCounties">County:</label>
 			<select id="ddlCounties" class="form-control" ng-model="Search.Location.County" ng-options="County.id as County.name for County in Counties | orderBy: 'name' | filter: selectedCorridors">
-				<option value="all">All Counties</option>
+				<option value="">All Counties</option>
 			</select>
 		</div>
 
 		<div class="form-group">
 			<label for="ddlCities">City:</label>
 			<select id="ddlCities" class="form-control" ng-disabled="!Search.Location.City">
-				<option value="all">All Cities</option>
+				<option value="">All Cities</option>
 				<option>City 1</option>
 				<option>City 2</option>
 				<option>City 3</option>

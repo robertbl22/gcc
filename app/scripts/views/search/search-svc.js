@@ -24,10 +24,10 @@ angular.module('gccApp')
 					'Highway': ''
 				},
 			'Location': {
-				'Corridor': 'all',
-				'Tier' : 'all',
-				'County': 'all',
-				'City': 'all'
+				'Corridor': '',
+				'Tier' : '',
+				'County': '',
+				'City': ''
 			}
 		}
 	};

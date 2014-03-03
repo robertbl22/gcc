@@ -2,7 +2,7 @@
 	{
 		"id" : "bibb", 
 		"name" : "Bibb",
-		"tier" : "Tier 3",
+		"tier" : 3,
 		"corridors" : 
 		[
 			{
@@ -14,7 +14,7 @@
 	{
 		"id" : "wilkinson", 
 		"name" : "Wilkinson",
-		"tier" : "Tier 1",
+		"tier" : 1,
 		"corridors" : 
 		[
 			{
@@ -27,7 +27,7 @@
 	{
 		"id" : "twiggs", 
 		"name" : "Twiggs",
-		"tier" : "Tier 1",
+		"tier" : 1,
 		"corridors" : 
 		[
 			{
@@ -66,7 +66,7 @@
 	{
 		"id" : "treutlen", 
 		"name" : "Treutlen",
-		"tier" : "Tier 1",
+		"tier" : 1,
 		"corridors" : 
 		[
 			{
@@ -79,7 +79,7 @@
 	{
 		"id" : "emanuel", 
 		"name" : "Emanuel",
-		"tier" : "Tier 1",
+		"tier" : 1,
 		"corridors" : 
 		[
 			{
@@ -92,7 +92,7 @@
 	{
 		"id" : "candler", 
 		"name" : "Candler",
-		"tier" : "Tier 1",
+		"tier" : 1,
 		"corridors" : 
 		[
 			{
@@ -105,7 +105,7 @@
 	{
 		"id" : "bulloch", 
 		"name" : "Bulloch",
-		"tier" : "Tier 1",
+		"tier" : 1,
 		"corridors" : 
 		[
 			{
@@ -121,7 +121,7 @@
 	{
 		"id" : "bryan", 
 		"name" : "Bryan",
-		"tier" : "Tier 1",
+		"tier" : 1,
 		"corridors" : 
 		[
 			{
@@ -137,7 +137,7 @@
 	{
 		"id" : "effingham", 
 		"name" : "Effingham",
-		"tier" : "Tier 4",
+		"tier" : 4,
 		"corridors" : 
 		[
 			{
@@ -153,7 +153,7 @@
 	{
 		"id" : "houston", 
 		"name" : "Houston",
-		"tier" : "Tier 4",
+		"tier" : 4,
 		"corridors" : 
 		[
 			{
@@ -165,7 +165,7 @@
 	{
 		"id" : "pulaski", 
 		"name" : "Pulaski",
-		"tier" : "Tier 3",
+		"tier" : 3,
 		"corridors" : 
 		[
 			{
@@ -177,7 +177,7 @@
 	{
 		"id" : "dodge", 
 		"name" : "Dodge",
-		"tier" : "Tier 1",
+		"tier" : 1,
 		"corridors" : 
 		[
 			{
@@ -189,7 +189,7 @@
 	{
 		"id" : "telfair", 
 		"name" : "Telfair",
-		"tier" : "Tier 1",
+		"tier" : 1,
 		"corridors" : 
 		[
 			{
@@ -201,7 +201,7 @@
 	{
 		"id" : "jeff-davis", 
 		"name" : "Jeff Davis",
-		"tier" : "Tier 1",
+		"tier" : 1,
 		"corridors" : 
 		[
 			{
@@ -213,7 +213,7 @@
 	{
 		"id" : "appling", 
 		"name" : "Appling",
-		"tier" : "Tier 1",
+		"tier" : 1,
 		"corridors" : 
 		[
 			{
@@ -225,7 +225,7 @@
 	{
 		"id" : "wayne", 
 		"name" : "Wayne",
-		"tier" : "Tier 1",
+		"tier" : 1,
 		"corridors" : 
 		[
 			{
@@ -249,7 +249,7 @@
 	{
 		"id" : "burke", 
 		"name" : "Burke",
-		"tier" : "Tier 1",
+		"tier" : 1,
 		"corridors" : 
 		[
 			{
@@ -261,7 +261,7 @@
 	{
 		"id" : "jenkins", 
 		"name" : "Jenkins",
-		"tier" : "Tier 1",
+		"tier" : 1,
 		"corridors" : 
 		[
 			{
@@ -273,7 +273,7 @@
 	{
 		"id" : "screven", 
 		"name" : "Screven",
-		"tier" : "Tier 1",
+		"tier" : 1,
 		"corridors" : 
 		[
 			{
@@ -285,7 +285,7 @@
 	{
 		"id" : "chatham", 
 		"name" : "Chatham",
-		"tier" : "Tier 4",
+		"tier" : 4,
 		"corridors" : 
 		[
 			{
@@ -304,7 +304,7 @@
 	{
 		"id" : "liberty", 
 		"name" : "Liberty",
-		"tier" : "Tier 3",
+		"tier" : 3,
 		"corridors" : 
 		[
 			{
@@ -328,7 +328,7 @@
 	{
 		"id" : "glynn", 
 		"name" : "Glynn",
-		"tier" : "Tier 4",
+		"tier" : 4,
 		"corridors" : 
 		[
 			{
@@ -344,7 +344,7 @@
 	{
 		"id" : "camden", 
 		"name" : "Camden",
-		"tier" : "Tier 3",
+		"tier" : 3,
 		"corridors" : 
 		[
 			{

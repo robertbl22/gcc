@@ -6,6 +6,11 @@ $FontAwesomePath: "/bower_components/font-awesome/font/";
 /* Required by angular-bootstrap */
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
+/* Always force a scrollbar so that layouts don't jump */
+html {
+    overflow-y: scroll;
+}
+
 /* .angular-google-map-container { height: 400px; } */
 .map-canvas { height: 400px; }
 
@@ -92,7 +97,10 @@ h3.headline-links {
 }
 
 
-
+/*
+This animates the Bookmark list 
+when adding and removing rows.
+*/
 .animate-repeat.ng-enter, 
 .animate-repeat.ng-leave { 
     -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;

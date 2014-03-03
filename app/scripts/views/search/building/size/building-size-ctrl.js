@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.controller('SearchOfficeSizeCtrl', function ($scope, SearchSvc) {
+.controller('SearchBuildingSizeCtrl', function ($scope, SearchSvc) {
 
 	$scope.Search = SearchSvc;
 

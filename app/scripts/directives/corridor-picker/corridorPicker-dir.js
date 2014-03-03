@@ -26,16 +26,22 @@ angular.module('gccApp')
 				if($stateParams.corridorId) {
 					var areaId = '#' + $stateParams.corridorId;
 					$(areaId).mapster('select');
+				} else {
+					$('#i-16, #341-alliance, #srp, #i-95').mapster('deselect');
 				}
 			});
 
 			/*
+			/////////////////// REMOVED ////////////////////
+			The throttle mentioned below caused a problem.
+			////////////////////////////////////////////////
 			NOTE: We use a throttled 'resize' event override 
 			because IE will fire events a crazy number 
 			of times until the browser crashes.
 			jquery.unevent.js
 			*/
-			$(window).on('resize', resizeImageMap, 50);
+			
+			$(window).on('resize', resizeImageMap); //, 50);
 
 			function resizeImageMap() {
 				img.mapster('resize', element.width(), '', 0);

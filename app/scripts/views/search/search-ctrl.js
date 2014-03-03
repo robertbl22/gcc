@@ -6,9 +6,6 @@ angular.module('gccApp')
 	$scope.Search = SearchSvc.fields;
 	$scope.Form = {'Property': {}};
 
-	LocalDataSvc.Counties.get().success(function(data) {
-		$scope.Counties = data;
-	});
 
 	$scope.Form.reset = function() {
 		$scope.Search = angular.copy(SearchSvc.defaults);
@@ -21,13 +18,13 @@ angular.module('gccApp')
 	$scope.$watch('Search.Property.Type', function() {
 		switch($scope.Search.Property.Type) {
 			case 'Site': 
-			$scope.Form.Property.TemplateUrl = 'scripts/views/search/subforms/site.html';
+			$scope.Form.Property.TemplateUrl = 'scripts/views/search/site/site.html';
 			break;
 			case 'OfficeBuilding': 
-			$scope.Form.Property.TemplateUrl = 'scripts/views/search/subforms/office.html';
+			$scope.Form.Property.TemplateUrl = 'scripts/views/search/office/office.html';
 			break;
 			case 'IndustrialBuilding': 
-			$scope.Form.Property.TemplateUrl = 'scripts/views/search/subforms/industrial.html';
+			$scope.Form.Property.TemplateUrl = 'scripts/views/search/industrial/industrial.html';
 			break;
 		}
 	});

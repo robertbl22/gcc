@@ -5,14 +5,11 @@ var app = angular.module('gccApp')
 
 	$scope.currentPath = '#/corridor/' + $stateParams.corridorId + '/county/' + $stateParams.countyId;
 
-	/*IndustrialsSvc.get($stateParams.countyId).success(function(data) {
-		$scope.Properties = data.features;
-	});*/
-
 	IndustrialSvc.getByCountyId($stateParams.countyId)
 	.then(function(data){
 		$scope.Properties = data.features;
-	}).catch(function(e){
+	})
+	.catch(function(e){
 		ToastrSvc.error('Sorry, there was an error while loading the data.');
 	});
 	

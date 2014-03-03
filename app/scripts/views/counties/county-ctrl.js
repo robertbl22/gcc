@@ -6,7 +6,7 @@ var app = angular.module('gccApp')
 	$scope.county = {};
 	$scope.corridorId = $stateParams.corridorId;
 	$scope.countyId = $stateParams.countyId;
-
+	
 
 	/* Tab set stuff */
 	var currentTab = 'overview';
@@ -25,6 +25,9 @@ var app = angular.module('gccApp')
 
 	LocalDataSvc.Counties.get($scope.countyId).success(function(county) {
 		$scope.county = county;
+	})
+	.error(function() {
+		ToastrSvc.error('Sorry, there was an error while loading the data.');
 	});
 
 	/* SelectGeorgia data */
@@ -32,17 +35,17 @@ var app = angular.module('gccApp')
 	.then(function(data){
 		$scope.county.attributes = data.features[0].attributes;
 		$scope.fieldAliases = data.fieldAliases;
-	}).catch(function(e){
+	})
+	.catch(function(e){
 		ToastrSvc.error('Sorry, there was an error while loading the data.');
 	});
 
 	sgCountiesSvc.getPropertiesCount($scope.countyId)
 	.then(function(data){
 		$scope.propertiesCount = data;
-	}).catch(function(e){
+	})
+	.catch(function(e){
 		$scope.propertiesCount = {offices:'?',industrial:'?',sites:'?'};
 	});
 
 });
-
-

@@ -1,191 +1,181 @@
 <div class="row loading" field-to-watch="{{property.NAME}}" spinner-offset-y="200px">
-	<div corridors-indicator corridors="county.corridors" active="{{county.corridorId}}"></div>
 
-	<h3 class="headline-links">{{property.NAME}}</h3>
-	<div ng-show="hasPreviousPath()" class="small headline-links"><a ng-href="{{previousPath}}"><i class="icon-level-up"></i> Return</a></div>
+	<div class="col-sm-12">
+		<h3 class="headline-links">{{property.NAME}}</h3>
+		<div ng-show="hasPreviousPath()" class="small headline-links"><a ng-href="{{previousPath}}"><i class="icon-level-up"></i> Return</a></div>
 
-	<div class="row">
-		<div class="col-sm-6">
-		
-			<div class="well">
-				<p><strong>{{property.SALE_LEASE | salelease}}</strong></p>
-				<p>
-					{{property.ADDRESS}}<br/>
-					{{property.CITY}}, GA&nbsp;&nbsp;{{property.ZIP_CODE}}
-				</p>
-				<p>
-					<div county-link county-id="{{countyId}}" corridor-id="{{corridorId}}" name="{{property.COUNTY_NAME}}"></div>
-				</p>
-				<p>
-					<div bookmark-button item-id="{{property.OBJECTID}}" item="property" item-type="office"></div>
-				</p>
+		<div class="row">
+			<div class="col-sm-6">
+
+				<div class="well">
+					<p><strong>{{property.SALE_LEASE | salelease}}</strong></p>
+					<p>
+						{{property.ADDRESS}}<br/>
+						{{property.CITY}}, GA&nbsp;&nbsp;{{property.ZIP_CODE}}
+					</p>
+					<p>
+						<div county-link county-id="{{countyId}}" corridor-id="{{corridorId}}" name="{{property.COUNTY_NAME}}"></div>
+					</p>
+					<p>
+						<div bookmark-button item-id="{{property.OBJECTID}}" item="property" item-type="office"></div>
+					</p>
+				</div>
+
+				<table class="table">
+					<tr ng-show="property.SUBMARKET">
+						<td>
+							<strong>{{fieldAliases.SUBMARKET}}:</strong>
+						</td>
+						<td>
+							{{property.SUBMARKET}}
+						</td>
+					</tr>
+					<tr ng-show="property.BUILDING_SIZE">
+						<td>
+							<strong>{{fieldAliases.BUILDING_SIZE}}:</strong>
+						</td>
+						<td>
+							{{property.BUILDING_SIZE | number}} sq. ft.
+						</td>
+					</tr>
+					<tr ng-show="property.SPACE_AVAILABLE">
+						<td>
+							<strong>{{fieldAliases.SPACE_AVAILABLE}}:</strong>
+						</td>
+						<td>
+							{{property.SPACE_AVAILABLE | number}} sq. ft.
+						</td>
+					</tr>
+					<tr ng-show="property.CONTIG_MIN_SF">
+						<td>
+							<strong>{{fieldAliases.CONTIG_MIN_SF}}:</strong>
+						</td>
+						<td>
+							{{property.CONTIG_MIN_SF | number}} sq. ft.
+						</td>
+					</tr>
+					<tr ng-show="property.CONTIG_MAX_SF">
+						<td>
+							<strong>{{fieldAliases.CONTIG_MAX_SF}}:</strong>
+						</td>
+						<td>
+							{{property.CONTIG_MAX_SF | number}} sq. ft.
+						</td>
+					</tr>
+					<tr ng-show="property.ASKING_PRICE">
+						<td>
+							<strong>{{fieldAliases.ASKING_PRICE | dollars}}:</strong>
+						</td>
+						<td>
+							{{property.ASKING_PRICE}}
+						</td>
+					</tr>
+					<tr ng-show="property.LEASE_TERMS">
+						<td>
+							<strong>{{fieldAliases.LEASE_TERMS}}:</strong>
+						</td>
+						<td>
+							{{property.LEASE_TERMS}}
+						</td>
+					</tr>
+					<tr ng-show="property.BUILDING_TYPE">
+						<td>
+							<strong>{{fieldAliases.BUILDING_TYPE}}:</strong>
+						</td>
+						<td>
+							{{property.BUILDING_TYPE}}
+						</td>
+					</tr>
+					<tr ng-show="property.YEAR_BUILT">
+						<td>
+							<strong>{{fieldAliases.YEAR_BUILT}}:</strong>
+						</td>
+						<td>
+							{{property.YEAR_BUILT}}
+						</td>
+					</tr>
+					<tr ng-show="property.TENANTS">
+						<td>
+							<strong>{{fieldAliases.TENANTS}}:</strong>
+						</td>
+						<td>
+							{{property.TENANTS | yesno}}
+						</td>
+					</tr>
+					<tr ng-show="property.LOT_SIZE">
+						<td>
+							<strong>{{fieldAliases.LOT_SIZE}}:</strong>
+						</td>
+						<td>
+							{{property.LOT_SIZE | number:2}} acres
+						</td>
+					</tr>
+					<tr ng-show="property.CLASS">
+						<td>
+							<strong>{{fieldAliases.CLASS}}:</strong>
+						</td>
+						<td>
+							{{property.CLASS}}
+						</td>
+					</tr>
+					<tr ng-show="property.PARKING_RATIO">
+						<td>
+							<strong>{{fieldAliases.PARKING_RATIO}}:</strong>
+						</td>
+						<td>
+							{{property.PARKING_RATIO}}
+						</td>
+					</tr>
+				</table>
+
+				<h4>Government Planning</h4>
+				<table class="table">
+					<tr>
+						<td>
+							<strong>{{fieldAliases.COUNTY_FIPS_CODE}}:</strong>
+						</td>
+						<td>
+							{{property.COUNTY_FIPS_CODE}}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong>{{fieldAliases.INCORPORATED}}:</strong>
+						</td>
+						<td>
+							{{property.INCORPORATED | yesno}}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong>Jobs Tax Credit:</strong>
+						</td>
+						<td>
+							{{property.JOBS_TAX_CREDIT | dollars}}
+						</td>
+					</tr>
+				</table>
+
+				<h4>Utilities</h4>
+				<table class="table">
+					<tr>
+						<td>
+							<strong>{{fieldAliases.ELECTRIC_PROVIDER}}:</strong>
+						</td>
+						<td>
+							{{property.ELECTRIC_PROVIDER}}
+						</td>
+					</tr>
+				</table>
+
+
+
 			</div>
+			<div class="col-sm-6">
 
-			<table class="table">
-				<tr ng-show="property.SUBMARKET">
-					<td>
-						<strong>{{fieldAliases.SUBMARKET}}:</strong>
-					</td>
-					<td>
-						{{property.SUBMARKET}}
-					</td>
-				</tr>
-				<tr ng-show="property.BUILDING_SIZE">
-					<td>
-						<strong>{{fieldAliases.BUILDING_SIZE}}:</strong>
-					</td>
-					<td>
-						{{property.BUILDING_SIZE | number}} sq. ft.
-					</td>
-				</tr>
-				<tr ng-show="property.SPACE_AVAILABLE">
-					<td>
-						<strong>{{fieldAliases.SPACE_AVAILABLE}}:</strong>
-					</td>
-					<td>
-						{{property.SPACE_AVAILABLE | number}} sq. ft.
-					</td>
-				</tr>
-				<tr ng-show="property.CONTIG_MIN_SF">
-					<td>
-						<strong>{{fieldAliases.CONTIG_MIN_SF}}:</strong>
-					</td>
-					<td>
-						{{property.CONTIG_MIN_SF | number}} sq. ft.
-					</td>
-				</tr>
-				<tr ng-show="property.CONTIG_MAX_SF">
-					<td>
-						<strong>{{fieldAliases.CONTIG_MAX_SF}}:</strong>
-					</td>
-					<td>
-						{{property.CONTIG_MAX_SF | number}} sq. ft.
-					</td>
-				</tr>
-				<tr ng-show="property.ASKING_PRICE">
-					<td>
-						<strong>{{fieldAliases.ASKING_PRICE | dollars}}:</strong>
-					</td>
-					<td>
-						{{property.ASKING_PRICE}}
-					</td>
-				</tr>
-				<tr ng-show="property.LEASE_TERMS">
-					<td>
-						<strong>{{fieldAliases.LEASE_TERMS}}:</strong>
-					</td>
-					<td>
-						{{property.LEASE_TERMS}}
-					</td>
-				</tr>
-				<tr ng-show="property.BUILDING_TYPE">
-					<td>
-						<strong>{{fieldAliases.BUILDING_TYPE}}:</strong>
-					</td>
-					<td>
-						{{property.BUILDING_TYPE}}
-					</td>
-				</tr>
-				<tr ng-show="property.YEAR_BUILT">
-					<td>
-						<strong>{{fieldAliases.YEAR_BUILT}}:</strong>
-					</td>
-					<td>
-						{{property.YEAR_BUILT}}
-					</td>
-				</tr>
-				<tr ng-show="property.TENANTS">
-					<td>
-						<strong>{{fieldAliases.TENANTS}}:</strong>
-					</td>
-					<td>
-						{{property.TENANTS | yesno}}
-					</td>
-				</tr>
-				<tr ng-show="property.LOT_SIZE">
-					<td>
-						<strong>{{fieldAliases.LOT_SIZE}}:</strong>
-					</td>
-					<td>
-						{{property.LOT_SIZE | number:2}} acres
-					</td>
-				</tr>
-				<tr ng-show="property.CLASS">
-					<td>
-						<strong>{{fieldAliases.CLASS}}:</strong>
-					</td>
-					<td>
-						{{property.CLASS}}
-					</td>
-				</tr>
-				<tr ng-show="property.PARKING_RATIO">
-					<td>
-						<strong>{{fieldAliases.PARKING_RATIO}}:</strong>
-					</td>
-					<td>
-						{{property.PARKING_RATIO}}
-					</td>
-				</tr>
-			</table>
+				<div building-viewer name="{{property.NAME}}" photo-src="{{property.PHOTO_LINK}}" lat="{{property.LATITUDE}}" lng="{{property.LONGITUDE}}" flyer-link="{{property.FLYER_LINK}}"></div>
 
-			<h4>Government Planning</h4>
-			<table class="table">
-				<tr>
-					<td>
-						<strong>{{fieldAliases.COUNTY_FIPS_CODE}}:</strong>
-					</td>
-					<td>
-						{{property.COUNTY_FIPS_CODE}}
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<strong>{{fieldAliases.INCORPORATED}}:</strong>
-					</td>
-					<td>
-						{{property.INCORPORATED | yesno}}
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<strong>Jobs Tax Credit:</strong>
-					</td>
-					<td>
-						{{property.JOBS_TAX_CREDIT | dollars}}
-					</td>
-				</tr>
-			</table>
-
-			<h4>Utilities</h4>
-			<table class="table">
-				<tr>
-					<td>
-						<strong>{{fieldAliases.ELECTRIC_PROVIDER}}:</strong>
-					</td>
-					<td>
-						{{property.ELECTRIC_PROVIDER}}
-					</td>
-				</tr>
-			</table>
-
-
-
-		</div>
-		<div class="col-sm-6">
-			
-			<div building-viewer name="{{property.NAME}}" photo-src="{{property.PHOTO_LINK}}" lat="{{property.LATITUDE}}" lng="{{property.LONGITUDE}}" flyer-link="{{property.FLYER_LINK}}"></div>
-
-			<!-- <div property-photo name="{{property.NAME}}" photo-src="{{property.PHOTO_LINK}}" link="#"></div> -->
-			<!-- <p>&nbsp;</p>
-			<p ng-hide="property.FLYER_LINK === 'No Flyer'">
-				<a ng-href="{{property.FLYER_LINK}}" target="_blank"><i class="icon-cloud-download" style="margin-right:4px;"></i>Download the flyer</a>
-			</p> -->
-			<!-- <div>
-				[map: {{property.LATITUDE | number:3}} lat.,
-				{{property.LONGITUDE | number:3}} long.]
-			</div> -->
+			</div>
 		</div>
 	</div>
 </div>
-
-

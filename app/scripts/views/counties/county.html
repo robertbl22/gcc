@@ -1,4 +1,4 @@
-<div corridors-indicator corridors="county.attributes.corridors" active="{{corridorId}}"></div>
+<!-- <div corridors-indicator corridors="county.corridors" active="{{corridorId}}"></div> -->
 
 <h3 style="display: inline-block;">{{county.name}} County</h3>
 <div style="display: inline-block; margin-left: 20px;">
@@ -21,20 +21,6 @@
 	</li>
 </ul>
 
-<div ui-view="countyTabs" class="rb-crossfade" autoscroll="false"></div>
-
-<!-- Tab panes -->
-<!-- <div class="tab-content">
-	<div class="tab-pane" ng-class="{active:tabset.isActive('overview')}">
-		<div ng-include="'scripts/views/counties/overview.html'"></div>
-	</div>
-	<div class="tab-pane" ng-class="{active:tabset.isActive('offices')}">
-		<div ng-include="'scripts/views/offices/office-list.html'"></div>
-	</div>
-	<div class="tab-pane" ng-class="{active:tabset.isActive('industrial')}">
-		<div ng-include="'scripts/views/industrial/industrial-list.html'"></div>
-	</div>
-	<div class="tab-pane" ng-class="{active:tabset.isActive('sites')}">
-		<div ng-include="'scripts/views/sites/site-list.html'"></div>
-	</div>
-</div> -->
+<div class="row" style="position:relative;">
+	<div ui-view="countyTabs" class="col-sm-12 rb-fade" style="position:absolute;" autoscroll="false"></div>
+</div>

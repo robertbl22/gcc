@@ -1,7 +1,7 @@
 'use strict',
 
 angular.module('gccApp')
-.directive('propertyPhoto', function() {
+.directive('propertyPhoto', function(PropertyPhotoSvc) {
 	return {
 		templateUrl: 'scripts/directives/property-photo/propertyPhoto-dir.html',
 		restrict: 'A',
@@ -9,6 +9,12 @@ angular.module('gccApp')
 			photoSrc: '@',
 			name: '@',
 			link: '@'
+		},
+		link: function(scope, element, attrs) {
+			scope.$watch('photoSrc', function() {
+				PropertyPhotoSvc.photoSrc = scope.photoSrc;
+				PropertyPhotoSvc.name = scope.name;
+			});
 		}
 	}
 });

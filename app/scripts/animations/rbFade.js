@@ -1,11 +1,9 @@
 'use strict';
 
 angular.module('gccApp')
-.animation('.rb-crossfade', function () {
+.animation('.rb-fade', function() {
 	return {
 		enter: function (element, done) {
-			element.parent()[0].style.position = 'relative';
-			element[0].style.position = 'absolute';
 			TweenMax.fromTo(element[0], 0.5, {opacity: 0}, {opacity: 1, onComplete: done});
 		},
 		leave: function (element, done) {
