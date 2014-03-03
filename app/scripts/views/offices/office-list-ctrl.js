@@ -1,11 +1,11 @@
 'use strict';
 
 var app = angular.module('gccApp')
-.controller('OfficeListCtrl', function ($scope, $stateParams, OfficesSvc) {
+.controller('OfficeListCtrl', function ($scope, $stateParams, DataService) {
 
 	$scope.currentPath = '#/corridor/' + $stateParams.corridorId + '/county/' + $stateParams.countyId;
 
-	OfficesSvc.getByCountyId($stateParams.countyId)
+	DataService.office.getByCounty($stateParams.countyId)
 	.then(function(data){
 		$scope.Properties = data.features;
 	}).catch(function(e){

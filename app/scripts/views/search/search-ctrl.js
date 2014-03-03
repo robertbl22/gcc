@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.controller('SearchCtrl', function ($scope, LocalDataSvc, SearchSvc, ToastrSvc) {
+.controller('SearchCtrl', function ($scope, SearchSvc, ToastrSvc) {
 
 	$scope.Search = SearchSvc.fields;
 	$scope.Form = {'Property': {}};

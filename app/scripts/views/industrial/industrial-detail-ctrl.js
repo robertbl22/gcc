@@ -1,14 +1,14 @@
 'use strict';
 
 var app = angular.module('gccApp')
-.controller('IndustrialDetailCtrl', function ($scope, $stateParams, LocalDataSvc, IndustrialSvc, BreadcrumbSvc, ToastrSvc) {
+.controller('IndustrialDetailCtrl', function ($scope, $stateParams, DataService, BreadcrumbSvc, ToastrSvc) {
 
 	$scope.corridorId = $stateParams.corridorId;
 	$scope.countyId = $stateParams.countyId;
 	var propertyId = $stateParams.propertyId;
 
 	/* Local data for "corridors-indicator" */
-	LocalDataSvc.Counties.get($stateParams.countyId).success(function(data) {
+	DataService.county.getOverview($stateParams.countyId).success(function(data) {
 		$scope.county = data;
 		$scope.county.corridorId = $stateParams.corridorId;
 	})
@@ -17,7 +17,7 @@ var app = angular.module('gccApp')
 	});
 
 	/* SelectGeorgia data */
-	IndustrialSvc.get(propertyId)
+	DataService.industrial.getDetail(propertyId)
 	.then(function(data){
 		$scope.property = data.features[0].attributes;
 		$scope.fieldAliases = data.fieldAliases;

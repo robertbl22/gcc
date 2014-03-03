@@ -1,15 +1,13 @@
 'use strict';
 
 angular.module('gccApp')
-.factory('CorridorsSvc', function($http) {
+.factory('LocalData_CorridorsSvc', function($http) {
 	return {
-		get: function(CorridorId) {
-			if(CorridorId) {
-				return $http.get('scripts/data/corridors/' + CorridorId + '.json', {cache: true});
-			}
-			else {
-				return $http.get('scripts/data/corridors.json', {cache: true});
-			}
+		getOverview: function(CorridorId) {
+			return $http.get('scripts/data/corridors/' + CorridorId + '.json', {cache: true});
+		},
+		getAll: function() {
+			return $http.get('scripts/data/corridors.json', {cache: true});
 		}
 	};
 });

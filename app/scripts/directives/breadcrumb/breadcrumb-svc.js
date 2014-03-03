@@ -18,7 +18,7 @@ Site Selection > Bookmarked Properties
 */
 
 angular.module('gccApp')
-.factory('BreadcrumbSvc', function ($q, LocalDataSvc, OfficesSvc, IndustrialSvc, SitesSvc) {
+.factory('BreadcrumbSvc', function ($q, DataService) {
 
 	var breadcrumbsArray = [{
 		name: 'Site Selection',
@@ -35,7 +35,7 @@ angular.module('gccApp')
 
 	var getCorridorCrumb = function(corridorId, previousPath) {
 		var deferred = $q.defer();
-		LocalDataSvc.Corridors.get(corridorId).success(function(data) {
+		DataService.corridor.getOverview(corridorId).success(function(data) {
 			deferred.resolve(function() {
 				var crumb = makeCrumb(corridorId, data.shortname, previousPath, 'corridor');
 				return crumb;
@@ -46,7 +46,7 @@ angular.module('gccApp')
 
 	var getCountyCrumb = function(countyId, previousPath) {
 		var deferred = $q.defer();
-		LocalDataSvc.Counties.get(countyId).success(function(data) {
+		DataService.county.getOverview(countyId).success(function(data) {
 			deferred.resolve(function() {
 				var crumb = makeCrumb(countyId, data.name, previousPath, 'county');
 				return crumb;
@@ -58,9 +58,9 @@ angular.module('gccApp')
 	var getPropertyCrumb = function(propertyType, propertyId, previousPath) {
 		var name;
 		switch(propertyType) {
-			case 'Office' : name = OfficesSvc.currentPropertyName; break;
-			case 'Industrial' : name = IndustrialSvc.currentPropertyName; break;
-			case 'Site' : name = SitesSvc.currentPropertyName; break;
+			case 'Office' : name = DataService.office.currentPropertyName; break;
+			case 'Industrial' : name = DataService.industrial.currentPropertyName; break;
+			case 'Site' : name = DataService.site.currentPropertyName; break;
 		};
 		var crumb = makeCrumb(propertyId, data.name, previousPath, propertyType);
 

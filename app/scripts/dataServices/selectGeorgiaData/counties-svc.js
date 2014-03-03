@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('gccApp')
-.factory('sgCountiesSvc', function($q, SelectGeorgiaSvc) {
+.factory('SelectGeorgia_CountiesSvc', function($q, SelectGeorgiaSvc) {
 	
-	this.get = function(countyId) {
-		var countyName = this.countyIdToCountyName(countyId);
+	this.getDetail = function(countyId) {
+		var countyName = _countyIdToCountyName(countyId);
 		var queryParams = {
 			returnGeometry: false,
 			where: 'NAME = \'' + countyName + '\'',
@@ -52,7 +52,7 @@ angular.module('gccApp')
 	};
 
 	this.getPropertiesCount = function(countyId) {
-		var countyName = this.countyIdToCountyName(countyId);
+		var countyName = _countyIdToCountyName(countyId);
 		var officeCount = _getOfficesCount(countyName);
 		var industrialCount = _getIndustrialCount(countyName);
 		var siteCount = _getSitesCount(countyName);
@@ -76,11 +76,13 @@ angular.module('gccApp')
 		});
 	};
 
-	this.countyIdToCountyName = function(countyId) {
+	var _countyIdToCountyName = function(countyId) {
 		var countyName = countyId.replace('-', ' ');
 		countyName = _capitalize(countyName);
 		return countyName;
 	};
+
+	this.countyIdToCountyName = _countyIdToCountyName;
 
 	var _capitalize = function(str)
 	{

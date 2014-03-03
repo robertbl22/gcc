@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('gccApp')
-.factory('SitesSvc', function(SelectGeorgiaSvc, sgCountiesSvc) {
+.factory('SelectGeorgia_SitesSvc', function(SelectGeorgiaSvc, SelectGeorgia_CountiesSvc) {
 
 	this.currentPropertyName;
 	
-	this.get = function(siteId) {
+	this.getDetail = function(siteId) {
 		var queryParams = {
 			returnGeometry: true,
 			where: 'SITE_ID = \'' + siteId + '\'',
@@ -16,8 +16,8 @@ angular.module('gccApp')
 		return SelectGeorgiaSvc.get(layerId, queryParams, queryKey);
 	};
 
-	this.getByCountyId = function(countyId) {
-		var countyName = sgCountiesSvc.countyIdToCountyName(countyId);
+	this.getByCounty = function(countyId) {
+		var countyName = SelectGeorgia_CountiesSvc.countyIdToCountyName(countyId);
 		return _getByCountyName(countyName);
 	};
 

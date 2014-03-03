@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.directive('countyMap', function(LocalDataSvc, ColorSvc, GoogleMapSvc) {
+.directive('countyMap', function(DataService, ColorSvc, GoogleMapSvc) {
 	return {
 		restrict: 'A',
 		template: '<div class="map"></div>',
@@ -11,7 +11,7 @@ angular.module('gccApp')
 		},
 		link: function(scope, element, attrs) {
 
-			LocalDataSvc.Counties.get(scope.countyId).success(function(data) {
+			DataService.county.getOverview(scope.countyId).success(function(data) {
 				drawGoogleMap(data, element[0]);
 			});
 

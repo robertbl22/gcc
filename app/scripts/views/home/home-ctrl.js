@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('gccApp')
-.controller('HomeCtrl', function ($scope, LocalDataSvc) {
+.controller('HomeCtrl', function ($scope, DataService) {
 
-	LocalDataSvc.Corridors.get().success(function(data) {
+	DataService.corridor.getAll().success(function(data) {
 		$scope.Corridors = data;
 	});
 	

@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('gccApp')
-.controller('CorridorPickerCtrl', function ($scope, $stateParams, LocalDataSvc) {
+.controller('CorridorPickerCtrl', function ($scope, $stateParams, DataService) {
 
 	$scope.isActive = function(key) {
 		return (key === $stateParams.corridorId);
 	};
 
-	LocalDataSvc.Corridors.get().success(function(data) {
+	DataService.corridor.getAll().success(function(data) {
 		$scope.Corridors = data;
 	});
 	
