@@ -5,7 +5,7 @@
 
 		<div class="form-group">
 			<label for="ddlCorridor">Interstate/highway corridor:</label>
-			<select id="ddlCorridor" class="form-control" ng-model="Search.Location.Corridor">
+			<select id="ddlCorridor" class="form-control" ng-model="Location.Corridor">
 				<option value="">All Corridors</option>
 				<option value="i-16">I-16 Corridor</option>
 				<option value="341-alliance">341 Alliance Corridor</option>
@@ -16,7 +16,7 @@
 
 		<div class="form-group">
 			<label for="ddlCorridor">Georgia&rsquo;s BEST Legislation Tier:</label>
-			<select id="ddlCorridor" class="form-control" ng-model="Search.Location.Tier">
+			<select id="ddlCorridor" class="form-control" ng-model="Location.Tier">
 				<option value="">Any Tier</option>
 				<option value="1">Tier 1</option>
 				<option value="2">Tier 2</option>
@@ -27,19 +27,15 @@
 
 		<div class="form-group">
 			<label for="ddlCounties">County:</label>
-			<select id="ddlCounties" class="form-control" ng-model="Search.Location.County" ng-options="County.id as County.name for County in Counties | orderBy: 'name' | filter: selectedCorridors">
+			<select id="ddlCounties" class="form-control" ng-model="Location.County" ng-options="County.name as County.name group by County.corridors[0].name for County in Counties | orderBy: 'name'">
 				<option value="">All Counties</option>
 			</select>
 		</div>
 
 		<div class="form-group">
 			<label for="ddlCities">City:</label>
-			<select id="ddlCities" class="form-control" ng-disabled="!Search.Location.City">
+			<select id="ddlCities" class="form-control" ng-model="Location.City" ng-options="City.attributes.CITY for City in Cities | unique:'attributes.CITY' | orderBy: 'attributes.CITY'">
 				<option value="">All Cities</option>
-				<option>City 1</option>
-				<option>City 2</option>
-				<option>City 3</option>
-				<option>City 4</option>
 			</select>
 		</div>
 

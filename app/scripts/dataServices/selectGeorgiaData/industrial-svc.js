@@ -25,10 +25,10 @@ angular.module('gccApp')
 		var countyName = SelectGeorgia_CountiesSvc.countyIdToCountyName(countyId);
 		var queryParams = {
 			returnGeometry: false,
-			where: 'COUNTY = \'' + countyName + '\'',
-			outFields: 'CITY'
+			where: 'COUNTY_NAME = \'' + countyName + '\'',
+			outFields: 'COUNTY_NAME, CITY'
 		};
-		var layerId = SelectGeorgiaSvc.layerId.COUNTIES;
+		var layerId = SelectGeorgiaSvc.layerId.INDUSTRIAL;
 		var queryKey = 'INDUSTRIAL_COUNTY_CITIES_' + countyName;
 		return SelectGeorgiaSvc.get(layerId, queryParams, queryKey);
 	};

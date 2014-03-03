@@ -1,29 +1,57 @@
 'use strict';
 
 angular.module('gccApp')
-.controller('SearchLocationCtrl', function ($scope, SearchSvc, DataService) {
+.controller('SearchLocationCtrl', function ($scope, DataService, SearchSvc) {
 
-	$scope.Search = SearchSvc.fields;
+	var citiesDataSource;
 
-	$scope.$watch('Search.Location.Corridor', function() {
-		if($scope.Search.Location.Corridor != '') {
-			DataService.corridor.getOverview($scope.Search.Location.Corridor).success(function(data) {
+	$scope.$watch('Property.Type', function() {
+		updateCounty();
+	});
+
+	$scope.$watch('Location.Corridor', function() {
+		updateCounty();
+	});
+
+	$scope.$watch('Location.County', function() {
+		citiesDataSource = getCitiesDataSource();
+		console.log('citiesDataSource changed!', citiesDataSource)
+		updateCity();
+	});
+
+
+
+	var getCitiesDataSource = function() {
+		switch($scope.Property.Type) {
+			case SearchSvc.PropertyType.OFFICE: return DataService.office;
+			case SearchSvc.PropertyType.SITE: return DataService.site;
+			default: return DataService.industrial;
+		}
+	};
+
+	var updateCounty = function() {
+		if($scope.Location.Corridor != '') {
+			DataService.corridor.getOverview($scope.Location.Corridor)
+			.success(function(data) {
 				$scope.Counties = data.counties;
+				$scope.Location.County = '';
 			});
 		} else {
 			DataService.county.getAll().success(function(data) {
 				$scope.Counties = data;
 			});
-		}
-	});
-
-	$scope.$watch('Search.Location.County', function() {
-		if($scope.Search.Location.Corridor != '') {
-			DataService.industrial.getCountyCities($scope.countyId)
-			.then(function(data){
-				//$scope.county.attributes = data.features[0].attributes;
-			});
 		};
-	});
+	};
+
+	var updateCity = function() {
+		if($scope.Location.County != '') {
+			citiesDataSource.getCountyCities($scope.Location.County)
+			.then(function(data){
+				$scope.Cities = data.features;
+			});
+		} else {
+			$scope.Cities = [];
+		};
+	};
 
 });

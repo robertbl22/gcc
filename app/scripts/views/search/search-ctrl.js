@@ -4,27 +4,29 @@ angular.module('gccApp')
 .controller('SearchCtrl', function ($scope, SearchSvc, ToastrSvc) {
 
 	$scope.Search = SearchSvc.fields;
-	$scope.Form = {'Property': {}};
 
+	/* Create form controls namespacing */
+	$scope.Form = {'Property': {}};
 
 	$scope.Form.reset = function() {
 		$scope.Search = angular.copy(SearchSvc.defaults);
+		ToastrSvc.info('The form has been reset to default values.');
 	};
 
 	$scope.Form.submit = function() {
-		ToastrSvc.warning('Sorry, the search feature is not yet ready.')
+		ToastrSvc.warning('Sorry, the search feature is not yet ready.');
 	};
 
 	$scope.$watch('Search.Property.Type', function() {
 		switch($scope.Search.Property.Type) {
-			case 'Site': 
+			case SearchSvc.PropertyType.SITE: 
 			$scope.Form.Property.TemplateUrl = 'scripts/views/search/site/site.html';
 			break;
-			case 'OfficeBuilding': 
-			$scope.Form.Property.TemplateUrl = 'scripts/views/search/office/office.html';
+			case SearchSvc.PropertyType.OFFICE: 
+			$scope.Form.Property.TemplateUrl = 'scripts/views/search/building/office.html';
 			break;
-			case 'IndustrialBuilding': 
-			$scope.Form.Property.TemplateUrl = 'scripts/views/search/industrial/industrial.html';
+			case SearchSvc.PropertyType.INDUSTRIAL: 
+			$scope.Form.Property.TemplateUrl = 'scripts/views/search/building/industrial.html';
 			break;
 		}
 	});

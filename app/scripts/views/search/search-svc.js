@@ -5,7 +5,7 @@ angular.module('gccApp')
 	var Search = {
 		fields: {
 			'Property': {
-				'Type': 'IndustrialBuilding',
+				'Type': 'Industrial',
 				'Listing': 'LeaseOrSale',
 				'SqFt': {
 					'Min': '',
@@ -17,18 +17,23 @@ angular.module('gccApp')
 				}
 			},
 			'Proximity': {
-					'Airport': '',
-					'Port': '',
-					'Intermodal': '',
-					'Interstate': '',
-					'Highway': ''
-				},
+				'Airport': '',
+				'Port': '',
+				'Intermodal': '',
+				'Interstate': '',
+				'Highway': ''
+			},
 			'Location': {
 				'Corridor': '',
 				'Tier' : '',
 				'County': '',
 				'City': ''
 			}
+		},
+		PropertyType: {
+			INDUSTRIAL: 'Industrial',
+			OFFICE: 'Office',
+			SITE: 'Site'
 		}
 	};
 	Search.defaults = angular.copy(Search.fields);

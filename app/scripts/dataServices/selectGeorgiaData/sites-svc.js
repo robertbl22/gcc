@@ -21,6 +21,18 @@ angular.module('gccApp')
 		return _getByCountyName(countyName);
 	};
 
+	this.getCountyCities = function(countyId) {
+		var countyName = SelectGeorgia_CountiesSvc.countyIdToCountyName(countyId);
+		var queryParams = {
+			returnGeometry: false,
+			where: 'COUNTY = \'' + countyName + '\'',
+			outFields: 'COUNTY, CITY'
+		};
+		var layerId = SelectGeorgiaSvc.layerId.SITES;
+		var queryKey = 'SITE_COUNTY_CITIES_' + countyName;
+		return SelectGeorgiaSvc.get(layerId, queryParams, queryKey);
+	};
+
 	var _getByCountyName = function(countyName) {
 		var queryParams = {
 			returnGeometry: false,

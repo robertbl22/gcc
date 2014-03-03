@@ -38,7 +38,7 @@ angular.module('gccApp')
 		}
 		var promise = _get(layerId, queryParams);
 		return promise.then(function(data) {
-			console.log('angular.equals(data, cachedObj) =', angular.equals(data, cachedObj))
+			//console.log('angular.equals(data, cachedObj) =', angular.equals(data, cachedObj))
 			var cacheCopy = angular.copy(data);
 			_cache.put(cacheKey, cacheCopy);
 			return data;

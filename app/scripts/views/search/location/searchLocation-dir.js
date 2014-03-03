@@ -7,6 +7,8 @@ angular.module('gccApp')
 		restrict: 'A',
 		controller: 'SearchLocationCtrl',
 		scope: {
+			Property: '=property',
+			Location: '=location'
 		}
 	}
 });

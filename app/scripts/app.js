@@ -7,5 +7,6 @@ var app = angular.module('gccApp', [
   'ngRoute',
   'ngAnimate',
   'LocalStorageModule',
-  'ui.router'
+  'ui.router',
+  'ui.utils'
 ]);

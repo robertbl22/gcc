@@ -2,11 +2,13 @@
 <form role="form" name="SearchForm">
 	<div class="row">
 		<div class="col-sm-6">
-			<div ng-include="'scripts/views/search/property-type/property-type.html'"></div>
-			<div search-location></div>
+			<div search-property-type property="Search.Property"></div>
+			<div search-location location="Search.Location" property="Search.Property"></div>
 		</div>
-		<div class="col-sm-6">
-			<div class="rb-fade" ng-include="Form.Property.TemplateUrl"></div>
+		<div class="col-sm-6" style="position:relative;">
+			<div class="row">
+				<div style="position:absolute;" class="col-sm-12 rb-slide" ng-include="Form.Property.TemplateUrl"></div>
+			</div>
 		</div>
 	</div>
 	<div class="row">
