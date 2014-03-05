@@ -6,7 +6,7 @@ var app = angular.module('gccApp')
 	return {
 		zoom: function(corridorId, countyId, pageX, pageY) {
 			$rootScope.$on('$stateChangeSuccess', function() {
-				$rootScope.rootAnimationClass = 'rb-fade';
+				$rootScope.rootAnimationClass = 'rb-crossfade';
 			});
 			$rootScope.rootAnimationClass = 'rb-zoom';
 			$location.path('/corridor/' + corridorId + '/county/' + countyId);

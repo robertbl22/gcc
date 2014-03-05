@@ -18,14 +18,50 @@ angular.module('gccApp')
     controller: 'HomeCtrl'
   })
 
-  /* Search */
+  /* Search ////////////////////////////////////////// */
   .state('search', {
     url: '/search',
     templateUrl: 'scripts/views/search/search.html',
     controller: 'SearchCtrl'
   })
+  .state('search.results', {
+    url: '/results',
+    views: {
+      '@': {
+        templateUrl: 'scripts/views/search/results/results.html',
+        controller: 'ResultsCtrl'
+      }
+    }
+  })
+  .state('search.results.office', {
+    url: '/office/:propertyId',
+    views: {
+      '@': {
+        templateUrl: 'scripts/views/offices/office-detail.html',
+        controller: 'OfficeDetailCtrl'
+      }
+    }
+  })
+  .state('search.results.industrial', {
+    url: '/industrial/:propertyId',
+    views: {
+      '@': {
+        templateUrl: 'scripts/views/industrial/industrial-detail.html',
+        controller: 'IndustrialDetailCtrl'
+      }
+    }
+  })
+  .state('search.results.site', {
+    url: '/site/:propertyId',
+    views: {
+      '@': {
+        templateUrl: 'scripts/views/sites/site-detail.html',
+        controller: 'SiteDetailCtrl'
+      }
+    }
+  })
 
-  /* Bookmarks */
+  /* Bookmarks ////////////////////////////////////////// */
   .state('bookmarks', {
     url: '/bookmarks',
     templateUrl: 'scripts/views/bookmarks/bookmarks-list.html',
@@ -59,14 +95,14 @@ angular.module('gccApp')
     }
   })
 
-  /* Corridor */
+  /* Corridor ////////////////////////////////////////// */
   .state('corridor', {
     url: '/corridor/:corridorId',
     templateUrl: 'scripts/views/corridors/corridor.html',
     controller: 'CorridorCtrl'
   })
 
-  /* County */
+  /* County ////////////////////////////////////////// */
   .state('corridor.county', {
     url: '/county/:countyId',
     views: {
@@ -111,7 +147,7 @@ angular.module('gccApp')
     }
   })
 
-  /* Properties */
+  /* Properties ////////////////////////////////////////// */
   .state('corridor.county.office', {
     url: '/office/:propertyId',
     views: {

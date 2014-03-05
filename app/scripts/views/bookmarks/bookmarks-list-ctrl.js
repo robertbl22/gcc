@@ -5,8 +5,8 @@ angular.module('gccApp')
 
 	BookmarksSvc.load();
 	$scope.Bookmarks = BookmarksSvc.collection;
-
 	$scope.BookmarksIndex = BookmarksSvc.index;
+	$rootScope.scrollTop();
 
 	$scope.deleteAllBookmarks = function() {
 		BookmarksSvc.deleteAll();

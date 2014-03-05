@@ -1,0 +1,38 @@
+<a id="top"></a>
+<div class="row">
+	<div class="col-sm-8">
+		<h3><i class="icon-search"></i> Search Results <ng-pluralize class="small" count="Results.length"
+		when="{'0': '', '1': '(1 result)', 'other': '({} results)'}">
+		</ng-pluralize></h3>
+	</div>
+	<div class="col-sm-4" style="padding-top:20px;line-height:24px;">
+		<a ui-sref="search" class="small pull-right"><i class="icon-undo"></i> Search again</a>
+	</div>
+</div>
+<p>&nbsp;</p>
+
+<!-- PROPERTY ROWS -->
+<div ng-hide="showNoResults" ng-repeat="property in Results" class="animate-repeat">
+	<div ng-switch on="propertyType">
+		<div ng-switch-when="Office">
+			<div office-row property="property.attributes" current-path="#/search/results"></div>
+		</div>
+		<div ng-switch-when="Industrial">
+			<div industrial-row property="property.attributes" current-path="#/search/results"></div>
+		</div>
+		<div ng-switch-when="Site">
+			<div site-row property="property.attributes" current-path="#/search/results"></div>
+		</div>
+	</div>
+</div>
+
+<!-- NO RECORDS MESSAGE -->
+<div class="alert alert-info" ng-show="showNoResults">
+	<p>
+		<i class="icon-info-sign icon-large"></i>&nbsp;&nbsp;Sorry, no properties were found matching the criteria.
+	</p>
+	<p>&nbsp;</p>
+	<p>
+		<a ui-sref="search" class="btn btn-primary"><i class="icon-undo"></i> Search again</a>
+	</p>
+</div>

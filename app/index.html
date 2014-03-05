@@ -16,12 +16,15 @@
   <!-- endbuild -->
   <link rel="stylesheet" href="bower_components/toastr/toastr.min.css">
 </head>
-<body>
+<body ng-app="gccApp" ng-controller="MainCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
 
-      <!-- Add your site or application content here -->
+      <!-- Begin application content here -->
+      <div property-photo-modal></div>
+      <a id="TopOfPage"></a>
+
       <div class="container">
         <nav class="navbar navbar-default">
           <ul class="nav navbar-nav">
@@ -36,7 +39,7 @@
       </div>
 
 
-      <div class="container" ng-app="gccApp" ng-controller="MainCtrl">
+      <div class="container gcc-container">
         <div class="row">
           <div class="col-sm-12">
             <h1>Site Selection</h1>
@@ -51,17 +54,17 @@
             <p><a href="#/bookmarks" ng-cloak><i class="icon-bookmark"></i> View bookmarks ({{BookmarksIndex.count}})</a></p>
             <div corridor-picker></div>
           </div>
-          <div class="col-sm-8 col-md-9" style="position:relative;">
+          <div class="col-sm-8 col-md-9">
             <!-- ////////// Main content view //////////// -->
             <div class="row">
-              <div class="col-sm-12 {{rootAnimationClass}}" style="position:absolute;" ui-view autoscroll="false"></div>
+              <div class="col-sm-12 {{rootAnimationClass}}" ui-view autoscroll="false"></div>
             </div>
             <!-- ///////////////////////////////////////// -->
           </div>
         </div>
-        <div property-photo-modal></div>
       </div>
 
+      <div footer></div>
 
       <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
       <script>
@@ -80,12 +83,12 @@
       <![endif]-->
 
       <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.11.2/TweenMax.min.js"></script>
 
       <!-- build:js scripts/vendor.js -->
       <script src="bower_components/jquery/jquery.js"></script>
       <script src="bower_components/angular/angular.js"></script>
       <script src="bower_components/toastr/toastr.js"></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.11.2/TweenMax.min.js"></script>
       <script src="scripts/vendor/arcgislink.js"></script>
       <script src="scripts/vendor/maplabel.js"></script>
       <!-- <script src="scripts/vendor/jquery.unevent.js"></script> -->
@@ -136,6 +139,7 @@
       <script src="scripts/filters/salelease-filter.js"></script>
 
       <!-- Animations -->
+      <script src="scripts/animations/animation-svc.js"></script>
       <!-- <script src="scripts/animations/rbCrossfade.js"></script> -->
       <script src="scripts/animations/rbFade.js"></script>
       <script src="scripts/animations/rbSlide.js"></script>
@@ -155,9 +159,11 @@
       <script src="scripts/dataServices/selectGeorgiaData/offices-svc.js"></script>
       <script src="scripts/dataServices/selectGeorgiaData/industrial-svc.js"></script>
       <script src="scripts/dataServices/selectGeorgiaData/counties-svc.js"></script>
+      <script src="scripts/dataServices/selectGeorgiaData/search-svc.js"></script>
 
 
       <!-- /// Views //////////////////////////////////////////////// -->
+      <script src="scripts/views/footer/footer-dir.js"></script>
       <!-- Bookmarks -->
       <script src="scripts/views/bookmarks/bookmarks-svc.js"></script>
       <script src="scripts/views/bookmarks/bookmarks-list-ctrl.js"></script>
@@ -185,11 +191,14 @@
 
       <!-- /// Search Views /////////////////////////////////////////// -->
       <!-- GENERAL -->
-      <script src="scripts/views/search/search-svc.js"></script>
+      <script src="scripts/views/search/searchParameters-svc.js"></script>
       <script src="scripts/views/search/search-ctrl.js"></script>
+      <script src="scripts/views/search/results/results-ctrl.js"></script>
+      <!-- PROPERTY: Property Type, Location -->
+      <script src="scripts/views/search/property-type/searchPropertyType-dir.js"></script>
+      <script src="scripts/views/search/location/searchLocation-svc.js"></script>
       <script src="scripts/views/search/location/searchLocation-dir.js"></script>
       <script src="scripts/views/search/location/searchLocation-ctrl.js"></script>
-      <script src="scripts/views/search/property-type/searchPropertyType-dir.js"></script>
       <!-- PROPERTY: Building (Common for Industrial, Office) -->
       <script src="scripts/views/search/building/proximity/searchBuildingProximity-dir.js"></script>
       <script src="scripts/views/search/building/size/searchBuildingSize-dir.js"></script>

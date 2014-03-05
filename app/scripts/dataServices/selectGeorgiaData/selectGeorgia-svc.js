@@ -29,7 +29,15 @@ angular.module('gccApp')
 		return new _gmaps.ags.Layer(url + '/' + layerId);
 	};
 
-	var _cachedGet = function(layerId, queryParams, cacheKey) {
+	var _get = function(layerId, queryParams, cacheKey) {
+		if(cacheKey) {
+			return _getCached(layerId, queryParams, cacheKey);
+		} else {
+			return _getUncached(layerId, queryParams);
+		}
+	}
+
+	var _getCached = function(layerId, queryParams, cacheKey) {
 		var cachedObj = _cache.get(cacheKey);
 		if(angular.isDefined(cachedObj)) {
 			var defer = $q.defer();
@@ -38,14 +46,14 @@ angular.module('gccApp')
 		}
 		var promise = _get(layerId, queryParams);
 		return promise.then(function(data) {
-			//console.log('angular.equals(data, cachedObj) =', angular.equals(data, cachedObj))
+			/* console.log('angular.equals(data, cachedObj) =', angular.equals(data, cachedObj)) */
 			var cacheCopy = angular.copy(data);
 			_cache.put(cacheKey, cacheCopy);
 			return data;
 		});
 	};
 
-	var _get = function(layerId, queryParams) {
+	var _getUncached = function(layerId, queryParams) {
 		var defer = $q.defer();
 		var callback = function(data) {
 			defer.resolve(data);
@@ -59,7 +67,7 @@ angular.module('gccApp')
 	};
 
 	return {
-		get: _cachedGet,
+		get: _get,
 		layerId: _layerId
 	}
 

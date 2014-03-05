@@ -13,7 +13,8 @@ angular.module('gccApp')
 	SelectGeorgia_CountiesSvc,
 	SelectGeorgia_OfficesSvc, 
 	SelectGeorgia_IndustrialSvc, 
-	SelectGeorgia_SitesSvc
+	SelectGeorgia_SitesSvc,
+	SelectGeorgia_SearchSvc
 	) {
 
 	return {
@@ -32,19 +33,25 @@ angular.module('gccApp')
 			currentPropertyName: 	SelectGeorgia_OfficesSvc.currentPropertyName,
 			getDetail: 				SelectGeorgia_OfficesSvc.getDetail,
 			getByCounty: 			SelectGeorgia_OfficesSvc.getByCounty,
-			getCountyCities: 		SelectGeorgia_OfficesSvc.getCountyCities
+			getCountyCities: 		SelectGeorgia_OfficesSvc.getCountyCities,
+			listOutFields: 			SelectGeorgia_OfficesSvc.listOutFields
 		},
 		industrial: {
 			currentPropertyName: 	SelectGeorgia_IndustrialSvc.currentPropertyName,
 			getDetail: 				SelectGeorgia_IndustrialSvc.getDetail,
 			getByCounty: 			SelectGeorgia_IndustrialSvc.getByCounty,
-			getCountyCities: 		SelectGeorgia_IndustrialSvc.getCountyCities
+			getCountyCities: 		SelectGeorgia_IndustrialSvc.getCountyCities,
+			listOutFields: 			SelectGeorgia_IndustrialSvc.listOutFields
 		},
 		site: {
 			currentPropertyName: 	SelectGeorgia_SitesSvc.currentPropertyName,
 			getDetail: 				SelectGeorgia_SitesSvc.getDetail,
 			getByCounty: 			SelectGeorgia_SitesSvc.getByCounty,
-			getCountyCities: 		SelectGeorgia_SitesSvc.getCountyCities
+			getCountyCities: 		SelectGeorgia_SitesSvc.getCountyCities,
+			listOutFields: 			SelectGeorgia_SitesSvc.listOutFields
+		},
+		search: {
+			getResults: 			SelectGeorgia_SearchSvc.getResults
 		}
 	};
 

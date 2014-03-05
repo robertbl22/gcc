@@ -37,7 +37,14 @@ angular.module('gccApp')
 		var queryParams = {
 			returnGeometry: false,
 			where: 'COUNTY_NAME = \'' + countyName + '\'',
-			outFields: [
+			outFields: this.listOutFields
+		};
+		var layerId = SelectGeorgiaSvc.layerId.OFFICES;
+		var queryKey = 'OFFICE_' + countyName;
+		return SelectGeorgiaSvc.get(layerId, queryParams, queryKey);
+	};
+
+	this.listOutFields = [
 			'OBJECTID',
 			'BUILDING_ID',
 			'NAME',
@@ -48,16 +55,7 @@ angular.module('gccApp')
 			'SALE_LEASE',
 			'YEAR_BUILT',
 			'SPACE_AVAILABLE'
-			]
-		};
-		var layerId = SelectGeorgiaSvc.layerId.OFFICES;
-		var queryKey = 'OFFICE_' + countyName;
-		return SelectGeorgiaSvc.get(layerId, queryParams, queryKey);
-	}
-
-
-
-
+			];
 
 	return this;
 

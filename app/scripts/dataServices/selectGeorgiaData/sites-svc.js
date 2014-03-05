@@ -37,7 +37,14 @@ angular.module('gccApp')
 		var queryParams = {
 			returnGeometry: false,
 			where: 'COUNTY = \'' + countyName + '\'',
-			outFields: [
+			outFields: this.listOutFields
+		};
+		var layerId = SelectGeorgiaSvc.layerId.SITES;
+		var queryKey = 'SITES_' + countyName;
+		return SelectGeorgiaSvc.get(layerId, queryParams, queryKey);
+	};
+
+	this.listOutFields = [
 			'OBJECTID',
 			'SITE_ID',
 			'NAME',
@@ -50,12 +57,7 @@ angular.module('gccApp')
 			'RAIL_SERVED',
 			'SEWER_ON_SITE',
 			'WATER_ON_SITE'
-			]
-		};
-		var layerId = SelectGeorgiaSvc.layerId.SITES;
-		var queryKey = 'SITES_' + countyName;
-		return SelectGeorgiaSvc.get(layerId, queryParams, queryKey);
-	}
+			];
 
 	return this;
 

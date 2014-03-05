@@ -1,57 +1,76 @@
 'use strict';
 
 angular.module('gccApp')
-.controller('SearchLocationCtrl', function ($scope, DataService, SearchSvc) {
+.controller('SearchLocationCtrl', function ($scope, SearchLocationSvc, ToastrSvc) {
 
-	var citiesDataSource;
+	(function init() {
+		_updateCounty();
+	}());
 
-	$scope.$watch('Property.Type', function() {
-		updateCounty();
+	/* Event Handlers */
+
+	$scope.$watch('Property.Type', function(newVal, oldVal) {
+		if(newVal != oldVal) {
+			_updateCounty();
+			_updateCity();
+		};
 	});
 
-	$scope.$watch('Location.Corridor', function() {
-		updateCounty();
+	$scope.$watch('Location.Corridor', function(newVal, oldVal) {
+		if(newVal != oldVal) {
+			_updateCounty();
+		};
 	});
 
-	$scope.$watch('Location.County', function() {
-		citiesDataSource = getCitiesDataSource();
-		console.log('citiesDataSource changed!', citiesDataSource)
-		updateCity();
+	$scope.$watch('Location.County', function(newVal, oldVal) {
+		if(newVal != oldVal) {
+			_updateCity();
+		};
 	});
 
+	/* Private Methods */
 
-
-	var getCitiesDataSource = function() {
-		switch($scope.Property.Type) {
-			case SearchSvc.PropertyType.OFFICE: return DataService.office;
-			case SearchSvc.PropertyType.SITE: return DataService.site;
-			default: return DataService.industrial;
-		}
+	function _updateCounty() {
+		SearchLocationSvc.getCounties($scope.Location.Corridor)
+		.then(function(data) { 
+			$scope.Counties = data;
+			_resetCounty();
+		})
+		.catch(function() {
+			ToastrSvc.warning('Sorry, there was an error while fetching the data.');
+		});
 	};
 
-	var updateCounty = function() {
-		if($scope.Location.Corridor != '') {
-			DataService.corridor.getOverview($scope.Location.Corridor)
-			.success(function(data) {
-				$scope.Counties = data.counties;
-				$scope.Location.County = '';
-			});
-		} else {
-			DataService.county.getAll().success(function(data) {
-				$scope.Counties = data;
-			});
+	function _updateCity() {
+		var countyName = $scope.Location.County;
+		var propertyType = $scope.Property.Type;
+		SearchLocationSvc.getCities(propertyType, countyName)
+		.then(function(data) {
+			$scope.Cities = data.features;
+			_resetCity();
+		})
+		.catch(function() {
+			ToastrSvc.warning('Sorry, there was an error while fetching the data.');
+		});
+	};
+
+	function _resetCounty() {
+		var countyName = $scope.Location.County;
+		var counties = $scope.Counties;
+		var hasItem = SearchLocationSvc.isItemInArray(countyName, counties);
+		if(!hasItem) {
+			$scope.Location.County = '';
 		};
 	};
 
-	var updateCity = function() {
-		if($scope.Location.County != '') {
-			citiesDataSource.getCountyCities($scope.Location.County)
-			.then(function(data){
-				$scope.Cities = data.features;
-			});
-		} else {
-			$scope.Cities = [];
+	function _resetCity() {
+		var cityName = $scope.Location.City;
+		var cities = $scope.Cities;
+		var hasItem = SearchLocationSvc.isItemInArray(cityName, cities);
+		if(!hasItem) {
+			$scope.Location.City = '';
 		};
 	};
+
 
 });

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.factory('SearchSvc', function() {
+.factory('SearchParametersSvc', function() {
 	var Search = {
 		fields: {
 			'Property': {

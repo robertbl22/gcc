@@ -77,8 +77,11 @@ angular.module('gccApp')
 	};
 
 	var _countyIdToCountyName = function(countyId) {
-		var countyName = countyId.replace('-', ' ');
-		countyName = _capitalize(countyName);
+		var countyName;
+		if(countyId){
+			countyName = countyId.replace('-', ' ');
+			countyName = _capitalize(countyName);
+		};
 		return countyName;
 	};
 

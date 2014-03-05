@@ -14,13 +14,13 @@
 		<a  ui-sref="corridor.county.officeList">Offices <span class="badge loading loading-small" field-to-watch="{{propertiesCount.offices}}">{{propertiesCount.offices||'0'}}</span></a>
 	</li>
 	<li ui-sref-active="active" ng-class="{disabled:tabset.isEmpty(propertiesCount.industrial)}">
-		<a  ui-sref="corridor.county.industrialList">Industrial Buildings <span class="badge loading loading-small" field-to-watch="{{propertiesCount.industrial}}">{{propertiesCount.industrial||'0'}}</span></a>
+		<a  ui-sref="corridor.county.industrialList">Industrial<span class="rb-hidden-sm"> Buildings</span> <span class="badge loading loading-small" field-to-watch="{{propertiesCount.industrial}}">{{propertiesCount.industrial||'0'}}</span></a>
 	</li>
 	<li ui-sref-active="active" ng-class="{disabled:tabset.isEmpty(propertiesCount.sites)}">
 		<a  ui-sref="corridor.county.siteList">Sites <span class="badge loading loading-small" field-to-watch="{{propertiesCount.sites}}">{{propertiesCount.sites||'0'}}</span></a>
 	</li>
 </ul>
 
-<div class="row" style="position:relative;">
-	<div ui-view="countyTabs" class="col-sm-12 rb-fade" style="position:absolute;" autoscroll="false"></div>
+<div class="row">
+	<div ui-view="countyTabs" class="col-sm-12 rb-fade" autoscroll="false"></div>
 </div>

@@ -1,4 +1,4 @@
-<div class="panel panel-default" ng-controller="SearchLocationCtrl">
+<div class="panel panel-default">
 	<div class="panel-heading">Location</div>
 	<div class="panel-body">
 
@@ -34,7 +34,7 @@
 
 		<div class="form-group">
 			<label for="ddlCities">City:</label>
-			<select id="ddlCities" class="form-control" ng-model="Location.City" ng-options="City.attributes.CITY for City in Cities | unique:'attributes.CITY' | orderBy: 'attributes.CITY'">
+			<select id="ddlCities" class="form-control" ng-model="Location.City" ng-options="City.attributes.CITY as City.attributes.CITY for City in Cities | unique:'attributes.CITY' | orderBy: 'attributes.CITY'">
 				<option value="">All Cities</option>
 			</select>
 		</div>
