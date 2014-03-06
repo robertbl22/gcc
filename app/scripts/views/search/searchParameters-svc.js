@@ -4,30 +4,31 @@ angular.module('gccApp')
 .factory('SearchParametersSvc', function() {
 	var Search = {
 		fields: {
-			'Property': {
-				'Type': 'Industrial',
-				'Listing': 'LeaseOrSale',
-				'SqFt': {
-					'Min': '',
-					'Max': ''
+			Property: {
+				Type: 'Industrial',
+				Listing: 'Both', /* Lease, Sale, Both */
+				SqFt: {
+					Min: '',
+					Max: ''
 				},
-				'Acres': {
-					'Min': '',
-					'Max': ''
+				Acres: {
+					Min: '',
+					Max: ''
 				}
 			},
-			'Proximity': {
-				'Airport': '',
-				'Port': '',
-				'Intermodal': '',
-				'Interstate': '',
-				'Highway': ''
+			Proximity: {
+				Airport: '',
+				Atlanta: '',
+				Port: '',
+				Intermodal: '',
+				Interstate: '',
+				Highway: ''
 			},
-			'Location': {
-				'Corridor': '',
-				'Tier' : '',
-				'County': '',
-				'City': ''
+			Location: {
+				Corridor: '',
+				Tier: '',
+				County: '',
+				City: ''
 			}
 		},
 		PropertyType: {

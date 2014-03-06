@@ -44,18 +44,40 @@ angular.module('gccApp')
 		return SelectGeorgiaSvc.get(layerId, queryParams, queryKey);
 	};
 
+	this.searchFields = {
+		Property: {
+			Type: 		'Industrial',
+			LayerId: 	SelectGeorgiaSvc.layerId.INDUSTRIAL,
+			Id: 		'BUILDING_ID',
+			Listing: 	'SALE_LEASE',
+			SqFt: 		'BUILDING_SIZE'
+		},
+		Proximity: {
+			TableId: 	SelectGeorgiaSvc.tableId.SITE_PROXIMITY,
+			Airport: 	'DISTANCE_AIRPORT',
+			Port: 		'DISTANCE_PORT',
+			Intermodal: 'DISTANCE_INTERMODAL'
+		},
+		Location: {
+			Corridor: 	'',
+			Tier: 		-1,
+			County: 	'COUNTY_NAME',
+			City: 		'CITY'
+		}
+	};
+
 	this.listOutFields = [
-			'OBJECTID',
-			'BUILDING_ID',
-			'NAME',
-			'PHOTO_LINK',
-			'ADDRESS',
-			'CITY',
-			'ZIP_CODE',
-			'SALE_LEASE',
-			'YEAR_BUILT',
-			'SPACE_AVAILABLE'
-			];
+	'OBJECTID',
+	'BUILDING_ID',
+	'NAME',
+	'PHOTO_LINK',
+	'ADDRESS',
+	'CITY',
+	'ZIP_CODE',
+	'SALE_LEASE',
+	'YEAR_BUILT',
+	'SPACE_AVAILABLE'
+	];
 
 	return this;
 

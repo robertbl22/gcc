@@ -24,6 +24,16 @@ angular.module('gccApp')
 		COUNTIES: 13
 	};
 
+	var _tableId = {
+		BUILDING_INCENTIVE_ZONES: 14,
+		INDUSTRIAL_BUILDINGS_PROXIMITY: 15,
+		OFFICE_BUILDINGS_PROXIMITY: 16,
+		SITE_INCENTIVE_ZONES: 17,
+		SITE_PROXIMITY: 18,
+		WATER_PROVIDER: 19,
+		SEWER_PROVIDER: 20
+	};
+
 	var _getLayer = function(layerId) {
 		var url = 'http://maps.selectgeorgia.com/arcgis/rest/services/GISPlanningLayers/MapServer';
 		return new _gmaps.ags.Layer(url + '/' + layerId);
@@ -68,7 +78,8 @@ angular.module('gccApp')
 
 	return {
 		get: _get,
-		layerId: _layerId
+		layerId: _layerId,
+		tableId: _tableId
 	}
 
 });

@@ -44,18 +44,42 @@ angular.module('gccApp')
 		return SelectGeorgiaSvc.get(layerId, queryParams, queryKey);
 	};
 
+	this.searchFields = {
+		Property: {
+			Type: 		'Office',
+			LayerId: 	SelectGeorgiaSvc.layerId.OFFICES,
+			Id: 		'BUILDING_ID',
+			Listing:	'SALE_LEASE',
+			SqFt: 		'BUILDING_SIZE',
+			Acres: 		'LOT_SIZE'
+		},
+		Proximity: {
+			TableId: 	SelectGeorgiaSvc.tableId.OFFICE_BUILDINGS_PROXIMITY,
+			Airport: 	'DISTANCE_AIRPORT',
+			Atlanta: 	'DISTANCE_ATLANTA',
+			Interstate: 'DISTANCE_INTERSTATE',
+			Highway: 	'DISTANCE_HIGHWAY'
+		},
+		Location: {
+			Corridor: 	'',
+			Tier: 		-1,
+			County: 	'COUNTY_NAME',
+			City: 		'CITY'
+		}
+	};
+
 	this.listOutFields = [
-			'OBJECTID',
-			'BUILDING_ID',
-			'NAME',
-			'PHOTO_LINK',
-			'ADDRESS',
-			'CITY',
-			'ZIP_CODE',
-			'SALE_LEASE',
-			'YEAR_BUILT',
-			'SPACE_AVAILABLE'
-			];
+	'OBJECTID',
+	'BUILDING_ID',
+	'NAME',
+	'PHOTO_LINK',
+	'ADDRESS',
+	'CITY',
+	'ZIP_CODE',
+	'SALE_LEASE',
+	'YEAR_BUILT',
+	'SPACE_AVAILABLE'
+	];
 
 	return this;
 
