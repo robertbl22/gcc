@@ -3,9 +3,11 @@
 angular.module('gccApp')
 .factory('SelectGeorgia_IndustrialSvc', function(SelectGeorgiaSvc, SelectGeorgia_CountiesSvc) {
 
-	this.currentPropertyName;
+	var self = this;
+
+	self.currentPropertyName;
 	
-	this.getDetail = function(propertyId) {
+	self.getDetail = function(propertyId) {
 		var queryParams = {
 			returnGeometry: false,
 			where: 'BUILDING_ID = \'' + propertyId + '\'',
@@ -16,12 +18,12 @@ angular.module('gccApp')
 		return SelectGeorgiaSvc.get(layerId, queryParams, queryKey);
 	};
 
-	this.getByCounty = function(countyId) {
+	self.getByCounty = function(countyId) {
 		var countyName = SelectGeorgia_CountiesSvc.countyIdToCountyName(countyId);
 		return _getByCountyName(countyName);
 	};
 
-	this.getCountyCities = function(countyId) {
+	self.getCountyCities = function(countyId) {
 		var countyName = SelectGeorgia_CountiesSvc.countyIdToCountyName(countyId);
 		var queryParams = {
 			returnGeometry: false,
@@ -37,14 +39,14 @@ angular.module('gccApp')
 		var queryParams = {
 			returnGeometry: false,
 			where: 'COUNTY_NAME = \'' + countyName + '\'',
-			outFields: this.listOutFields
+			outFields: self.layerOutFields
 		};
 		var layerId = SelectGeorgiaSvc.layerId.INDUSTRIAL;
 		var queryKey = 'INDUSTRIAL_' + countyName;
 		return SelectGeorgiaSvc.get(layerId, queryParams, queryKey);
 	};
 
-	this.searchFields = {
+	self.searchFields = {
 		Property: {
 			Type: 		'Industrial',
 			LayerId: 	SelectGeorgiaSvc.layerId.INDUSTRIAL,
@@ -66,7 +68,7 @@ angular.module('gccApp')
 		}
 	};
 
-	this.listOutFields = [
+	self.layerOutFields = [
 	'OBJECTID',
 	'BUILDING_ID',
 	'NAME',
@@ -79,6 +81,14 @@ angular.module('gccApp')
 	'SPACE_AVAILABLE'
 	];
 
-	return this;
+	/*self.tableOutFields = [
+	'OBJECTID',
+	'BUILDING_ID',
+	'DISTANCE_AIRPORT',
+	'DISTANCE_PORT',
+	'DISTANCE_INTERMODAL' 
+	];*/
+
+	return self;
 
 });

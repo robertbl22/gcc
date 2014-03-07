@@ -6,7 +6,7 @@
 		<div class="form-group">
 			<label for="ddlCorridor">Interstate/highway corridor:</label>
 			<select id="ddlCorridor" class="form-control" ng-model="Location.Corridor">
-				<option value="">All Corridors</option>
+				<option value="">All corridors</option>
 				<option value="i-16">I-16 Corridor</option>
 				<option value="341-alliance">341 Alliance Corridor</option>
 				<option value="srp">Savannah River Parkway Corridor</option>
@@ -17,7 +17,7 @@
 		<div class="form-group">
 			<label for="ddlCorridor">Georgia&rsquo;s BEST Legislation Tier:</label>
 			<select id="ddlCorridor" class="form-control" ng-model="Location.Tier">
-				<option value="">Any Tier</option>
+				<option value="">Any tier</option>
 				<option value="1">Tier 1</option>
 				<option value="2">Tier 2</option>
 				<option value="3">Tier 3</option>
@@ -25,17 +25,21 @@
 			</select>
 		</div>
 
-		<div class="form-group">
+		<div class="form-group" ng-class="{'has-error': SearchForm.ddlCounties.$error.required}">
 			<label for="ddlCounties">County:</label>
-			<select id="ddlCounties" class="form-control" ng-model="Location.County" ng-options="County.name as County.name group by County.corridors[0].name for County in Counties | orderBy: 'name'">
-				<option value="">All Counties</option>
+			<span ng-show="SearchForm.ddlCounties.$error.required"  class="label label-danger">Required</span>
+			<select id="ddlCounties" name="ddlCounties" class="form-control" 
+			ng-model="Location.County" 
+			ng-options="County.name as County.name group by County.corridors[0].name for County in Counties | orderBy: 'name'" 
+			required>
+				<option value="">Select a county</option>
 			</select>
 		</div>
 
 		<div class="form-group">
 			<label for="ddlCities">City:</label>
 			<select id="ddlCities" class="form-control" ng-model="Location.City" ng-options="City.attributes.CITY as City.attributes.CITY for City in Cities | unique:'attributes.CITY' | orderBy: 'attributes.CITY'">
-				<option value="">All Cities</option>
+				<option value="">All cities</option>
 			</select>
 		</div>
 

@@ -1,39 +1,55 @@
 'use static';
 
 angular.module('gccApp')
-.factory('SearchConditionBuilder', function(PhraseBuilder) {
-	var self = this;
+.factory('Search_ConditionBuilder', function(Search_PhraseBuilder) {
 
-	self.getOfficeWhere = function(searchFields, searchParams) {
-		var phraseArray = [];
-		PhraseBuilder.getCommon(searchFields, searchParams, phraseArray);
-		PhraseBuilder.getAcres(searchFields, searchParams, phraseArray);
-		PhraseBuilder.getBuilding(searchFields, searchParams, phraseArray);
-		PhraseBuilder.getOfficeProximity(searchFields, searchParams, phraseArray);
-		return phraseArray.join(' AND ');
-	};
-	self.getIndustrialWhere = function(searchFields, searchParams) {
-		var phraseArray = [];
-		PhraseBuilder.getCommon(searchFields, searchParams, phraseArray);
-		PhraseBuilder.getAcres(searchFields, searchParams, phraseArray);
-		PhraseBuilder.getBuilding(searchFields, searchParams, phraseArray);
-		PhraseBuilder.getSiteProximity(searchFields, searchParams, phraseArray);
-		return phraseArray.join(' AND ');
-	};
-	self.getSiteWhere = function(searchFields, searchParams) {
-		var phraseArray = [];
-		PhraseBuilder.getCommon(searchFields, searchParams, phraseArray);
-		PhraseBuilder.getAcres(searchFields, searchParams, phraseArray);
-		PhraseBuilder.getSiteProximity(searchFields, searchParams, phraseArray);
-		return phraseArray.join(' AND ');
+	this.layer = {
+		getOffice: function(searchFields, searchParams) {
+			var phraseArray = [];
+			Search_PhraseBuilder.getCommon(searchFields, searchParams, phraseArray);
+			Search_PhraseBuilder.getAcres(searchFields, searchParams, phraseArray);
+			Search_PhraseBuilder.getBuilding(searchFields, searchParams, phraseArray);
+			return phraseArray.join(' AND ');
+		},
+		getIndustrial: function(searchFields, searchParams) {
+			var phraseArray = [];
+			Search_PhraseBuilder.getCommon(searchFields, searchParams, phraseArray);
+			Search_PhraseBuilder.getAcres(searchFields, searchParams, phraseArray);
+			Search_PhraseBuilder.getBuilding(searchFields, searchParams, phraseArray);
+			return phraseArray.join(' AND ');
+		},
+		getSite: function(searchFields, searchParams) {
+			var phraseArray = [];
+			Search_PhraseBuilder.getCommon(searchFields, searchParams, phraseArray);
+			Search_PhraseBuilder.getAcres(searchFields, searchParams, phraseArray);
+			return phraseArray.join(' AND ');
+		}
 	};
 
-	return self;
+	this.table = {
+		getOffice: function(searchFields, searchParams) {
+			var phraseArray = [];
+			Search_PhraseBuilder.getOfficeProximity(searchFields, searchParams, phraseArray);
+			return phraseArray.join(' AND ');
+		},
+		getIndustrial: function(searchFields, searchParams) {
+			var phraseArray = [];
+			Search_PhraseBuilder.getSiteProximity(searchFields, searchParams, phraseArray);
+			return phraseArray.join(' AND ');
+		},
+		getSite: function(searchFields, searchParams) {
+			var phraseArray = [];
+			Search_PhraseBuilder.getSiteProximity(searchFields, searchParams, phraseArray);
+			return phraseArray.join(' AND ');
+		}
+	};
+
+	return this;
 });
 
 
 angular.module('gccApp')
-.factory('PhraseBuilder', function() {
+.factory('Search_PhraseBuilder', function() {
 
 	var self = this;
 
@@ -65,14 +81,11 @@ angular.module('gccApp')
 	};
 
 	self._safeAddNumeric = function(cfg) {
-		console.log('_safeAddNumeric cfg.searchParam',cfg.searchParam)
 		if(cfg.searchParam){
 			if(angular.isString(cfg.searchParam)) {
-				console.log('_safeAddNumeric says it is a string')
 				var cleanNum = cfg.searchParam.replace(/\D/g,'');
 				cfg.searchParam = parseInt(cleanNum);
 			}
-			console.log(' _safeAddNumeric cfg.searchParam cleaned',cfg.searchParam)
 			if(cfg.searchParam > 0) {
 				cfg.phraseArray.push(cfg.func(cfg.searchField, cfg.searchParam));
 			}
@@ -80,12 +93,14 @@ angular.module('gccApp')
 	};
 
 	self.getCommon = function(searchFields, searchParams, phraseArray) {
-		self._safeAddString({
-			searchField: searchFields.Property.Listing,
-			searchParam: searchParams.Property.Listing,
-			phraseArray: phraseArray,
-			func: self._phrase.getStringEq
-		});
+		if(searchParams.Property.Listing != 'Both') {
+			self._safeAddString({
+				searchField: searchFields.Property.Listing,
+				searchParam: searchParams.Property.Listing,
+				phraseArray: phraseArray,
+				func: self._phrase.getStringEq
+			});
+		};
 		self._safeAddString({
 			searchField: searchFields.Location.County,
 			searchParam: searchParams.Location.County,

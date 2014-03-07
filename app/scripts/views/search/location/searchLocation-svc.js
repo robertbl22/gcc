@@ -13,9 +13,18 @@ angular.module('gccApp')
 		}
 	};
 
-	this.isItemInArray = function(currentItem, collection) {
+	this.isCountyInArray = function(currentItem, collection) {
 		for (var i = collection.length - 1; i >= 0; i--) {
 			if(collection[i].name === currentItem) {
+				return true;
+			};
+		};
+		return false;
+	};
+
+	this.isCityInArray = function(currentItem, collection) {
+		for (var i = collection.length - 1; i >= 0; i--) {
+			if(collection[i].attributes.CITY === currentItem) {
 				return true;
 			};
 		};

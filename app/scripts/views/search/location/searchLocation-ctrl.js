@@ -57,7 +57,7 @@ angular.module('gccApp')
 	function _resetCounty() {
 		var countyName = $scope.Location.County;
 		var counties = $scope.Counties;
-		var hasItem = SearchLocationSvc.isItemInArray(countyName, counties);
+		var hasItem = SearchLocationSvc.isCountyInArray(countyName, counties);
 		if(!hasItem) {
 			$scope.Location.County = '';
 		};
@@ -66,7 +66,7 @@ angular.module('gccApp')
 	function _resetCity() {
 		var cityName = $scope.Location.City;
 		var cities = $scope.Cities;
-		var hasItem = SearchLocationSvc.isItemInArray(cityName, cities);
+		var hasItem = SearchLocationSvc.isCityInArray(cityName, cities);
 		if(!hasItem) {
 			$scope.Location.City = '';
 		};

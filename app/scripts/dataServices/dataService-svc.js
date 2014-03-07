@@ -34,21 +34,21 @@ angular.module('gccApp')
 			getDetail: 				SelectGeorgia_OfficesSvc.getDetail,
 			getByCounty: 			SelectGeorgia_OfficesSvc.getByCounty,
 			getCountyCities: 		SelectGeorgia_OfficesSvc.getCountyCities,
-			listOutFields: 			SelectGeorgia_OfficesSvc.listOutFields
+			layerOutFields: 			SelectGeorgia_OfficesSvc.layerOutFields
 		},
 		industrial: {
 			currentPropertyName: 	SelectGeorgia_IndustrialSvc.currentPropertyName,
 			getDetail: 				SelectGeorgia_IndustrialSvc.getDetail,
 			getByCounty: 			SelectGeorgia_IndustrialSvc.getByCounty,
 			getCountyCities: 		SelectGeorgia_IndustrialSvc.getCountyCities,
-			listOutFields: 			SelectGeorgia_IndustrialSvc.listOutFields
+			layerOutFields: 			SelectGeorgia_IndustrialSvc.layerOutFields
 		},
 		site: {
 			currentPropertyName: 	SelectGeorgia_SitesSvc.currentPropertyName,
 			getDetail: 				SelectGeorgia_SitesSvc.getDetail,
 			getByCounty: 			SelectGeorgia_SitesSvc.getByCounty,
 			getCountyCities: 		SelectGeorgia_SitesSvc.getCountyCities,
-			listOutFields: 			SelectGeorgia_SitesSvc.listOutFields
+			layerOutFields: 			SelectGeorgia_SitesSvc.layerOutFields
 		},
 		search: {
 			getResults: 			SelectGeorgia_SearchSvc.getResults

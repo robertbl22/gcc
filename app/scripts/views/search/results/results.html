@@ -12,7 +12,7 @@
 <p>&nbsp;</p>
 
 <!-- PROPERTY ROWS -->
-<div ng-hide="showNoResults" ng-repeat="property in Results" class="animate-repeat">
+<div ng-hide="showNoResults" ng-repeat="property in Results" class="rb-fade">
 	<div ng-switch on="propertyType">
 		<div ng-switch-when="Office">
 			<div office-row property="property.attributes" current-path="#/search/results"></div>

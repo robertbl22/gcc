@@ -8,7 +8,8 @@ angular.module('gccApp')
 		controller: 'SearchLocationCtrl',
 		scope: {
 			Property: '=property',
-			Location: '=location'
+			Location: '=location',
+			SearchForm: '=form'
 		}
 	}
 });
