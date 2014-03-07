@@ -1,15 +1,16 @@
 'use strict';
 
 var app = angular.module('gccApp')
-.factory('CountyZoomSvc', function ($rootScope, $location) {
+.factory('CountyZoomSvc', function ($rootScope) {
 
 	return {
-		zoom: function(corridorId, countyId, pageX, pageY) {
+		zoom: function(corridorId, countyId) {
 			$rootScope.$on('$stateChangeSuccess', function() {
 				$rootScope.rootAnimationClass = 'rb-crossfade';
 			});
 			$rootScope.rootAnimationClass = 'rb-zoom';
-			$location.path('/corridor/' + corridorId + '/county/' + countyId);
+			//$location.path('/' + corridorId + '/' + countyId);
+			//$state.go('corridor.county', {countyId: countyId});
 		}
 	};
 

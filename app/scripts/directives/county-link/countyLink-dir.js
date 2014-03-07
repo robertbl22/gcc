@@ -10,26 +10,5 @@ angular.module('gccApp')
 			name: '@'
 		},
 		restrict: 'A'
-		/*,link: function (scope, element, attrs) {
-			
-			var hasPath = false;
-			scope.currentPath = '#';
-			if(scope.corridorId) {
-				scope.currentPath += '/corridor/' + scope.corridorId;
-				hasPath = true;
-			}
-			if(scope.countyId) {
-				scope.currentPath += '/county/' + scope.countyId;
-				hasPath = true;
-			}
-			if(!hasPath) {
-				scope.$watch('name', function() {
-					if(scope.name) {
-						element.replaceWith(scope.name);
-					}
-				});
-			}
-			
-		}*/
 	};
 });

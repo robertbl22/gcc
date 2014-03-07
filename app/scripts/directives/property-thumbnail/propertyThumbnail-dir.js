@@ -3,16 +3,9 @@
 angular.module('gccApp')
 .directive('propertyThumbnail', function() {
 	return {
-		template: '<a ng-href="{{link}}"> \
+		template: '<a ui-sref="{{link}}"> \
 		<img \
-		ng-hide="{{photosrc===\'No Photo\'}}" \
-		ng-src="{{photosrc}}" \
-		alt="{{title}}" \
-		title="{{title}}" \
-		class="img-responsive img-thumbnail" imageload> \
-		<img \
-		ng-show="{{photosrc===\'No Photo\'}}" \
-		ng-src="images/no-photo.jpg" \
+		ng-src="{{cleanPhotosrc}}" \
 		alt="{{title}}" \
 		title="{{title}}" \
 		class="img-responsive img-thumbnail" imageload> \
@@ -22,6 +15,14 @@ angular.module('gccApp')
 			photosrc: '@',
 			title: '@',
 			link: '@'
+		},
+		link: function(scope, element, attr) {
+			scope.cleanPhotosrc = '';
+			if(scope.photosrc != 'No Photo') {
+				scope.cleanPhotosrc = scope.photosrc;
+			} else {
+				scope.cleanPhotosrc = 'images/no-photo.jpg';
+			}
 		}
 	}
 });

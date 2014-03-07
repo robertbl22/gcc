@@ -15,13 +15,13 @@
 <div ng-hide="showNoResults" ng-repeat="property in Results" class="rb-fade">
 	<div ng-switch on="propertyType">
 		<div ng-switch-when="Office">
-			<div office-row property="property.attributes" current-path="#/search/results"></div>
+			<div office-row property="property.attributes"></div>
 		</div>
 		<div ng-switch-when="Industrial">
-			<div industrial-row property="property.attributes" current-path="#/search/results"></div>
+			<div industrial-row property="property.attributes"></div>
 		</div>
 		<div ng-switch-when="Site">
-			<div site-row property="property.attributes" current-path="#/search/results"></div>
+			<div site-row property="property.attributes"></div>
 		</div>
 	</div>
 </div>

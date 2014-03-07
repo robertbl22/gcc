@@ -1,7 +1,7 @@
-$FontAwesomePath: "/bower_components/font-awesome/font/";
+/* $FontAwesomePath: "/bower_components/font-awesome/font/"; */
 //$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
-@import "font-awesome/scss/font-awesome";
-@import 'sass-bootstrap/lib/bootstrap';
+/* @import "font-awesome/scss/font-awesome"; */
+/* @import 'sass-bootstrap/lib/bootstrap'; */
 
 /* Required by angular-bootstrap */
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
@@ -26,13 +26,6 @@ html {
 
 .gcc-container {
     min-height: 800px;
-}
-
-.footer {
-    background-color: #00274c;
-    color: lightgray;
-    padding-top: 30px;
-    margin-top: 100px;
 }
 
 .rb-hide-while-transition-animating {};
@@ -90,9 +83,12 @@ html {
 div.headline-links {
     display: inline-block;
     margin-left: 20px;
+    vertical-align: top;
+    margin-top: 20px;
+    line-height: 24px;
 }
 h3.headline-links {
-    display: inline-block;
+    display: inline-block; 
 }
 
 

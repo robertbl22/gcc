@@ -1,7 +1,7 @@
 'use strict';
 
 var app = angular.module('gccApp')
-.controller('IndustrialDetailCtrl', function ($scope, $stateParams, DataService, BreadcrumbSvc, ToastrSvc) {
+.controller('IndustrialDetailCtrl', function ($scope, $stateParams, DataService, ToastrSvc) {
 
 	$scope.corridorId = $stateParams.corridorId;
 	$scope.countyId = $stateParams.countyId;
@@ -25,14 +25,5 @@ var app = angular.module('gccApp')
 	.catch(function(e){
 		ToastrSvc.error('Sorry, there was an error while loading the data.');
 	})
-
-	/* "Return" link */
-	$scope.previousPath = BreadcrumbSvc.previousPath;
-	$scope.hasPreviousPath = function() {
-		if(BreadcrumbSvc.previousPath === BreadcrumbSvc.currentPath) {
-			return false;
-		}
-		return true;
-	};
 	
 });

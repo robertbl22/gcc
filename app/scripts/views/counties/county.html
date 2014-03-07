@@ -1,23 +1,23 @@
 <!-- <div corridors-indicator corridors="county.corridors" active="{{corridorId}}"></div> -->
 
-<h3 style="display: inline-block;">{{county.name}} County</h3>
-<div style="display: inline-block; margin-left: 20px;">
+<h3 class="headline-links">{{county.name}} County</h3>
+<div class="headline-links">
 	<div tiers-indicator tier="county.tier"></div>
 </div>
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
 	<li ui-sref-active="active">
-		<a ui-sref="corridor.county" ng-click="tabset.setActive('overview')">Overview</a>
+		<a ui-sref="corridor.county">Overview</a>
 	</li>
 	<li ui-sref-active="active" ng-class="{disabled:tabset.isEmpty(propertiesCount.offices)}">
-		<a  ui-sref="corridor.county.officeList">Offices <span class="badge loading loading-small" field-to-watch="{{propertiesCount.offices}}">{{propertiesCount.offices||'0'}}</span></a>
+		<a  ui-sref="corridor.county.offices">Offices <span class="badge loading loading-small" field-to-watch="{{propertiesCount.offices}}">{{propertiesCount.offices||'0'}}</span></a>
 	</li>
 	<li ui-sref-active="active" ng-class="{disabled:tabset.isEmpty(propertiesCount.industrial)}">
-		<a  ui-sref="corridor.county.industrialList">Industrial<span class="rb-hidden-sm"> Buildings</span> <span class="badge loading loading-small" field-to-watch="{{propertiesCount.industrial}}">{{propertiesCount.industrial||'0'}}</span></a>
+		<a  ui-sref="corridor.county.industrial">Industrial<span class="rb-hidden-sm"> Buildings</span> <span class="badge loading loading-small" field-to-watch="{{propertiesCount.industrial}}">{{propertiesCount.industrial||'0'}}</span></a>
 	</li>
 	<li ui-sref-active="active" ng-class="{disabled:tabset.isEmpty(propertiesCount.sites)}">
-		<a  ui-sref="corridor.county.siteList">Sites <span class="badge loading loading-small" field-to-watch="{{propertiesCount.sites}}">{{propertiesCount.sites||'0'}}</span></a>
+		<a  ui-sref="corridor.county.sites">Sites <span class="badge loading loading-small" field-to-watch="{{propertiesCount.sites}}">{{propertiesCount.sites||'0'}}</span></a>
 	</li>
 </ul>
 

@@ -9,6 +9,7 @@ angular.module('gccApp')
 		link: function(scope, element, attrs) {
 
 			var img = element.find('#GeorgiaMap');
+			var currentSelectedAreaId = undefined;
 
 			var mapsterOptions = {
 				singleSelect : true,
@@ -26,8 +27,11 @@ angular.module('gccApp')
 				if($stateParams.corridorId) {
 					var areaId = '#' + $stateParams.corridorId;
 					$(areaId).mapster('select');
+					currentSelectedAreaId = areaId;
 				} else {
-					$('#i-16, #341-alliance, #srp, #i-95').mapster('deselect');
+					if(currentSelectedAreaId != undefined) {
+						$(currentSelectedAreaId).mapster('deselect');
+					}
 				}
 			});
 

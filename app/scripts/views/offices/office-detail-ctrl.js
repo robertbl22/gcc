@@ -25,14 +25,5 @@ var app = angular.module('gccApp')
 	.catch(function(e){
 		ToastrSvc.error('Sorry, there was an error while loading the data.');
 	});
-
-	/* "Return" link */
-	$scope.previousPath = BreadcrumbSvc.previousPath;
-	$scope.hasPreviousPath = function() {
-		if(BreadcrumbSvc.previousPath === BreadcrumbSvc.currentPath) {
-			return false;
-		}
-		return true;
-	};
 	
 });

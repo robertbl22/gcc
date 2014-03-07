@@ -3,7 +3,7 @@
 angular.module('gccApp')
 .directive('footer', function () {
 	return {
-		templateUrl: 'scripts/views/footer/footer.html',
+		templateUrl: 'scripts/directives/footer/footer.html',
 		restrict: 'A'
 	};
 });

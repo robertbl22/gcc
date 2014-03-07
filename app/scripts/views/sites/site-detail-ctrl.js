@@ -6,7 +6,6 @@ var app = angular.module('gccApp')
 	$scope.corridorId = $stateParams.corridorId;
 	$scope.countyId = $stateParams.countyId;
 	var propertyId = $stateParams.propertyId;
-	//$scope.detailsTab = 'map';
 
 	/* Local data for "corridors-indicator" */
 	DataService.county.getOverview($stateParams.countyId).success(function(data) {
@@ -27,14 +26,5 @@ var app = angular.module('gccApp')
 	.catch(function(e){
 		ToastrSvc.error('Sorry, there was an error while loading the data.');
 	});
-
-	/* "Return" link */
-	$scope.previousPath = BreadcrumbSvc.previousPath;
-	$scope.hasPreviousPath = function() {
-		if(BreadcrumbSvc.previousPath === BreadcrumbSvc.currentPath) {
-			return false;
-		}
-		return true;
-	};
 	
 });

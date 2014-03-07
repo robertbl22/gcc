@@ -6,11 +6,11 @@
 	<p>
 		<strong>Browse the corridors:</strong><br/>
 		<span ng-repeat="Corridor in Corridors">
-			<a ng-href="#/corridor/{{Corridor.id}}" >{{Corridor.name}}</a><span ng-hide="$last">,&nbsp;</span>
+			<a ui-sref="corridor({corridorId: Corridor.id})">{{Corridor.name}}</a><span ng-hide="$last">,&nbsp;</span>
 		</span>
 	</p>
 	<p>
-		<a href="#/search" class="btn btn-primary"><i class="icon-play"></i> Search Properties</a>
+		<a ui-sref="search" class="btn btn-primary"><i class="icon-play"></i> Search Properties</a>
 	</p>
 </div>
 <h3><em class="icon-info-sign"></em> Georgia&rsquo;s BEST Legislation</h3>

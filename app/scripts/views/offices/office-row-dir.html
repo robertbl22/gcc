@@ -5,7 +5,7 @@
 	<div class="gcc-vertical-gutter visible-xs"></div>
 	<div class="col-sm-5">
 		<p class="small">
-			<a ng-href="{{currentPath}}/office/{{property.BUILDING_ID}}"><strong>{{property.NAME}}</strong></a><br/>
+			<a ui-sref=".officeDetail({propertyId: property.BUILDING_ID})"><strong>{{property.NAME}}</strong></a><br/>
 			{{property.ADDRESS}}<br/>
 			{{property.CITY}}, GA&nbsp;&nbsp;{{property.ZIP_CODE}}<br/>
 		</p>
@@ -13,7 +13,7 @@
 			<div bookmark-button item-id="{{property.OBJECTID}}" item="property" item-type="office"></div>
 		</p>
 		<p>
-			<a ng-href="{{currentPath}}/office/{{property.BUILDING_ID}}" class="btn btn-default btn-sm">View details</a>
+			<a ui-sref=".officeDetail({propertyId: property.BUILDING_ID})" class="btn btn-default btn-sm">View details</a>
 		</p>
 	</div>
 	<div class="col-sm-3">

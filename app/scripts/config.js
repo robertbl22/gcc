@@ -33,8 +33,8 @@ angular.module('gccApp')
       }
     }
   })
-  .state('search.results.office', {
-    url: '/office/:propertyId',
+  .state('search.results.officeDetail', {
+    url: '/:propertyId',
     views: {
       '@': {
         templateUrl: 'scripts/views/offices/office-detail.html',
@@ -42,8 +42,8 @@ angular.module('gccApp')
       }
     }
   })
-  .state('search.results.industrial', {
-    url: '/industrial/:propertyId',
+  .state('search.results.industrialDetail', {
+    url: '/:propertyId',
     views: {
       '@': {
         templateUrl: 'scripts/views/industrial/industrial-detail.html',
@@ -51,8 +51,8 @@ angular.module('gccApp')
       }
     }
   })
-  .state('search.results.site', {
-    url: '/site/:propertyId',
+  .state('search.results.siteDetail', {
+    url: '/:propertyId',
     views: {
       '@': {
         templateUrl: 'scripts/views/sites/site-detail.html',
@@ -68,7 +68,7 @@ angular.module('gccApp')
     controller: 'BookmarksListCtrl'
   })
   .state('bookmarks.office', {
-    url: '/office/:propertyId',
+    url: '/offices/:propertyId',
     views: {
       '@': {
         templateUrl: 'scripts/views/offices/office-detail.html',
@@ -86,7 +86,7 @@ angular.module('gccApp')
     }
   })
   .state('bookmarks.site', {
-    url: '/site/:propertyId',
+    url: '/sites/:propertyId',
     views: {
       '@': {
         templateUrl: 'scripts/views/sites/site-detail.html',
@@ -97,14 +97,14 @@ angular.module('gccApp')
 
   /* Corridor ////////////////////////////////////////// */
   .state('corridor', {
-    url: '/corridor/:corridorId',
+    url: '/:corridorId',
     templateUrl: 'scripts/views/corridors/corridor.html',
     controller: 'CorridorCtrl'
   })
 
   /* County ////////////////////////////////////////// */
   .state('corridor.county', {
-    url: '/county/:countyId',
+    url: '/:countyId',
     views: {
       '@': {
         templateUrl: 'scripts/views/counties/countyShell.html',
@@ -119,7 +119,7 @@ angular.module('gccApp')
       }
     }
   })
-  .state('corridor.county.officeList', {
+  .state('corridor.county.offices', {
     url: '/offices',
     views: {
       'countyTabs@corridor.county': {
@@ -128,7 +128,7 @@ angular.module('gccApp')
       }
     }
   })
-  .state('corridor.county.industrialList', {
+  .state('corridor.county.industrial', {
     url: '/industrial',
     views: {
       'countyTabs@corridor.county': {
@@ -137,7 +137,7 @@ angular.module('gccApp')
       }
     }
   })
-  .state('corridor.county.siteList', {
+  .state('corridor.county.sites', {
     url: '/sites',
     views: {
       'countyTabs@corridor.county': {
@@ -148,8 +148,8 @@ angular.module('gccApp')
   })
 
   /* Properties ////////////////////////////////////////// */
-  .state('corridor.county.office', {
-    url: '/office/:propertyId',
+  .state('corridor.county.offices.officeDetail', {
+    url: '/:propertyId',
     views: {
       'countyShell@corridor.county': {
         templateUrl: 'scripts/views/offices/office-detail.html',
@@ -157,8 +157,8 @@ angular.module('gccApp')
       }
     }
   })
-  .state('corridor.county.industrial', {
-    url: '/industrial/:propertyId',
+  .state('corridor.county.industrial.industrialDetail', {
+    url: '/:propertyId',
     views: {
       'countyShell@corridor.county': {
         templateUrl: 'scripts/views/industrial/industrial-detail.html',
@@ -166,8 +166,8 @@ angular.module('gccApp')
       }
     }
   })
-  .state('corridor.county.site', {
-    url: '/site/:propertyId',
+  .state('corridor.county.sites.siteDetail', {
+    url: '/:propertyId',
     views: {
       'countyShell@corridor.county': {
         templateUrl: 'scripts/views/sites/site-detail.html',

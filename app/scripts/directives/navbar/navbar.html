@@ -1,0 +1,98 @@
+<!-- *********************************** -->
+<!-- NAVBAR -->
+<header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+    <div class="container">
+
+        <!-- MOBILE NAVBAR -->
+        <div class="navbar-header visible-xs">
+            <!-- MOBILE NAV BUTTON -->
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- MOBILE GPA BANNER -->
+            <a href="/home.aspx" class="navbar-brand"></a>
+        </div>
+
+        <!-- DESKTOP NAVBAR -->
+        <nav class="collapse navbar-collapse navbar-responsive-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <!-- DDRmenu v02.00.01 - ddrmenu/topnav template -->
+                <li><a href="http://www.gaports.com/Home.aspx">Home</a></li>
+                <li><a href="http://www.gaports.com/About.aspx">About</a></li>
+                <li><a href="http://www.gaports.com/PortofSavannah.aspx">Savannah</a></li>
+                <li><a href="http://www.gaports.com/PortofBrunswick.aspx">Brunswick</a></li>
+                <li><a href="http://www.gaports.com/Media.aspx">Media</a></li>
+                <li class="dropdown"><a ng-href="" class="dropdown-toggle" data-toggle="dropdown">
+                    Cargo <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/PortofSavannah/GardenCityTerminal/Container.aspx">Container</a></li>
+                        <li><a href="/PortofSavannah/GardenCityTerminal/Reefer.aspx">Reefer</a></li>
+                        <li><a href="/PortofBrunswick/ColonelsIslandTerminalRoRo/RoRo.aspx">Ro/Ro</a></li>
+                        <li><a href="/PortofSavannah/OceanTerminal/BreakBulk.aspx">Breakbulk</a></li>
+                        <li><a href="/PortofSavannah/OceanTerminal/HeavyLift.aspx">Heavy Lift</a></li>
+                    </ul>
+                </li>
+
+                <!-- DESKTOP SEARCH (Dropdown) -->
+                <li class="dropdown hidden-xs">
+                    <a ng-href="" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-search"></i> <b class="caret"></b>
+                    </a>
+                    <div class="dropdown-menu navbar-search-dropdown">
+                        <div id="dnn_dnnSEARCH_ClassicSearch" class="navbar-search">
+                            <form method="GET" action="http://www.gaports.com/Site/SearchResults.aspx">
+                                <div class="input-group">                                <input name="Search" type="text" maxlength="255" size="20" id="Search" class="form-control" placeholder="Search" />
+                                    <span class="input-group-btn">
+                                        <input type="submit" value="Go!" id="dnn_dnnSEARCH_cmdSearch" class="btn btn-default"></input>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+                <!-- // END: DESKTOP SEARCH (Dropdown) -->
+
+            </ul>
+
+            <!-- MOBILE SEARCH -->
+            <div class="navbar-form navbar-left visible-xs" role="search">
+                <div id="dnn_dnnSEARCHmobile_ClassicSearch" class="navbar-search">
+                    <form method="GET" action="http://www.gaports.com/Site/SearchResults.aspx">
+                        <div class="input-group">
+                            <input name="Search" type="text" maxlength="255" size="20" id="Search" class="form-control" placeholder="Search" />
+                            <span class="input-group-btn">
+                                <input type="submit" value="Go!" id="dnn_dnnSEARCHmobile_cmdSearch" class="btn btn-default"></input>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- // END: MOBILE SEARCH -->
+
+        </nav>
+        <!-- // END: DESKTOP NAVBAR -->
+
+    </div>
+</header>
+<!-- // END: NAVBAR -->
+
+<!-- *********************************** -->
+<!-- GPA DESKTOP BANNER -->
+<div class="container gpa-banner hidden-xs hidden-print">
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="http://www.gaports.com/Portals/2/Skins/2013/images/gpa-banner.png" alt="Georgia Ports Authority" />
+        </div>
+    </div>
+</div>
+<!-- GPA PRINT BANNER -->
+<div class="container gpa-banner-print visible-print">
+    <div class="row">
+        <div class="col-xs-2 pull-right">
+            <img src="http://www.gaports.com/Portals/2/Skins/2013/images/gpa-banner.png" alt="Georgia Ports Authority" />
+        </div>
+    </div>
+</div>
+<!-- // END: GPA DESKTOP BANNER -->

@@ -6,8 +6,7 @@ angular.module('gccApp')
 		templateUrl: 'scripts/views/offices/office-row-dir.html',
 		restrict: 'A',
 		scope: {
-			property: '=',
-			currentPath: '@'
+			property: '='
 		}
 	}
 });

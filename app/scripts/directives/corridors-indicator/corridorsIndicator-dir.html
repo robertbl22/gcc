@@ -1,5 +1,3 @@
-<div style="margin-bottom:0;padding:5px;">
-	<span ng-repeat="Corridor in corridors">
-		<a ng-href="#/corridor/{{Corridor.id}}" class="btn btn-xs" ng-class="{'btn-primary': isActive(Corridor.id),'btn-default':!isActive(Corridor.id)}">{{Corridor.name}}</a>
-	</span>
-</div>
+<span ng-repeat="Corridor in corridors">
+	<a ui-sref="corridor({corridorId: Corridor.id})" class="btn-xs" ng-class="{'text-primary': isActive(Corridor.id),'text-muted':!isActive(Corridor.id)}">{{Corridor.name}}<span ng-hide="$last">,</span></a>
+</span>
