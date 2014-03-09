@@ -112,6 +112,38 @@ h3.headline-links {
 }
 
 
+
+
+.rb-zoom-css {
+    transition-timing-function: ease;
+    transition-duration: 500ms;
+}
+ 
+.rb-zoom-css.ng-enter {
+    transition-property: none;
+    transform: translate3d(0,0,50%);
+}
+ 
+.rb-zoom-css.ng-enter.ng-enter-active {
+    transition-property: all;
+    transform: translate3d(0,0,100%);
+}
+ 
+.rb-zoom-css.ng-leave {
+    transition-property: all;
+    transform: translate3d(0,0,100%);
+}
+ 
+.rb-zoom-css.ng-leave.ng-leave-active {
+    transition-property: all;
+    transform: translate3d(0,0,50%);
+}
+
+
+
+
+
+
 /*
 This animates the Bookmark list 
 when adding and removing rows.

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.controller('BreadcrumbCtrl', function ($scope, $state, $stateParams, SelectGeorgia_CountiesSvc) {
+.controller('BreadcrumbCtrl', function ($scope, $rootScope, $state, $stateParams, SelectGeorgia_CountiesSvc) {
 
 	$scope.$state = $state;
 	$scope.$stateParams = $stateParams;
@@ -12,6 +12,7 @@ angular.module('gccApp')
 				for (var i = 0; i < $scope.Corridors.length; i++) {
 					var c = $scope.Corridors[i];
 					if(c.id===$stateParams.corridorId) {
+						$rootScope.docTitle = c.shortname;
 						return c.shortname;
 					}
 				};
@@ -19,8 +20,11 @@ angular.module('gccApp')
 		};
 		if(key==='County') {
 			var name = SelectGeorgia_CountiesSvc.countyIdToCountyName($stateParams.countyId);
-			return name + ' County';
+			name = name + ' County'
+			$rootScope.docTitle = name;
+			return name;
 		}
+		$rootScope.docTitle = key;
 		return key;
 	}
 

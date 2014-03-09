@@ -5,10 +5,11 @@ var app = angular.module('gccApp')
 
 	return {
 		zoom: function(corridorId, countyId) {
-			$rootScope.$on('$stateChangeSuccess', function() {
+			/*$rootScope.$on('$stateChangeSuccess', function() {
 				$rootScope.rootAnimationClass = 'rb-crossfade';
 			});
-			$rootScope.rootAnimationClass = 'rb-zoom';
+			$rootScope.rootAnimationClass = 'rb-zoom';*/
+			
 			//$location.path('/' + corridorId + '/' + countyId);
 			//$state.go('corridor.county', {countyId: countyId});
 		}

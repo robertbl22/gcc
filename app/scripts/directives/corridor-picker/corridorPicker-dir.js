@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.directive('corridorPicker', function ($stateParams) {
+.directive('corridorPicker', function ($stateParams, CorridorHighlightSvc) {
 	return {
 		templateUrl: 'scripts/directives/corridor-picker/corridorPicker.html',
 		restrict: 'A',
@@ -18,10 +18,23 @@ angular.module('gccApp')
 				strokeColor : 'FFFFFF',
 				strokeWidth : 1,
 				clickNavigate : true,
-				showToolTip : true
+				showToolTip : true,
+				mapKey: 'data-key'
 			};
 
 			img.mapster(mapsterOptions);
+
+			scope.highlightCorridor = function(corridorId) {CorridorHighlightSvc.highlightCorridor(corridorId);};
+
+			var watched = function(){ return CorridorHighlightSvc.highlightedCorridorId; };
+			scope.$watch(watched, function(newVal, oldVal, scope) {
+				if(newVal) {
+					img.mapster('highlight', false);
+					img.mapster('highlight', newVal);
+				} else {
+					img.mapster('highlight', false);
+				}
+			});
 
 			scope.$on('$stateChangeSuccess', function () {
 				if($stateParams.corridorId) {
@@ -44,8 +57,9 @@ angular.module('gccApp')
 			of times until the browser crashes.
 			jquery.unevent.js
 			*/
+			/*$(window).on('resize', resizeImageMap, 50);*/
 			
-			$(window).on('resize', resizeImageMap); //, 50);
+			$(window).on('resize', resizeImageMap);
 
 			function resizeImageMap() {
 				img.mapster('resize', element.width(), '', 0);

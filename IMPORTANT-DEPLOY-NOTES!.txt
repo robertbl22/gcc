@@ -1,0 +1,8 @@
+DEPLOY NOTES!
+
+Gaports.com main.css
+We link to the style sheet used for all of Gaports.com. But IE8 needs respond.js, and respond.js needs css files to be local. For deploy, remove local reference to main.css and point it to the copy in Portals.
+<link rel="stylesheet" href="/Portals/2/Skins/2013/styles/main.css">
+
+For more info, see "Browser and device support" at:
+http://getbootstrap.com/getting-started/
