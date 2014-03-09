@@ -2,20 +2,20 @@
 
 var app = angular.module('gccApp');
 
-app.controller('MainCtrl', function ($scope, $location, $anchorScroll, $rootScope, BookmarksSvc, BreadcrumbSvc) {
+app.controller('MainCtrl', function ($scope, $location, $anchorScroll, $rootScope, BookmarksSvc) {
 	
 	$scope.BookmarksIndex = BookmarksSvc.index;
-	$scope.ControlName = 'MainCtrl';
-	$rootScope.rootAnimationClass = 'rb-crossfade';
 	
-	/*$scope.$on('$locationChangeStart',function(evt, absNewUrl, absOldUrl) {
-		BreadcrumbSvc.currentPath = absNewUrl;
-		BreadcrumbSvc.previousPath = absOldUrl;
-	});*/
+	$rootScope.rootAnimationClass = 'rb-crossfade';
 
 	$rootScope.scrollTop = function() {
 		$location.hash('TopOfPage');
 		$anchorScroll();
 	};
+	
+	/*$scope.$on('$locationChangeStart',function(evt, absNewUrl, absOldUrl) {
+		BreadcrumbSvc.currentPath = absNewUrl;
+		BreadcrumbSvc.previousPath = absOldUrl;
+	});*/
 	
 });

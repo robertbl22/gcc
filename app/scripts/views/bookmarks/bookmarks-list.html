@@ -16,13 +16,13 @@
 <div ng-show="Bookmarks.length > 0" ng-repeat="property in Bookmarks" class="animate-repeat">
 	<div ng-switch on="property.type">
 		<div ng-switch-when="office">
-			<div office-row property="property" current-path="#/bookmarks"></div>
+			<div office-row property="property"></div>
 		</div>
 		<div ng-switch-when="industrial">
-			<div industrial-row property="property" current-path="#/bookmarks"></div>
+			<div industrial-row property="property"></div>
 		</div>
 		<div ng-switch-when="site">
-			<div site-row property="property" current-path="#/bookmarks"></div>
+			<div site-row property="property"></div>
 		</div>
 	</div>
 </div>

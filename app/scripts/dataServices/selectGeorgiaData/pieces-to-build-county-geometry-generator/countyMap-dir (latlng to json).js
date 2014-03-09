@@ -34,8 +34,6 @@ angular.module('gccApp')
 					var polygon = feat.geometry[0];
 
 
-
-
 					var pathArray = polygon.getPaths().getAt(0).getArray();
 					var newPathArray = [];
 					for (var i = 0; i < pathArray.length; i++) {
@@ -46,11 +44,6 @@ angular.module('gccApp')
 					};
 					var encPaths = angular.toJson(newPathArray, false);
 					//var encPaths = GoogleMapSvc.maps.geometry.encoding.encodePath(pathArray);
-					console.log('agsCountyName', attrs.NAME)
-					console.log('encPaths', encPaths);
-
-
-
 
 					var bounds = polygon.getBounds();
 					bounds = GoogleMapSvc.removeBoundsPadding(bounds);
@@ -68,7 +61,7 @@ angular.module('gccApp')
 			};
 
 			var layerId = SelectGeorgiaSvc.layerId.COUNTIES;
-			SelectGeorgiaSvc.get(layerId, agsQueryParams).then(successCallback).catch(errorCallback);
+			SelectGeorgiaSvc.get(layerId, agsQueryParams).then(successCallback)['catch'](errorCallback);
 			
 		}
 	};

@@ -7,8 +7,7 @@ angular.module('gccApp')
 		restrict: 'A',
 		scope: {
 			photoSrc: '@',
-			name: '@',
-			link: '@'
+			name: '@'
 		},
 		link: function(scope, element, attrs) {
 			scope.$watch('photoSrc', function() {

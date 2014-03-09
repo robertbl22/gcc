@@ -2,14 +2,14 @@
 <div class="row">
 	<div class="col-sm-7">
 		<p ng-bind-html="county.summary"></p>
-		<div class="loading" field-to-watch="{{county.attributes.COUNTY_FIPS_CODE}}" spinner-offset-y="50px">
+		<div class="loading" field-to-watch="{{countyAttributes.COUNTY_FIPS_CODE}}" spinner-offset-y="50px">
 			<table id="OverviewTable" class="table table-striped" ng-cloak>
 				<tr>
 					<td>
 						<strong>{{fieldAliases.COUNTY_FIPS_CODE}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.COUNTY_FIPS_CODE}}
+						{{countyAttributes.COUNTY_FIPS_CODE}}
 					</td>
 				</tr>
 				<tr>
@@ -17,7 +17,7 @@
 						<strong>{{fieldAliases.TOTPOP_CY}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.TOTPOP_CY | number}}
+						{{countyAttributes.TOTPOP_CY | number}}
 					</td>
 				</tr>
 				<tr>
@@ -25,7 +25,7 @@
 						<strong>{{fieldAliases.MEDHHINC_CY}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.MEDHHINC_CY | dollars}}
+						{{countyAttributes.MEDHHINC_CY | dollars}}
 					</td>
 				</tr>
 				<tr>
@@ -33,7 +33,7 @@
 						<strong>{{fieldAliases.HHPOP_CY}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.HHPOP_CY | number}}
+						{{countyAttributes.HHPOP_CY | number}}
 					</td>
 				</tr>
 				<tr>
@@ -41,7 +41,7 @@
 						<strong>{{fieldAliases.MEDAGE_CY}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.MEDAGE_CY}}
+						{{countyAttributes.MEDAGE_CY}}
 					</td>
 				</tr>
 				<tr>
@@ -49,7 +49,7 @@
 						<strong>{{fieldAliases.MILLAGE_RATE}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.MILLAGE_RATE | number:2}}%
+						{{countyAttributes.MILLAGE_RATE | number:2}}%
 					</td>
 				</tr>
 				<tr>
@@ -57,7 +57,7 @@
 						<strong>{{fieldAliases.PROPERTY_TAX}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.PROPERTY_TAX | number:2}}%
+						{{countyAttributes.PROPERTY_TAX | number:2}}%
 					</td>
 				</tr>
 				<tr>
@@ -65,7 +65,7 @@
 						<strong>{{fieldAliases.SALES_TAX}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.SALES_TAX}}%
+						{{countyAttributes.SALES_TAX}}%
 					</td>
 				</tr>
 				<tr>
@@ -73,7 +73,7 @@
 						<strong>{{fieldAliases.STATE_SALES_TAX}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.STATE_SALES_TAX}}%
+						{{countyAttributes.STATE_SALES_TAX}}%
 					</td>
 				</tr>
 				<tr>
@@ -81,7 +81,7 @@
 						<strong>{{fieldAliases.FREEPORT_CAT_1}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.FREEPORT_CAT_1}}
+						{{countyAttributes.FREEPORT_CAT_1}}
 					</td>
 				</tr>
 				<tr>
@@ -89,7 +89,7 @@
 						<strong>{{fieldAliases.FREEPORT_CAT_2}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.FREEPORT_CAT_2}}
+						{{countyAttributes.FREEPORT_CAT_2}}
 					</td>
 				</tr>
 				<tr>
@@ -97,7 +97,7 @@
 						<strong>{{fieldAliases.FREEPORT_CAT_3}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.FREEPORT_CAT_3}}
+						{{countyAttributes.FREEPORT_CAT_3}}
 					</td>
 				</tr>
 				<tr>
@@ -105,14 +105,14 @@
 						<strong>{{fieldAliases.JOB_TAX_CREDIT}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.JOB_TAX_CREDIT | dollars}}
+						{{countyAttributes.JOB_TAX_CREDIT | dollars}}
 					</td>
 				</tr>
 				<tr>
 					<td><strong>{{fieldAliases.JOB_TAX_CREDIT_TIER}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.JOB_TAX_CREDIT_TIER}}
+						{{countyAttributes.JOB_TAX_CREDIT_TIER}}
 					</td>
 				</tr>
 				<tr>
@@ -120,14 +120,14 @@
 						<strong>{{fieldAliases.JDA}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.JDA}}
+						{{countyAttributes.JDA}}
 					</td>
 				</tr>
 				<tr>
 					<td><strong>{{fieldAliases.INVESTMENT_TAX_CREDIT}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.INVESTMENT_TAX_CREDIT}}
+						{{countyAttributes.INVESTMENT_TAX_CREDIT}}
 					</td>
 				</tr>
 				<tr>
@@ -135,7 +135,7 @@
 						<strong>{{fieldAliases.UNEMP_RATE_CY}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.UNEMP_RATE_CY | number:2}}%
+						{{countyAttributes.UNEMP_RATE_CY | number:2}}%
 					</td>
 				</tr>
 				<tr>
@@ -143,7 +143,7 @@
 						<strong>{{fieldAliases.AVG_WAGE}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.AVG_WAGE | dollars}}
+						{{countyAttributes.AVG_WAGE | dollars}}
 					</td>
 				</tr>
 				<tr>
@@ -151,7 +151,7 @@
 						<strong>{{fieldAliases.AVG_WAGE_MANF}}:</strong>
 					</td>
 					<td>
-						{{county.attributes.AVG_WAGE_MANF | dollars}}
+						{{countyAttributes.AVG_WAGE_MANF | dollars}}
 					</td>
 				</tr>
 				<tr>
@@ -159,7 +159,7 @@
 						<strong>Energy Tax Exemption:</strong>
 					</td>
 					<td>
-						{{county.attributes.ENERGY_TAX_EXEMPTION | yesno}}
+						{{countyAttributes.ENERGY_TAX_EXEMPTION | yesno}}
 					</td>
 				</tr>
 			</table>

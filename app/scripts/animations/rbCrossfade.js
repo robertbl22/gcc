@@ -5,8 +5,8 @@ angular.module('gccApp')
 	return {
 		enter: function (element, done) {
 			var opts = {
-				element: element, 
-				parent: element.parent(), 
+				element: element,
+				parent: element.parent(),
 				elementsToHide: $('.rb-hide-while-transition-animating'),
 				callback: done
 			};
@@ -23,8 +23,8 @@ angular.module('gccApp')
 		},
 		leave: function (element, done) {
 			var opts = {
-				element: element, 
-				parent: element.parent(), 
+				element: element,
+				parent: element.parent(),
 				elementsToHide: $('.rb-hide-while-transition-animating'),
 				callback: done
 			};

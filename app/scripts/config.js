@@ -9,10 +9,11 @@ http://txt.fliglio.com/2013/05/angularjs-state-management-with-ui-router/
 angular.module('gccApp')
 .config(function ($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise("/");
+  $urlRouterProvider.otherwise('/');
 
   $stateProvider
   .state('home', {
+    data: {title: 'Site Selection'},
     url: '/',
     templateUrl: 'scripts/views/home/home.html',
     controller: 'HomeCtrl'
@@ -20,11 +21,13 @@ angular.module('gccApp')
 
   /* Search ////////////////////////////////////////// */
   .state('search', {
+    data: {title: 'Search'},
     url: '/search',
     templateUrl: 'scripts/views/search/search.html',
     controller: 'SearchCtrl'
   })
   .state('search.results', {
+    data: {title: 'Results'},
     url: '/results',
     views: {
       '@': {
@@ -34,7 +37,8 @@ angular.module('gccApp')
     }
   })
   .state('search.results.officeDetail', {
-    url: '/:propertyId',
+    data: {title: 'View Details'},
+    url: '/offices/:propertyId',
     views: {
       '@': {
         templateUrl: 'scripts/views/offices/office-detail.html',
@@ -43,7 +47,8 @@ angular.module('gccApp')
     }
   })
   .state('search.results.industrialDetail', {
-    url: '/:propertyId',
+    data: {title: 'View Details'},
+    url: '/industrial/:propertyId',
     views: {
       '@': {
         templateUrl: 'scripts/views/industrial/industrial-detail.html',
@@ -52,7 +57,8 @@ angular.module('gccApp')
     }
   })
   .state('search.results.siteDetail', {
-    url: '/:propertyId',
+    data: {title: 'View Details'},
+    url: '/sites/:propertyId',
     views: {
       '@': {
         templateUrl: 'scripts/views/sites/site-detail.html',
@@ -63,11 +69,13 @@ angular.module('gccApp')
 
   /* Bookmarks ////////////////////////////////////////// */
   .state('bookmarks', {
+    data: {title: 'Bookmarks'},
     url: '/bookmarks',
     templateUrl: 'scripts/views/bookmarks/bookmarks-list.html',
     controller: 'BookmarksListCtrl'
   })
-  .state('bookmarks.office', {
+  .state('bookmarks.officeDetail', {
+    data: {title: 'View Details'},
     url: '/offices/:propertyId',
     views: {
       '@': {
@@ -76,7 +84,8 @@ angular.module('gccApp')
       }
     }
   })
-  .state('bookmarks.industrial', {
+  .state('bookmarks.industrialDetail', {
+    data: {title: 'View Details'},
     url: '/industrial/:propertyId',
     views: {
       '@': {
@@ -85,7 +94,8 @@ angular.module('gccApp')
       }
     }
   })
-  .state('bookmarks.site', {
+  .state('bookmarks.siteDetail', {
+    data: {title: 'View Details'},
     url: '/sites/:propertyId',
     views: {
       '@': {
@@ -97,6 +107,7 @@ angular.module('gccApp')
 
   /* Corridor ////////////////////////////////////////// */
   .state('corridor', {
+    data: {title: 'Corridor'},
     url: '/:corridorId',
     templateUrl: 'scripts/views/corridors/corridor.html',
     controller: 'CorridorCtrl'
@@ -104,6 +115,7 @@ angular.module('gccApp')
 
   /* County ////////////////////////////////////////// */
   .state('corridor.county', {
+    data: {title: 'County'},
     url: '/:countyId',
     views: {
       '@': {
@@ -111,15 +123,17 @@ angular.module('gccApp')
         controller: 'CountyShellCtrl'
       },
       'countyShell@corridor.county': {
-        templateUrl: 'scripts/views/counties/county.html',
-        controller: 'CountyCtrl'
+        templateUrl: 'scripts/views/counties/countyTabs.html',
+        controller: 'CountyTabsCtrl'
       },
       'countyTabs@corridor.county': {
-        templateUrl: 'scripts/views/counties/overview.html'
+        templateUrl: 'scripts/views/counties/countyOverview.html',
+        controller: 'CountyOverviewCtrl'
       }
     }
   })
   .state('corridor.county.offices', {
+    data: {title: 'Offices'},
     url: '/offices',
     views: {
       'countyTabs@corridor.county': {
@@ -129,6 +143,7 @@ angular.module('gccApp')
     }
   })
   .state('corridor.county.industrial', {
+    data: {title: 'Industrial Buildings'},
     url: '/industrial',
     views: {
       'countyTabs@corridor.county': {
@@ -138,6 +153,7 @@ angular.module('gccApp')
     }
   })
   .state('corridor.county.sites', {
+    data: {title: 'Sites'},
     url: '/sites',
     views: {
       'countyTabs@corridor.county': {
@@ -149,6 +165,7 @@ angular.module('gccApp')
 
   /* Properties ////////////////////////////////////////// */
   .state('corridor.county.offices.officeDetail', {
+    data: {title: 'View Details'},
     url: '/:propertyId',
     views: {
       'countyShell@corridor.county': {
@@ -158,6 +175,7 @@ angular.module('gccApp')
     }
   })
   .state('corridor.county.industrial.industrialDetail', {
+    data: {title: 'View Details'},
     url: '/:propertyId',
     views: {
       'countyShell@corridor.county': {
@@ -167,6 +185,7 @@ angular.module('gccApp')
     }
   })
   .state('corridor.county.sites.siteDetail', {
+    data: {title: 'View Details'},
     url: '/:propertyId',
     views: {
       'countyShell@corridor.county': {
@@ -174,6 +193,6 @@ angular.module('gccApp')
         controller: 'SiteDetailCtrl'
       }
     }
-  })
+  });
 
 });

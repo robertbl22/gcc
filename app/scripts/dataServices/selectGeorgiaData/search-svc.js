@@ -6,7 +6,6 @@ angular.module('gccApp')
 
 	self.getResults = function(searchParams) {
 		var queryParams = self._getQueryParams(searchParams);
-		console.log('queryParams',queryParams)
 		return SelectGeorgiaSvc.get(queryParams.layer.layerId, queryParams.layer);
 	};
 
@@ -33,8 +32,6 @@ angular.module('gccApp')
 	not have data for the corridors the the tables */
 	self.getResults2 = function(searchParams) {
 		var queryParams = self._getQueryParams(searchParams);
-		console.log('queryParams',queryParams)
-
 		if(queryParams.table.where.length > 0) {
 			SelectGeorgiaSvc.get(queryParams.layer.layerId, queryParams.layer)
 			.then(function(data) {
@@ -42,7 +39,6 @@ angular.module('gccApp')
 				queryParams.table.objectIds = objectIds;
 				SelectGeorgiaSvc.get(queryParams.table.tableId, queryParams.table)
 				.then(function(data) {
-					console.log('data', data);
 				});
 			});
 		} else {

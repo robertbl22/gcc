@@ -8,7 +8,7 @@ angular.module('gccApp')
 	self.getColorSet = function(color, highlight, stroke, opacity) {
 		if(angular.isUndefined(opacity)) {
 			opacity = 0.45;
-		};
+		}
 		return {
 			fillColor: color,
 			fillOpacity: opacity,
@@ -19,7 +19,7 @@ angular.module('gccApp')
 			strokeWeight: 1,
 			strokeOpacity: 1,
 			zIndex: 0
-		}
+		};
 	};
 
 	self.RED = self.getColorSet('#FF0000', '#FC7777', '#BA0000', 0.15);

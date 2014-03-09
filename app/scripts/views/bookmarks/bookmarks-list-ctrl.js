@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.controller('BookmarksListCtrl', function ($scope, BookmarksSvc) {
+.controller('BookmarksListCtrl', function ($scope, $rootScope, BookmarksSvc) {
 
 	BookmarksSvc.load();
 	$scope.Bookmarks = BookmarksSvc.collection;
@@ -13,7 +13,7 @@ angular.module('gccApp')
 	};
 
 	$scope.deleteBookmark = function(property) {
-		BookmarksSvc.delete(property.OBJECTID);
+		BookmarksSvc.deleteSingle(property.OBJECTID);
 	};
 	
 });

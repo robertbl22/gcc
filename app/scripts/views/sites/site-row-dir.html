@@ -1,18 +1,18 @@
 <div class="row">
 	<div class="col-sm-4">
-		<div property-thumbnail title="{{property.NAME}}" photosrc="{{property.LINK}}" link="{{currentPath}}/site/{{property.SITE_ID}}"></div>
+		<div property-thumbnail title="{{property.NAME}}" photosrc="{{property.LINK}}" relative-state=".siteDetail" property-id="{{property.SITE_ID}}"></div>
 	</div>
 	<div class="gcc-vertical-gutter visible-xs"></div>
 	<div class="col-sm-5">
 		<p class="small">
-			<a ui-sref=".siteDetail({propertyId: property.BUILDING_ID})"><strong>{{property.NAME}}</strong></a><br/>
+			<a ui-sref=".siteDetail({propertyId: property.SITE_ID})"><strong>{{property.NAME}}</strong></a><br/>
 			{{property.CITY}}, GA&nbsp;&nbsp;{{property.ZIP_CODE}}<br/>
 		</p>
 		<p>
 			<div bookmark-button item-id="{{property.OBJECTID}}" item="property" item-type="site"></div>
 		</p>
 		<p>
-			<a ui-sref=".siteDetail({propertyId: property.BUILDING_ID})" class="btn btn-default btn-sm">View details</a>
+			<a ui-sref=".siteDetail({propertyId: property.SITE_ID})" class="btn btn-default btn-sm">View details</a>
 		</p>
 	</div>
 	<div class="col-sm-3">

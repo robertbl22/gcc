@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.controller('SearchCtrl', function ($scope, SearchParametersSvc, ToastrSvc) {
+.controller('SearchCtrl', function ($scope, $state, SearchParametersSvc, ToastrSvc) {
 
 	$scope.Search = SearchParametersSvc.fields;
 
@@ -9,12 +9,14 @@ angular.module('gccApp')
 	$scope.Form = {'Property': {}};
 
 	$scope.Form.reset = function() {
-		$scope.Search = angular.copy(SearchParametersSvc.defaults);
+		SearchParametersSvc.reset();
+		$scope.Search = SearchParametersSvc.fields;
 		ToastrSvc.info('The form has been reset to default values.');
 	};
 
 	$scope.Form.submit = function() {
-		ToastrSvc.warning('Sorry, the search feature is not yet ready.');
+		SearchParametersSvc.save();
+		$state.go('search.results');
 	};
 
 	$scope.$watch('Search.Property.Type', function() {

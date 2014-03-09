@@ -7,7 +7,7 @@ angular.module('gccApp')
 			TweenMax.fromTo(element[0], 0.5, {
 				opacity: 0
 			}, {
-				opacity: 1, 
+				opacity: 1,
 				onComplete: done
 			});
 		},
@@ -15,7 +15,7 @@ angular.module('gccApp')
 			TweenMax.fromTo(element[0], 0.7, {
 				opacity: 1
 			}, {
-				opacity: 0, 
+				opacity: 0,
 				onComplete: done
 			});
 		}

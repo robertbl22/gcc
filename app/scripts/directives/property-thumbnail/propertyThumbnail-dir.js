@@ -1,9 +1,9 @@
 'use strict',
 
 angular.module('gccApp')
-.directive('propertyThumbnail', function() {
+.directive('propertyThumbnail', function($state) {
 	return {
-		template: '<a ui-sref="{{link}}"> \
+		template: '<a href="{{url}}"> \
 		<img \
 		ng-src="{{cleanPhotosrc}}" \
 		alt="{{title}}" \
@@ -14,9 +14,13 @@ angular.module('gccApp')
 		scope: {
 			photosrc: '@',
 			title: '@',
-			link: '@'
+			relativeState: '@',
+			propertyId: '@'
 		},
 		link: function(scope, element, attr) {
+			/* jshint unused: false */ /* for element, attrs */	
+			scope.url = $state.href(scope.relativeState, {propertyId: scope.propertyId});
+
 			scope.cleanPhotosrc = '';
 			if(scope.photosrc != 'No Photo') {
 				scope.cleanPhotosrc = scope.photosrc;

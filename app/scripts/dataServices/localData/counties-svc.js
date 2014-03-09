@@ -8,6 +8,14 @@ var app = angular.module('gccApp')
 		},
 		getAll: function() {
 			return $http.get('scripts/data/counties.json', {cache: true});
+		},
+		countyNameToCountyId: function(countyName) {
+			var countyId;
+			if(countyName){
+				countyId = countyName.replace(' ', '-');
+				countyId = countyId.toLowerCase();
+			}
+			return countyId;
 		}
 	};
 });

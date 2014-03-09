@@ -61,8 +61,15 @@ angular.module('gccApp')
 
 	this.addLabel = function(name, center, map, ColorSet) {
 		var options = this.getLabelOptions(name, center, map, ColorSet);
-		new this.MapLabel(options);
+		if(_isCanvasSupported()) {
+			new this.MapLabel(options);
+		}
 	};
+
+	function _isCanvasSupported(){
+		var elem = document.createElement('canvas');
+		return !!(elem.getContext && elem.getContext('2d'));
+	}
 
 	this.getPolygonFromPath = function(path, ColorSet) {
 		var latLngs = [];
@@ -191,4 +198,4 @@ angular.module('gccApp')
 		}
 
 
-});
+	});

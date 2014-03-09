@@ -21,7 +21,7 @@ angular.module('gccApp')
 				/* Get SelectGeorgia county geometry */
 				SelectGeorgiaSvc.get(layerId, queryParams)
 				.then(decoratedSuccessCallback(counties))
-				.catch(errorCallback);
+				['catch'](errorCallback);
 			});
 
 			var decoratedSuccessCallback = function(counties) {
@@ -45,7 +45,6 @@ angular.module('gccApp')
 						var origpolygon = agsCounty.geometry[0];
 
 						
-						
 						var pathArray = origpolygon.getPaths().getAt(0).getArray();
 						
 						var newPathArray = [];
@@ -58,12 +57,9 @@ angular.module('gccApp')
 						
 						var encPaths = angular.toJson(newPathArray, false);
 						//var encPaths = GoogleMapSvc.maps.geometry.encoding.encodePath(pathArray);
-						console.log('agsCountyName', agsCountyName)
-						console.log('encPaths', encPaths);
 
 						var decPaths = angular.fromJson(encPaths);
 						//var decPaths = GoogleMapSvc.maps.geometry.encoding.decodePath(encPaths);
-						
 
 						var latLngs = [];
 						for (var i = 0; i < decPaths.length; i++) {

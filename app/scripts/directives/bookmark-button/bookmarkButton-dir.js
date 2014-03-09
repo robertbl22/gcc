@@ -32,7 +32,7 @@ angular.module('gccApp')
 			}
 			
 			scope.deleteBookmark = function() {
-				var success = BookmarksSvc.delete(scope.itemId);
+				var success = BookmarksSvc.deleteSingle(scope.itemId);
 				ToastrSvc.warning('Bookmark removed!');
 				scope.action = actionType.ADD_BOOKMARK;
 			}

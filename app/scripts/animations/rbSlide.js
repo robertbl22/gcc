@@ -5,19 +5,19 @@ angular.module('gccApp')
 	return {
 		enter: function (element, done) {
 			var opts = {
-				element: element, 
-				parent: element.parent(), 
+				element: element,
+				parent: element.parent(),
 				elementsToHide: $('.rb-hide-while-transition-animating'),
 				callback: done
 			};
 
 			AnimationSvc.enter.freezeLayout(opts);
 			TweenMax.fromTo(element[0], 0.5, {
-				top: 25, 
+				top: 25,
 				opacity: 0
 			}, {
-				top: 0, 
-				opacity: 1, 
+				top: 0,
+				opacity: 1,
 				onComplete: function() {
 					AnimationSvc.enter.unfreezeLayout(opts);
 				}
@@ -25,18 +25,19 @@ angular.module('gccApp')
 		},
 		leave: function (element, done) {
 			var opts = {
-				element: element, 
-				parent: element.parent(), 
+				element: element,
+				parent: element.parent(),
 				elementsToHide: $('.rb-hide-while-transition-animating'),
 				callback: done
 			};
 
 			AnimationSvc.leave.freezeLayout(opts);
 			TweenMax.fromTo(element[0], 0.5, {
-				top: 0, opacity: 1
+				top: 0,
+				opacity: 1
 			}, {
-				top:  25, 
-				opacity: 0, 
+				top:  25,
+				opacity: 0,
 				onComplete: function() {
 					AnimationSvc.leave.unfreezeLayout(opts);
 				}

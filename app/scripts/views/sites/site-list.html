@@ -4,7 +4,7 @@
 		<div class="col-sm-12">
 
 			<div ng-show="Properties.length > 0" ng-repeat="property in Properties">
-				<div site-row property="property.attributes" current-path="{{currentPath}}"></div>
+				<div site-row property="property.attributes"></div>
 			</div>
 
 			<div class="alert alert-info" ng-hide="Properties.length > 0">

@@ -36,7 +36,7 @@ angular.module('gccApp')
 			$scope.Counties = data;
 			_resetCounty();
 		})
-		.catch(function() {
+		['catch'](function() {
 			ToastrSvc.warning('Sorry, there was an error while fetching the data.');
 		});
 	};
@@ -49,7 +49,7 @@ angular.module('gccApp')
 			$scope.Cities = data.features;
 			_resetCity();
 		})
-		.catch(function() {
+		['catch'](function() {
 			ToastrSvc.warning('Sorry, there was an error while fetching the data.');
 		});
 	};
