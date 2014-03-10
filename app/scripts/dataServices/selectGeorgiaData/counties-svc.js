@@ -95,7 +95,11 @@ angular.module('gccApp')
 			var j = pieces[i].charAt(0).toUpperCase();
 			pieces[i] = j + pieces[i].substr(1);
 		}
-		return pieces.join(" ");
+		var newStr = pieces.join(" ");
+		if(newStr==='Mcintosh') {
+			newStr = 'McIntosh';
+		}
+		return newStr;
 	}
 
 	return this;

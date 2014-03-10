@@ -1,7 +1,7 @@
 'use strict';
 
 var app = angular.module('gccApp')
-.controller('CountyTabsCtrl', function ($scope, $stateParams, DataService) {
+.controller('CountyTabsCtrl', function ($scope, $stateParams, DataService, $timeout) {
 
 	var countyId = $stateParams.countyId;
 
@@ -28,6 +28,12 @@ var app = angular.module('gccApp')
 	.error(function() {
 		ToastrSvc.error('Sorry, there was an error while loading the data.');
 	});*/
+
+	$timeout(function() {
+		if(!$scope.propertiesCount) {
+			$scope.propertiesCount = 'no data';
+		}
+	}, (10 * 1000));
 
 	/* SelectGeorgia data */
 	DataService.county.getPropertiesCount(countyId)

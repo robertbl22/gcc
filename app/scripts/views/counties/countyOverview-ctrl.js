@@ -1,7 +1,7 @@
 'use strict';
 
 var app = angular.module('gccApp')
-.controller('CountyOverviewCtrl', function ($scope, $stateParams, DataService) {
+.controller('CountyOverviewCtrl', function ($scope, $stateParams, DataService, ToastrSvc) {
 
 	var countyId = $stateParams.countyId;
 

@@ -12,7 +12,7 @@ angular.module('gccApp')
 			};
 
 			AnimationSvc.enter.freezeLayout(opts);
-			TweenMax.fromTo(element[0], 1.5, {
+			TweenMax.fromTo(element[0], 0.5, {
 				opacity: 0
 			}, {
 				opacity: 1,
@@ -22,21 +22,21 @@ angular.module('gccApp')
 			});
 		},
 		leave: function (element, done) {
-			var opts = {
+			/*var opts = {
 				element: element,
 				parent: element.parent(),
 				elementsToHide: $('.rb-hide-while-transition-animating'),
 				callback: done
-			};
+			};*/
 
-			AnimationSvc.leave.freezeLayout(opts);
-			TweenMax.fromTo(element[0], 1.7, {
+			//AnimationSvc.leave.freezeLayout(opts);
+			TweenMax.fromTo(element[0], 0.3, {
 				opacity: 1
 			}, {
 				opacity: 0,
-				onComplete: function() {
-					AnimationSvc.leave.unfreezeLayout(opts);
-				}
+				onComplete: done //function() {
+					//AnimationSvc.leave.unfreezeLayout(opts);
+				//}
 			});
 		}
 	};

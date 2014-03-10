@@ -47,7 +47,7 @@
           <div class="col-sm-8 col-md-9">
             <!-- ////////// Main content view //////////// -->
             <div class="row">
-              <div class="col-sm-12 rb-zoom-css" ui-view autoscroll="false"></div>
+              <div class="col-sm-12 {{rootAnimationClass}}" ui-view autoscroll="false"></div>
             </div>
             <!-- ///////////////////////////////////////// -->
           </div>
@@ -127,7 +127,7 @@
 
       <!-- Animations -->
       <script src="scripts/animations/animation-svc.js"></script>
-      <!-- <script src="scripts/animations/rbCrossfade.js"></script> -->
+      <script src="scripts/animations/rbCrossfade.js"></script>
       <script src="scripts/animations/rbFade.js"></script>
       <script src="scripts/animations/rbSlide.js"></script>
       <script src="scripts/animations/rbZoom.js"></script>
@@ -199,7 +199,6 @@
       <script src="scripts/directives/navbar/navbar-dir.js"></script>
       <script src="scripts/directives/footer/footer-dir.js"></script>
       <script src="scripts/directives/bookmark-button/bookmarkButton-dir.js"></script>
-      <!-- <script src="scripts/directives/breadcrumb/breadcrumb-svc.js"></script> -->
       <script src="scripts/directives/breadcrumb/breadcrumb-ctrl.js"></script>
       <script src="scripts/directives/breadcrumb/breadcrumb-dir.js"></script>
       <script src="scripts/directives/breadcrumb/pagetitle-dir.js"></script>

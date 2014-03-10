@@ -1,7 +1,9 @@
 'use strict';
 
 var app = angular.module('gccApp')
-.controller('IndustrialDetailCtrl', function ($scope, $stateParams, DataService, ToastrSvc) {
+.controller('IndustrialDetailCtrl', function ($scope, $rootScope, $stateParams, DataService, ToastrSvc) {
+
+	$rootScope.scrollTop();
 
 	var propertyId = $stateParams.propertyId;
 	$scope.countyId = $stateParams.countyId;

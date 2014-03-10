@@ -1,11 +1,13 @@
 'use strict';
 
 var app = angular.module('gccApp')
-.controller('OfficeDetailCtrl', function ($scope, $stateParams, DataService, ToastrSvc) {
+.controller('OfficeDetailCtrl', function ($scope, $rootScope, $stateParams, DataService, ToastrSvc) {
 
 	var propertyId = $stateParams.propertyId;
 	$scope.countyId = $stateParams.countyId;
 	$scope.corridorId = $stateParams.corridorId;
+
+	$rootScope.scrollTop();
 
 	DataService.office.getDetail(propertyId)
 	.then(function(data){

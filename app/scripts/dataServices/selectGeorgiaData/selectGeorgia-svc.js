@@ -65,7 +65,9 @@ angular.module('gccApp')
 	var _getUncached = function(layerId, queryParams) {
 		var defer = $q.defer();
 		var callback = function(data) {
-			defer.resolve(data);
+			//$timeout(function() {
+				defer.resolve(data);
+			//}, 3000)
 		};
 		var errback = function(err) {
 			defer.reject(err);

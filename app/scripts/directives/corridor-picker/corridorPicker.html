@@ -15,7 +15,7 @@
 
 	</div>
 
-	<div class="btn-group-vertical btn-group-sm">
+	<div class="btn-group-vertical btn-group-sm" style="width:100%;">
 		<a ui-sref="corridor({corridorId:Corridor.id})" class="btn btn-default" ng-class="{active:isActive(Corridor.id)}" ng-repeat="Corridor in Corridors" ng-cloak style="text-align:left;" ng-mouseover="highlightCorridor(Corridor.id)" ng-mouseout="highlightCorridor()">{{Corridor.name}}</a>
 	</div>
 

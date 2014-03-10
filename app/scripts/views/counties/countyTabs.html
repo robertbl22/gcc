@@ -6,19 +6,19 @@
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
 	<li ui-sref-active="active">
-		<a ui-sref="corridor.county">Overview</a>
+		<a ui-sref="corridor.county">Overview<span class="badge-placeholder" ng-hide="propertiesCount==='no data'">&nbsp;</span></a>
 	</li>
 	<li ui-sref-active="active" ng-class="{disabled:tabset.isEmpty(propertiesCount.offices)}">
-		<a  ui-sref="corridor.county.offices">Offices <span class="badge loading loading-small" field-to-watch="{{propertiesCount.offices}}">{{propertiesCount.offices||'0'}}</span></a>
+		<a ui-sref="corridor.county.offices">Offices <span class="badge loading loading-small" field-to-watch="{{propertiesCount.offices}}" ng-hide="propertiesCount==='no data'">{{propertiesCount.offices||'0'}}</span></a>
 	</li>
 	<li ui-sref-active="active" ng-class="{disabled:tabset.isEmpty(propertiesCount.industrial)}">
-		<a  ui-sref="corridor.county.industrial">Industrial<span class="rb-hidden-sm"> Buildings</span> <span class="badge loading loading-small" field-to-watch="{{propertiesCount.industrial}}">{{propertiesCount.industrial||'0'}}</span></a>
+		<a ui-sref="corridor.county.industrial">Industrial<span class="rb-hidden-sm"> Buildings</span> <span class="badge loading loading-small" field-to-watch="{{propertiesCount.industrial}}" ng-hide="propertiesCount==='no data'">{{propertiesCount.industrial||'0'}}</span></a>
 	</li>
 	<li ui-sref-active="active" ng-class="{disabled:tabset.isEmpty(propertiesCount.sites)}">
-		<a  ui-sref="corridor.county.sites">Sites <span class="badge loading loading-small" field-to-watch="{{propertiesCount.sites}}">{{propertiesCount.sites||'0'}}</span></a>
+		<a ui-sref="corridor.county.sites">Sites <span class="badge loading loading-small" field-to-watch="{{propertiesCount.sites}}" ng-hide="propertiesCount==='no data'">{{propertiesCount.sites||'0'}}</span></a>
 	</li>
 </ul>
 
 <div class="row">
-	<div ui-view="countyTabs" class="col-sm-12 rb-fade" autoscroll="false"></div>
+	<div ui-view="countyTabs" class="col-sm-12 rb-crossfade" autoscroll="false"></div>
 </div>

@@ -1,8 +1,30 @@
 DEPLOY NOTES!
 
+**************************
 Gaports.com main.css
 We link to the style sheet used for all of Gaports.com. But IE8 needs respond.js, and respond.js needs css files to be local. For deploy, remove local reference to main.css and point it to the copy in Portals.
 <link rel="stylesheet" href="/Portals/2/Skins/2013/styles/main.css">
 
 For more info, see "Browser and device support" at:
 http://getbootstrap.com/getting-started/
+
+
+
+************************
+Dynamic image resizing
+http://bbimagehandler.codeplex.com/
+
+TURN SECURITY ON FOR PRODUCTION! For development, it needs to be turned off. Modify web.config to turn it back on.
+
+We resize and cache property images. This is especially important for the site aerial photos because they are large. This is used in the directives "property-thumbnail" and "property-photo".
+
+Example path:
+http://www.gaports.com/bbimagehandler.ashx?Url=somewhere.com/image.jpg&width=150
+
+There is a key in web.config with settings:
+<add key="BBImageHandler" value="EnableClientCache=true;EnableServerCache=true;EnableSecurity=true;EnableSecurityExceptions=true;ImageCompression=90&AllowedDomains=bitboxx.com" />
+
+
+***********************
+Google Maps
+We are not currently using a Google app key. Having a key allows Google to notify you if your usage is going to exceed the maximum limit before service is cut off.

@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('gccApp')
-.animation('.rb-slide', function(AnimationSvc) {
+.animation('.rb-slide', function (AnimationSvc) {
 	return {
 		enter: function (element, done) {
+				console.log('running enter')
 			var opts = {
 				element: element,
 				parent: element.parent(),
@@ -24,6 +25,7 @@ angular.module('gccApp')
 			});
 		},
 		leave: function (element, done) {
+				console.log('running leave')
 			var opts = {
 				element: element,
 				parent: element.parent(),

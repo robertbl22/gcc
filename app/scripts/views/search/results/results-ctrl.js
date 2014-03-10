@@ -3,18 +3,19 @@
 angular.module('gccApp')
 .controller('ResultsCtrl', function ($scope, $rootScope, SearchParametersSvc, DataService, ToastrSvc) {
 
-	$scope.showNoResults = false;
+	$rootScope.scrollTop();
+
+	//$scope.showNoResults = false;
 	$scope.propertyType = SearchParametersSvc.fields.Property.Type;
 
 	/* SelectGeorgia data */
 	DataService.search.getResults(SearchParametersSvc.fields)
 	.then(function(data) {
-		if(data.features && data.features.length > 0) {
+		//if(data.features && data.features.length > 0) {
 			$scope.Results = data.features;
-		} else {
-			$scope.showNoResults = true;
-		}
-		$rootScope.scrollTop();
+		//} else {
+			//$scope.showNoResults = true;
+		//}
 	})
 	['catch'](function() {
 		$scope.showNoResults = true;

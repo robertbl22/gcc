@@ -3,12 +3,12 @@
 angular.module('gccApp')
 .directive('propertyThumbnail', function($state) {
 	return {
-		template: '<a href="{{url}}"> \
+		template: '<a href="{{url}}" class="imageload"> \
 		<img \
 		ng-src="{{cleanPhotosrc}}" \
 		alt="{{title}}" \
 		title="{{title}}" \
-		class="img-responsive img-thumbnail" imageload> \
+		class="img-responsive img-thumbnail"> \
 		</a>',
 		restrict: 'A',
 		scope: {
@@ -23,7 +23,7 @@ angular.module('gccApp')
 
 			scope.cleanPhotosrc = '';
 			if(scope.photosrc != 'No Photo') {
-				scope.cleanPhotosrc = scope.photosrc;
+				scope.cleanPhotosrc = 'http://www.gaports.com/bbimagehandler.ashx?Url=' + scope.photosrc + '&width=262';
 			} else {
 				scope.cleanPhotosrc = 'images/no-photo.jpg';
 			}
