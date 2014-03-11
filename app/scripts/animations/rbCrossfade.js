@@ -7,7 +7,7 @@ angular.module('gccApp')
 			var opts = {
 				element: element,
 				parent: element.parent(),
-				elementsToHide: $('.rb-hide-while-transition-animating'),
+				//elementsToHide: $('.rb-hide-while-transition-animating'),
 				callback: done
 			};
 

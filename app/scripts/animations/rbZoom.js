@@ -1,13 +1,13 @@
 'use strict';
 
 angular.module('gccApp')
-.animation('.rb-zoom', function(AnimationSvc) {
+.animation('.rb-zoom', function (AnimationSvc) {
 	return {
 		enter: function (element, done) {
 			var opts = {
 				element: element,
 				parent: element.parent(),
-				elementsToHide: $('.rb-hide-while-transition-animating'),
+				//elementsToHide: $('.rb-hide-while-transition-animating'),
 				callback: done
 			};
 
@@ -31,7 +31,7 @@ angular.module('gccApp')
 			var opts = {
 				element: element,
 				parent: element.parent(),
-				elementsToHide: $('.rb-hide-while-transition-animating'),
+				//elementsToHide: $('.rb-hide-while-transition-animating'),
 				callback: done
 			};
 

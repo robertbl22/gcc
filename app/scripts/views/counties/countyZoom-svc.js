@@ -6,7 +6,7 @@ var app = angular.module('gccApp')
 	return {
 		zoom: function(corridorId, countyId) {
 			$rootScope.$on('$stateChangeSuccess', function() {
-				$rootScope.rootAnimationClass = 'rb-crossfade-same-height';
+				$rootScope.rootAnimationClass = 'rb-crossfade';
 			});
 			$rootScope.rootAnimationClass = 'rb-zoom';
 			

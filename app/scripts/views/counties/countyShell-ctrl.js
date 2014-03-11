@@ -1,7 +1,9 @@
 'use strict';
 
 var app = angular.module('gccApp')
-.controller('CountyShellCtrl', function ($scope, $stateParams, DataService) {
+.controller('CountyShellCtrl', function ($scope, $rootScope, $stateParams, DataService) {
+
+	$rootScope.scrollTop();
 
 	$scope.corridorId = $stateParams.corridorId;
 	$scope.countyId = $stateParams.countyId;

@@ -80,6 +80,7 @@
       <script src="scripts/vendor/maplabel.js"></script>
       <!-- <script src="scripts/vendor/jquery.unevent.js"></script> -->
       <script src="bower_components/ImageMapster/dist/jquery.imagemapster.js"></script>
+      <script src="bower_components/angular-swipe/dist/angular-swipe.js"></script>
       <!-- endbuild -->
 
       <!-- build:js scripts/plugins.js -->
@@ -106,6 +107,7 @@
       <script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
       <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+      <script src="bower_components/angular-touch/angular-touch.js"></script>
       <!-- endbuild -->
 
       <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -128,27 +130,32 @@
       <!-- Animations -->
       <script src="scripts/animations/animation-svc.js"></script>
       <script src="scripts/animations/rbCrossfade.js"></script>
-      <script src="scripts/animations/rbCrossfadeSameHeight.js"></script>
       <script src="scripts/animations/rbFade.js"></script>
       <script src="scripts/animations/rbSlide.js"></script>
       <script src="scripts/animations/rbZoom.js"></script>
 
 
       <!-- /// Data Providers //////////////////////////////////////////////// -->
-      <!-- Google Map Provider -->
-      <script src="scripts/dataServices/googleMap/googleMap-svc.js"></script>
       <script src="scripts/dataServices/dataService-svc.js"></script>
+      <!-- Google Map Provider -->
+      <script src="scripts/dataServices/googleMaps/googleMaps-svc.js"></script>
+      <script src="scripts/dataServices/googleMaps/infoWindow-svc.js"></script>
+      <script src="scripts/dataServices/googleMaps/label-svc.js"></script>
+      <script src="scripts/dataServices/googleMaps/map-svc.js"></script>
+      <script src="scripts/dataServices/googleMaps/marker-svc.js"></script>
+      <script src="scripts/dataServices/googleMaps/polygon-svc.js"></script>
+      <script src="scripts/dataServices/googleMaps/distance-svc.js"></script>
       <!-- Local Provider -->
       <script src="scripts/dataServices/localData/corridors-svc.js"></script>
       <script src="scripts/dataServices/localData/counties-svc.js"></script>
       <!-- SelectGeorgia Provider -->
-      <script src="scripts/dataServices/selectGeorgiaData/selectGeorgia-svc.js"></script>
-      <script src="scripts/dataServices/selectGeorgiaData/sites-svc.js"></script>
-      <script src="scripts/dataServices/selectGeorgiaData/offices-svc.js"></script>
-      <script src="scripts/dataServices/selectGeorgiaData/industrial-svc.js"></script>
-      <script src="scripts/dataServices/selectGeorgiaData/counties-svc.js"></script>
-      <script src="scripts/dataServices/selectGeorgiaData/search-svc.js"></script>
-      <script src="scripts/dataServices/selectGeorgiaData/searchConditionBuilder-svc.js"></script>
+      <script src="scripts/dataServices/selectGeorgia/selectGeorgia-svc.js"></script>
+      <script src="scripts/dataServices/selectGeorgia/sites-svc.js"></script>
+      <script src="scripts/dataServices/selectGeorgia/offices-svc.js"></script>
+      <script src="scripts/dataServices/selectGeorgia/industrial-svc.js"></script>
+      <script src="scripts/dataServices/selectGeorgia/counties-svc.js"></script>
+      <script src="scripts/dataServices/selectGeorgia/search-svc.js"></script>
+      <script src="scripts/dataServices/selectGeorgia/searchConditionBuilder-svc.js"></script>
 
 
       <!-- /// Views //////////////////////////////////////////////// -->
@@ -210,6 +217,7 @@
       <script src="scripts/directives/loading/loading-dir.js"></script>
       <script src="scripts/directives/loading/imageload-dir.js"></script>
       <script src="scripts/directives/number-only-input/numberOnlyInput-dir.js"></script>
+      <script src="scripts/directives/distance-to-port/distanceToPort-dir.js"></script>
 
       <script src="scripts/directives/property-photo/propertyPhoto-svc.js"></script>
       <script src="scripts/directives/property-photo/propertyPhoto-dir.js"></script>

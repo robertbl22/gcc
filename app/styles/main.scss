@@ -51,43 +51,49 @@ h3.headline-links {
 /*****************************
 Slide up footer
 */
+$footerHeight: 550px;
+$footerRevealTopOffset: 10px;
+$footerHideOffset: $footerRevealTopOffset - $footerHeight;
+
 .footer {
     position: fixed;
     width: 100%;
-    bottom: -540px;
-    height: 550px;
+    bottom: $footerHideOffset;
+    height: $footerHeight;
 
     -webkit-transition: bottom 0.5s; /* For Safari 3.1 to 6.0 */
     transition: bottom 0.5s;
-    z-index: 999;
+    z-index: 99999;
 }
 .footer.raised {
     bottom: 0;
 }
 .footer-tab {
     position: absolute;
-    width: 50px;
-    height: 24px;
+    /* width: 50px; */
+    padding: 0 20px;
+    height: 25px;
     background-color: #00274c;
     color: #FFFFFF;
     top: -24px;
     right: 30px;
-    font-size: 18px;
-    line-height: 24px;
+    /* font-size: 18px; */
+    line-height: 25px;
     text-align: center;
     border-radius: 5px 5px 0 0;
     cursor: pointer;
+    color: #96a0a9;
 }
 @media (max-width: 1200px) {
     .footer {
-        bottom: -590px;
-        height: 600px;
+        bottom: $footerHideOffset - 50px;
+        height: $footerHeight + 50px;
     }
 }
 @media (max-width: 992px) {
     .footer {
-        bottom: -670px;
-        height: 680px;
+        bottom: $footerHideOffset - 130px;
+        height: $footerHeight + 130px;
     }
 }
 @media (max-width: 749px) {
@@ -148,24 +154,28 @@ animation
 TIER button labels
 */
 .btn.tier1 {
+    background-color: #FF7300;
     background-color: rgba(#FF7300, 0.6);
     color: #FFFFFF;
     border-color: #914100;
     padding: 0 3px;
 }
 .btn.tier2 {
+    background-color: #598C00;
     background-color: rgba(#598C00, 0.6);
     color: #FFFFFF;
     border-color: #253B00;
     padding: 0 3px;
 }
 .btn.tier3 {
+    background-color: #BB00FF;
     background-color: rgba(#BB00FF, 0.6);
     color: #FFFFFF;
     border-color: #5F0082;
     padding: 0 3px;
 }
 .btn.tier4 {
+    background-color: #0055FF;
     background-color: rgba(#0055FF, 0.6);
     color: #FFFFFF;
     border-color: #002E8A;

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.directive('countyMap', function(GoogleMapSvc, SelectGeorgiaSvc, ToastrSvc) {
+.directive('countyMap', function(GoogleMapsSvc, SelectGeorgiaSvc, ToastrSvc) {
 	return {
 		restrict: 'A',
 		template: '<div style="height: 350px; border: solid 1px lightgray; border-radius:2px;"></div>',
@@ -17,7 +17,7 @@ angular.module('gccApp')
 				returnGeometry: true,
 				where: 'LOWER(NAME) = \'' + scope.countyId + '\'',
 				outFields: ['NAME','JOB_TAX_CREDIT_TIER'],
-				overlayOptions: GoogleMapSvc.defaultPolygonOptions,
+				overlayOptions: GoogleMapsSvc.polygon.defaultPolygonOptions,
 				maxAllowableOffset: 0.004
 			};
 
@@ -25,12 +25,12 @@ angular.module('gccApp')
 				if(data.features.length > 0) {
 					var feat = data.features[0];
 					var attrs = feat.attributes;
-					var latLng = new GoogleMapSvc.maps.LatLng(0,0);
+					var latLng = new GoogleMapsSvc.maps.LatLng(0,0);
 					var mapOptions = {
 						center: latLng,
 						zoom: 5
 					};
-					var map = new GoogleMapSvc.maps.Map(mapCanvas, mapOptions);
+					var map = new GoogleMapsSvc.maps.Map(mapCanvas, mapOptions);
 					var polygon = feat.geometry[0];
 
 
@@ -43,14 +43,14 @@ angular.module('gccApp')
 						})
 					};
 					var encPaths = angular.toJson(newPathArray, false);
-					//var encPaths = GoogleMapSvc.maps.geometry.encoding.encodePath(pathArray);
+					//var encPaths = GoogleMapsSvc.maps.geometry.encoding.encodePath(pathArray);
 
 					var bounds = polygon.getBounds();
-					bounds = GoogleMapSvc.removeBoundsPadding(bounds);
+					bounds = GoogleMapsSvc.removeBoundsPadding(bounds);
 					map.fitBounds(bounds);
 					polygon.setMap(map);
 					var cntr = bounds.getCenter();
-					GoogleMapSvc.addCountyInfoWindow(map, attrs, cntr, polygon);
+					GoogleMapsSvc.infoWindow.addCountyInfoWindow(map, attrs, cntr, polygon);
 				} else {
 					errorCallback(-1);
 				}

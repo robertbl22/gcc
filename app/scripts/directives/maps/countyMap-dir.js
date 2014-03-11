@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.directive('countyMap', function(DataService, ColorSvc, GoogleMapSvc) {
+.directive('countyMap', function(DataService, ColorSvc, GoogleMapsSvc) {
 	return {
 		restrict: 'A',
 		template: '<div class="map"></div>',
@@ -17,26 +17,26 @@ angular.module('gccApp')
 
 			var drawGoogleMap = function(county, mapCanvas) {
 				/* Create Map */
-				var map = new GoogleMapSvc.maps.Map(mapCanvas, {
-					center: new GoogleMapSvc.maps.LatLng(0,0),
+				var map = new GoogleMapsSvc.maps.Map(mapCanvas, {
+					center: new GoogleMapsSvc.maps.LatLng(0,0),
 					zoom: 5
 				});
 				
-				var bounds = new GoogleMapSvc.maps.LatLngBounds();
+				var bounds = new GoogleMapsSvc.maps.LatLngBounds();
 
 				/* Add County */
 				var colorSet = ColorSvc.TierColors[county.tier];
-				var polygon = GoogleMapSvc.getPolygonFromPath(county.geometry, colorSet);
+				var polygon = GoogleMapsSvc.polygon.getPolygonFromPath(county.geometry, colorSet);
 				polygon.setMap(map);
 				var polygonBounds = polygon.getBounds();
 				bounds.extend(polygonBounds.getNorthEast());
 				bounds.extend(polygonBounds.getSouthWest());
 				var center = polygonBounds.getCenter();
-				//GoogleMapSvc.addCountyInfoWindow(map, county.name, center, polygon);
-				GoogleMapSvc.addLabel(county.name, center, map, colorSet);
+				//GoogleMapsSvc.infoWindow.addCountyInfoWindow(map, county.name, center, polygon);
+				GoogleMapsSvc.label.addLabel(county.name, center, map, colorSet);
 				//addBehaviors(polygon, scope.corridorId, county.id, colorSet);
 
-				bounds = GoogleMapSvc.removeBoundsPadding(bounds);
+				bounds = GoogleMapsSvc.removeBoundsPadding(bounds);
 				map.fitBounds(bounds);
 			};
 

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.directive('siteMap', function(ColorSvc, GoogleMapSvc) {
+.directive('siteMap', function(ColorSvc, GoogleMapsSvc) {
 	return {
 		restrict: 'A',
 		template: '<div class="map"></div>',
@@ -21,8 +21,8 @@ angular.module('gccApp')
 					scope.$watch(function() {
 						return element.is(':visible'); 
 					}, function() {
-						var center = new GoogleMapSvc.maps.LatLng(scope.lat, scope.lng);
-						var map = GoogleMapSvc.createMap(element[0], center);
+						var center = new GoogleMapsSvc.maps.LatLng(scope.lat, scope.lng);
+						var map = GoogleMapsSvc.createMap(element[0], center);
 						var shapeConfig = {
 							colorSet : ColorSvc.RED,
 							map : map,
@@ -30,7 +30,7 @@ angular.module('gccApp')
 							center : center,
 							polygon : scope.geometry
 						};
-						GoogleMapSvc.addShapeToMap(shapeConfig);
+						GoogleMapsSvc.polygon.addShapeToMap(shapeConfig);
 					});
 				}
 			});

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.directive('buildingMap', function(GoogleMapSvc) {
+.directive('buildingMap', function(GoogleMapsSvc) {
 	return {
 		restrict: 'A',
 		template: '<div class="map"></div>',
@@ -20,16 +20,16 @@ angular.module('gccApp')
 					scope.$watch(function() {
 						return element.is(':visible'); 
 					}, function() {
-						var latLng = new GoogleMapSvc.maps.LatLng(scope.lat, scope.lng);
-						var map = GoogleMapSvc.createMap(element[0], latLng);
+						var latLng = new GoogleMapsSvc.maps.LatLng(scope.lat, scope.lng);
+						var map = GoogleMapsSvc.createMap(element[0], latLng);
 						var markerConfig = {
 							position: latLng,
 							map: map,
 							title: scope.name,
 							icon: 'images/icon-office.png'
 						};
-						var marker = GoogleMapSvc.addMarkerToMap(markerConfig);
-						GoogleMapSvc.addMarkerInfoWindow(map, scope.name, marker);
+						var marker = GoogleMapsSvc.marker.addMarkerToMap(markerConfig);
+						GoogleMapsSvc.infoWindow.addMarkerInfoWindow(map, scope.name, marker);
 					});
 				}
 			});
