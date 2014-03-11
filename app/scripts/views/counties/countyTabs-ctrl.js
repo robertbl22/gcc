@@ -19,15 +19,15 @@ var app = angular.module('gccApp')
 		currentTab = tabId;
 	};
 
-	/* The county overview is in $scope.$parent */
-	
-	/*$scope.county = {};
-	DataService.county.getOverview(countyId).success(function(county) {
-		$scope.county = county;
+
+	/* Properties Count stuff */
+	DataService.county.getPropertiesCount(countyId)
+	.then(function(data){
+		$scope.propertiesCount = data;
 	})
-	.error(function() {
-		ToastrSvc.error('Sorry, there was an error while loading the data.');
-	});*/
+	['catch'](function(e){
+		$scope.propertiesCount = 'no data';
+	});
 
 	$timeout(function() {
 		if(!$scope.propertiesCount) {
@@ -35,13 +35,5 @@ var app = angular.module('gccApp')
 		}
 	}, (10 * 1000));
 
-	/* SelectGeorgia data */
-	DataService.county.getPropertiesCount(countyId)
-	.then(function(data){
-		$scope.propertiesCount = data;
-	})
-	['catch'](function(e){
-		$scope.propertiesCount = {offices:'?',industrial:'?',sites:'?'};
-	});
 
 });

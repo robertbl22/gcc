@@ -3,7 +3,7 @@
 angular.module('gccApp')
 .factory('SelectGeorgiaSvc', function($window, $q, $cacheFactory) {
 
-	var _cache = $cacheFactory('SelectGeorgiaCache', {capacity: 20});
+	var _cache = $cacheFactory('SelectGeorgiaCache', {capacity: 50});
 
 	var _gmaps = $window.gmaps;
 
@@ -65,9 +65,7 @@ angular.module('gccApp')
 	var _getUncached = function(layerId, queryParams) {
 		var defer = $q.defer();
 		var callback = function(data) {
-			//$timeout(function() {
-				defer.resolve(data);
-			//}, 3000)
+			defer.resolve(data);
 		};
 		var errback = function(err) {
 			defer.reject(err);

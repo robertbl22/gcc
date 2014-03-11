@@ -47,7 +47,7 @@ angular.module('gccApp')
 			outFields: ''
 		};
 		var layerId = SelectGeorgiaSvc.layerId.OFFICES;
-		var queryKey = 'SITES_COUNT_' + countyName;
+		var queryKey = 'OFFICES_COUNT_' + countyName;
 		return SelectGeorgiaSvc.get(layerId, queryParams, queryKey);
 	};
 

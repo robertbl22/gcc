@@ -34,9 +34,9 @@ angular.module('gccApp')
 		},
 		leave: {
 			freezeLayout: function(cfg) {
-				//if(cfg.elementsToHide) {
-					//cfg.elementsToHide.hide().delay(200).fadeIn();
-				//}
+				if(cfg.elementsToHide) {
+					cfg.elementsToHide.hide().delay(200).fadeIn();
+				}
 				cfg.parent.css('position', 'relative');
 				cfg.element.css('position', 'absolute');
 			},
