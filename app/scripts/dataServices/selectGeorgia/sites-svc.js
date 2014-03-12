@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.factory('SelectGeorgia_SitesSvc', function(SelectGeorgiaSvc, SelectGeorgia_CountiesSvc) {
+.factory('selectGeorgia_SitesSvc', function(SelectGeorgiaSvc, selectGeorgia_CountiesSvc) {
 
 	var self = this;
 
@@ -19,12 +19,12 @@ angular.module('gccApp')
 	};
 
 	self.getByCounty = function(countyId) {
-		var countyName = SelectGeorgia_CountiesSvc.countyIdToCountyName(countyId);
+		var countyName = selectGeorgia_CountiesSvc.countyIdToCountyName(countyId);
 		return _getByCountyName(countyName);
 	};
 
 	self.getCountyCities = function(countyId) {
-		var countyName = SelectGeorgia_CountiesSvc.countyIdToCountyName(countyId);
+		var countyName = selectGeorgia_CountiesSvc.countyIdToCountyName(countyId);
 		var queryParams = {
 			returnGeometry: false,
 			where: 'COUNTY = \'' + countyName + '\'',

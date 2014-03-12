@@ -4,11 +4,11 @@ angular.module('gccApp')
 .factory('AnimationSvc', function() {
 
 	var _freeze = {
-		'position': 'absolute', 
+		'position': 'absolute',
 		'top': 0
 	};
 	var _restore = {
-		'position': 'static', 
+		'position': 'static',
 		'top': 'auto'
 	};
 
@@ -16,9 +16,9 @@ angular.module('gccApp')
 		enter: {
 			freezeLayout: function(cfg) {
 				
-				if(cfg.elementsToHide) {
+				/*if(cfg.elementsToHide) {
 					cfg.elementsToHide.hide();
-				}
+				}*/
 				cfg.element.css(_freeze);
 				cfg.parent.css('position', 'relative');
 			},
@@ -34,9 +34,9 @@ angular.module('gccApp')
 		},
 		leave: {
 			freezeLayout: function(cfg) {
-				if(cfg.elementsToHide) {
+				/*if(cfg.elementsToHide) {
 					cfg.elementsToHide.hide().delay(200).fadeIn();
-				}
+				}*/
 				cfg.parent.css('position', 'relative');
 				cfg.element.css('position', 'absolute');
 			},

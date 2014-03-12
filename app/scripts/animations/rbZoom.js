@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.animation('.rb-zoom', function (AnimationSvc) {
+.animation('.rb-zoom', ['AnimationSvc', function (AnimationSvc) {
 	return {
 		enter: function (element, done) {
 			var opts = {
@@ -52,4 +52,4 @@ angular.module('gccApp')
 			});
 		},
 	};
-});
+}]);

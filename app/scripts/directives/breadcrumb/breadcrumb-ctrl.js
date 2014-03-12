@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.controller('BreadcrumbCtrl', function ($scope, $rootScope, $state, $stateParams, SelectGeorgia_CountiesSvc) {
+.controller('BreadcrumbCtrl', function ($scope, $rootScope, $state, $stateParams, selectGeorgia_CountiesSvc) {
 
 	$scope.$state = $state;
 	$scope.$stateParams = $stateParams;
@@ -19,7 +19,7 @@ angular.module('gccApp')
 			}
 		};
 		if(key==='County') {
-			var name = SelectGeorgia_CountiesSvc.countyIdToCountyName($stateParams.countyId);
+			var name = selectGeorgia_CountiesSvc.countyIdToCountyName($stateParams.countyId);
 			name = name + ' County'
 			$rootScope.docTitle = name;
 			return name;

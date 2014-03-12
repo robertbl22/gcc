@@ -4,16 +4,15 @@
 	<div class="row">
 		<div class="col-sm-6">
 			<div search-property-type property="Search.Property"></div>
-			<div search-location location="Search.Location" property="Search.Property" form="SearchForm"></div>
-		</div>
-		<div class="col-sm-6">
-			<div class="row">
+			<div>
 				<div class="col-sm-12 rb-slide" ng-include="Form.Property.TemplateUrl"></div>
 			</div>
 		</div>
-	</div>
-	<div class="row rb-hide-while-transition-animating">
-		<div class="col-sm-12">
+		<div class="col-sm-6">
+			<div class="gcc-vertical-gutter"></div>
+			<div class="row">
+				<div search-location location="Search.Location" property="Search.Property" form="SearchForm"></div>
+			</div>
 			<div class="pull-right">
 				<button type="button" class="btn btn-default" ng-click="Form.reset()">Reset Form</button>
 				<button type="button" class="btn btn-primary" ng-click="Form.submit()" ng-disabled="!SearchForm.$valid">Search</button>

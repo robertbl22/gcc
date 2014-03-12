@@ -204,10 +204,10 @@ Loading Directive
 }
 .loading.loading-small .loading-panel {
     min-height: 16px;
-	background-image: url('../../images/ajax-loader-small.gif');
+	background-image: url('../images/ajax-loader-small.gif');
 }
 .loading-panel {
-	background-image: url('../../images/ajax-loader.gif');
+	background-image: url('../images/ajax-loader.gif');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-color: #FFFFFF;
@@ -232,7 +232,7 @@ Photo-Thumbnail Directive
     min-height: 50px;
 }
 .imageload .loading-bar {
-    background-image: url('../../images/loading-bar.gif');
+    background-image: url('../images/loading-bar.gif');
     background-repeat: no-repeat;
     background-position: center center;
     position: absolute;

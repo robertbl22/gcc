@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.factory('SelectGeorgia_CountiesSvc', function($q, SelectGeorgiaSvc) {
+.factory('selectGeorgia_CountiesSvc', function($q, SelectGeorgiaSvc) {
 	
 	this.getDetail = function(countyId) {
 		var countyName = _countyIdToCountyName(countyId);

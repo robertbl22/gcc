@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.animation('.rb-crossfade', function (AnimationSvc) {
+.animation('.rb-crossfade', ['AnimationSvc', function (AnimationSvc) {
 	return {
 		enter: function (element, done) {
 			var opts = {
@@ -40,4 +40,4 @@ angular.module('gccApp')
 			});
 		}
 	};
-});
+}]);

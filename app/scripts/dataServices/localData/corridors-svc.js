@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.factory('LocalData_CorridorsSvc', function($http) {
+.factory('localData_CorridorsSvc', function($http) {
 	return {
 		getOverview: function(CorridorId) {
 			return $http.get('scripts/data/corridors/' + CorridorId + '.json', {cache: true});

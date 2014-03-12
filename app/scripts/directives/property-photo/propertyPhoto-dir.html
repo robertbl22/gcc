@@ -1,9 +1,12 @@
 <a ng-hide="photoSrc==='No Photo'" href="" data-toggle="modal" data-target="#PropertyPhotoModal" class="imageload">
-	<img 
-	ng-src="http://www.gaports.com/bbimagehandler.ashx?Url={{photoSrc}}&width=409" 
-	alt="{{name}}" 
-	title="{{name}}" 
-	class="img-responsive img-thumbnail"><br/>
+	<div style="min-height:150px;">
+		<img 
+		ng-src="http://www.gaports.com/bbimagehandler.ashx?Url={{photoSrc}}&width=409" 
+		alt="{{name}}" 
+		title="{{name}}" 
+		class="img-responsive img-thumbnail"
+		>
+	</div>
 	<small><i class="icon-search" style="margin-right:4px;"></i>View larger</small>
 </a>
 <img 

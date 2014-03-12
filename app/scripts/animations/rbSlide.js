@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.animation('.rb-slide', function (AnimationSvc) {
+.animation('.rb-slide', ['AnimationSvc', function (AnimationSvc) {
 	return {
 		enter: function (element, done) {
 			var opts = {
@@ -9,7 +9,7 @@ angular.module('gccApp')
 				parent: element.parent(),
 				/* Note, we hide the submit button 
 				while animating so that it won't jump */
-				elementsToHide: $('.rb-hide-while-transition-animating'),
+				//elementsToHide: $('.rb-hide-while-transition-animating'),
 				callback: done
 			};
 
@@ -29,7 +29,7 @@ angular.module('gccApp')
 			var opts = {
 				element: element,
 				parent: element.parent(),
-				elementsToHide: $('.rb-hide-while-transition-animating'),
+				//elementsToHide: $('.rb-hide-while-transition-animating'),
 				callback: done
 			};
 
@@ -46,4 +46,4 @@ angular.module('gccApp')
 			});
 		}
 	};
-});
+}]);

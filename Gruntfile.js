@@ -257,8 +257,9 @@ module.exports = function (grunt) {
             'bower_components/**/*',
             //RWB: 'images/{,*/}*.{gif,webp}', 
             'images/**/*', //RWB
-            'fonts/*',
-            'scripts/**/*.{html,json}' //RWB
+            'styles/fonts/*', //RWB: 'fonts/*',
+            'scripts/**/*.{html,json}', //RWB
+            'styles/main-gaports.css' //RWB
           ]
         }, {
           expand: true,

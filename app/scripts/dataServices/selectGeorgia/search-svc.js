@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.factory('SelectGeorgia_SearchSvc', function(SelectGeorgiaSvc, SearchParametersSvc, Search_ConfigBuilder) {
+.factory('selectGeorgia_SearchSvc', function(SelectGeorgiaSvc, SearchParametersSvc, Search_ConfigBuilder) {
 	var self = this;
 
 	self.getResults = function(searchParams) {
@@ -54,9 +54,9 @@ angular.module('gccApp')
 angular.module('gccApp')
 .factory('Search_ConfigBuilder', function(
 	SelectGeorgiaSvc,
-	SelectGeorgia_OfficesSvc,
-	SelectGeorgia_IndustrialSvc,
-	SelectGeorgia_SitesSvc,
+	selectGeorgia_OfficesSvc,
+	selectGeorgia_IndustrialSvc,
+	selectGeorgia_SitesSvc,
 	Search_ConditionBuilder
 	) {
 
@@ -81,31 +81,31 @@ angular.module('gccApp')
 
 	this.layer = {
 		getOffice: function(searchParams) {
-			var searchFields = SelectGeorgia_OfficesSvc.searchFields;
+			var searchFields = selectGeorgia_OfficesSvc.searchFields;
 			var where = Search_ConditionBuilder.layer.getOffice(searchFields, searchParams);
 			return {
 				returnGeometry: false,
-				outFields: SelectGeorgia_OfficesSvc.layerOutFields,
+				outFields: selectGeorgia_OfficesSvc.layerOutFields,
 				layerId: SelectGeorgiaSvc.layerId.OFFICES,
 				where: where
 			};
 		},
 		getIndustrial: function(searchParams) {
-			var searchFields = SelectGeorgia_IndustrialSvc.searchFields;
+			var searchFields = selectGeorgia_IndustrialSvc.searchFields;
 			var where = Search_ConditionBuilder.layer.getIndustrial(searchFields, searchParams);
 			return {
 				returnGeometry: false,
-				outFields: SelectGeorgia_IndustrialSvc.layerOutFields,
+				outFields: selectGeorgia_IndustrialSvc.layerOutFields,
 				layerId: SelectGeorgiaSvc.layerId.INDUSTRIAL,
 				where: where
 			};
 		},
 		getSite: function(searchParams) {
-			var searchFields = SelectGeorgia_SitesSvc.searchFields;
+			var searchFields = selectGeorgia_SitesSvc.searchFields;
 			var where = Search_ConditionBuilder.layer.getSite(searchFields, searchParams);
 			return {
 				returnGeometry: false,
-				outFields: SelectGeorgia_SitesSvc.layerOutFields,
+				outFields: selectGeorgia_SitesSvc.layerOutFields,
 				layerId: SelectGeorgiaSvc.layerId.SITES,
 				where: where
 			};
@@ -114,7 +114,7 @@ angular.module('gccApp')
 
 	this.table = {
 		getOffice: function(searchParams) {
-			var searchFields = SelectGeorgia_OfficesSvc.searchFields;
+			var searchFields = selectGeorgia_OfficesSvc.searchFields;
 			var where = Search_ConditionBuilder.table.getOffice(searchFields, searchParams);
 			return {
 				returnGeometry: false,
@@ -125,7 +125,7 @@ angular.module('gccApp')
 			};
 		},
 		getIndustrial: function(searchParams) {
-			var searchFields = SelectGeorgia_IndustrialSvc.searchFields;
+			var searchFields = selectGeorgia_IndustrialSvc.searchFields;
 			var where = Search_ConditionBuilder.table.getIndustrial(searchFields, searchParams);
 			return {
 				returnGeometry: false,
@@ -136,7 +136,7 @@ angular.module('gccApp')
 			};
 		},
 		getSite: function(searchParams) {
-			var searchFields = SelectGeorgia_SitesSvc.searchFields;
+			var searchFields = selectGeorgia_SitesSvc.searchFields;
 			var where = Search_ConditionBuilder.table.getSite(searchFields, searchParams);
 			return {
 				returnGeometry: false,

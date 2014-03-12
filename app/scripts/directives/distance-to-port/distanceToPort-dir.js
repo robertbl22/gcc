@@ -3,10 +3,7 @@
 angular.module('gccApp')
 .directive('distanceToPort', function(GoogleMapsSvc) {
 	return {
-		template: '<p>Port of Savannah:<br/> \
-		{{posDistance}} ({{posDuration}})</p> \
-		<p>Port of Brunswick:<br/> \
-		{{pobDistance}} ({{pobDuration}})</p>',
+		templateUrl: 'scripts/directives/distance-to-port/distanceToPort-dir.html',
 		scope : {
 			lat: '@',
 			lng: '@'
@@ -27,8 +24,7 @@ angular.module('gccApp')
 						var pob = data.rows[0].elements[1];
 						scope.pobDistance = pob.distance.text;
 						scope.pobDuration = pob.duration.text;
-
-						console.log('data',data);
+						
 					})
 					['catch'](function() {
 						element.hide();

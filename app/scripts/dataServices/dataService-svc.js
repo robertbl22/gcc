@@ -2,57 +2,57 @@
 
 /*
 IMPORTANT NOTE:
-'LocalData_' methods return $http promise with 'success()' and 'error()'.
-'SelectGeorgia_' methods return a $q promise with 'then()' and 'catch()'.
+'localData_' methods return $http promise with 'success()' and 'error()'.
+'selectGeorgia_' methods return a $q promise with 'then()' and 'catch()'.
 */
 
 angular.module('gccApp')
 .factory('DataService', function(
-	LocalData_CorridorsSvc,
-	LocalData_CountiesSvc,
-	SelectGeorgia_CountiesSvc,
-	SelectGeorgia_OfficesSvc,
-	SelectGeorgia_IndustrialSvc,
-	SelectGeorgia_SitesSvc,
-	SelectGeorgia_SearchSvc
+	localData_CorridorsSvc,
+	localData_CountiesSvc,
+	selectGeorgia_CountiesSvc,
+	selectGeorgia_OfficesSvc,
+	selectGeorgia_IndustrialSvc,
+	selectGeorgia_SitesSvc,
+	selectGeorgia_SearchSvc
 	) {
 
 	return {
 		county: {
-			getAll:					LocalData_CountiesSvc.getAll,
-			getOverview:			LocalData_CountiesSvc.getOverview,
-			countyNameToCountyId:	LocalData_CountiesSvc.countyNameToCountyId,
-			getDetail:				SelectGeorgia_CountiesSvc.getDetail,
-			getPropertiesCount:		SelectGeorgia_CountiesSvc.getPropertiesCount
+			getAll:					localData_CountiesSvc.getAll,
+			getOverview:			localData_CountiesSvc.getOverview,
+			countyNameToCountyId:	localData_CountiesSvc.countyNameToCountyId,
+			getDetail:				selectGeorgia_CountiesSvc.getDetail,
+			getPropertiesCount:		selectGeorgia_CountiesSvc.getPropertiesCount
 		},
 		corridor: {
-			getAll:					LocalData_CorridorsSvc.getAll,
-			getOverview:			LocalData_CorridorsSvc.getOverview,
-			getByCounty:			LocalData_CorridorsSvc.getByCounty
+			getAll:					localData_CorridorsSvc.getAll,
+			getOverview:			localData_CorridorsSvc.getOverview,
+			getByCounty:			localData_CorridorsSvc.getByCounty
 		},
 		office: {
-			currentPropertyName:	SelectGeorgia_OfficesSvc.currentPropertyName,
-			getDetail:				SelectGeorgia_OfficesSvc.getDetail,
-			getByCounty:			SelectGeorgia_OfficesSvc.getByCounty,
-			getCountyCities:		SelectGeorgia_OfficesSvc.getCountyCities,
-			layerOutFields:			SelectGeorgia_OfficesSvc.layerOutFields
+			currentPropertyName:	selectGeorgia_OfficesSvc.currentPropertyName,
+			getDetail:				selectGeorgia_OfficesSvc.getDetail,
+			getByCounty:			selectGeorgia_OfficesSvc.getByCounty,
+			getCountyCities:		selectGeorgia_OfficesSvc.getCountyCities,
+			layerOutFields:			selectGeorgia_OfficesSvc.layerOutFields
 		},
 		industrial: {
-			currentPropertyName:	SelectGeorgia_IndustrialSvc.currentPropertyName,
-			getDetail:				SelectGeorgia_IndustrialSvc.getDetail,
-			getByCounty:			SelectGeorgia_IndustrialSvc.getByCounty,
-			getCountyCities:		SelectGeorgia_IndustrialSvc.getCountyCities,
-			layerOutFields:			SelectGeorgia_IndustrialSvc.layerOutFields
+			currentPropertyName:	selectGeorgia_IndustrialSvc.currentPropertyName,
+			getDetail:				selectGeorgia_IndustrialSvc.getDetail,
+			getByCounty:			selectGeorgia_IndustrialSvc.getByCounty,
+			getCountyCities:		selectGeorgia_IndustrialSvc.getCountyCities,
+			layerOutFields:			selectGeorgia_IndustrialSvc.layerOutFields
 		},
 		site: {
-			currentPropertyName:	SelectGeorgia_SitesSvc.currentPropertyName,
-			getDetail:				SelectGeorgia_SitesSvc.getDetail,
-			getByCounty:			SelectGeorgia_SitesSvc.getByCounty,
-			getCountyCities:		SelectGeorgia_SitesSvc.getCountyCities,
-			layerOutFields:			SelectGeorgia_SitesSvc.layerOutFields
+			currentPropertyName:	selectGeorgia_SitesSvc.currentPropertyName,
+			getDetail:				selectGeorgia_SitesSvc.getDetail,
+			getByCounty:			selectGeorgia_SitesSvc.getByCounty,
+			getCountyCities:		selectGeorgia_SitesSvc.getCountyCities,
+			layerOutFields:			selectGeorgia_SitesSvc.layerOutFields
 		},
 		search: {
-			getResults:				SelectGeorgia_SearchSvc.getResults
+			getResults:				selectGeorgia_SearchSvc.getResults
 		}
 	};
 

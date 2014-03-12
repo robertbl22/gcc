@@ -11,7 +11,14 @@ angular.module('gccApp')
 			tier: '='
 		},
 		link: function(scope, element, attrs) {
-			element.find('.btn').popover();
+			var popoverOpts = {
+				container: 'body',
+				placement: 'bottom',
+				trigger: 'hover',
+				html: true
+			};
+			var btns = element.find('.btn');
+			//btns.popover(popoverOpts);
 		}
 	};
 });
