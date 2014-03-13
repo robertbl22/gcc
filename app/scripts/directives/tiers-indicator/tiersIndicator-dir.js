@@ -18,7 +18,7 @@ angular.module('gccApp')
 				html: true
 			};
 			var btns = element.find('.btn');
-			//btns.popover(popoverOpts);
+			btns.popover(popoverOpts);
 		}
 	};
 });
