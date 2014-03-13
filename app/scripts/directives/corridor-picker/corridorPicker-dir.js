@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.directive('corridorPicker', function ($stateParams, CorridorHighlightSvc) {
+.directive('corridorPicker', function ($stateParams, CorridorHighlightSvc, CountyZoomSvc) {
 	return {
 		templateUrl: 'scripts/directives/corridor-picker/corridorPicker.html',
 		restrict: 'A',

@@ -45,7 +45,7 @@ angular.module('gccApp')
 			var addBehaviors = function(polygon, corridorId, countyId, PolygonColors) {
 				//var currentPath = '#/' + corridorId + '/';
 				GoogleMapsSvc.maps.event.addListener(polygon, 'click', function(evt) {
-					scope.$apply(CountyZoomSvc.zoom(corridorId, countyId));
+					scope.$apply(CountyZoomSvc.zoom());
 					scope.$apply($location.path('/' + corridorId + '/' + countyId));
 				});
 				GoogleMapsSvc.polygon.addPolygonHover(polygon, PolygonColors);

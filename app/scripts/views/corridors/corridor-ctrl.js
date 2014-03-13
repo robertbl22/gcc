@@ -6,7 +6,7 @@ angular.module('gccApp')
 	$scope.corridorId = $stateParams.corridorId;
 
 	$scope.zoomToCounty = function(countyId) {
-		CountyZoomSvc.zoom($scope.corridorId, countyId);
+		CountyZoomSvc.zoom();
 	};
 
 	DataService.corridor.getOverview($stateParams.corridorId).success(function(data) {
