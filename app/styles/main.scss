@@ -7,7 +7,7 @@
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 /* Always force a scrollbar so that layout doesn't jump */
-html {
+body {
     overflow-y: scroll;
 }
 

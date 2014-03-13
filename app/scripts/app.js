@@ -8,7 +8,8 @@ var app = angular.module('gccApp', [
   'ngAnimate',
   'LocalStorageModule',
   'ui.router',
-  'ui.utils'
+  'ui.utils',
+  'ui.bootstrap'
 ]);
 /* jshint unused: false */ /* for element, app */
 

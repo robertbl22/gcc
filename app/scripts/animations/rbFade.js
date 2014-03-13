@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gccApp')
-.animation('.rb-fade', function() {
+.animation('.rb-fade', [function() {
 	return {
 		enter: function (element, done) {
 			TweenMax.fromTo(element[0], 0.5, {
@@ -20,4 +20,4 @@ angular.module('gccApp')
 			});
 		}
 	};
-});
+}]);
