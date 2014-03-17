@@ -3,11 +3,11 @@
 <div class="row">
 	<div class="col-sm-8">
 		<h3><i class="icon-bookmark"></i> Bookmarked Properties <ng-pluralize class="small" count="BookmarksIndex.count"
-		when="{'0': '', '1': '(1 item)', 'other': '({} items)'}">
+			when="{'0': '', '1': '(1 item)', 'other': '({} items)'}">
 		</ng-pluralize></h3>
 	</div>
 	<div class="col-sm-4" style="padding-top:20px;line-height:24px;">
-		<a href="" data-toggle="modal" data-target="#ConfirmDeleteAllModal" class="small pull-right" ng-show="Bookmarks.length > 0"><i class="icon-remove-sign"></i> Remove all bookmarks</a>
+		<a href="" ng-click="showConfirmDeleteAllModal()" class="small pull-right" ng-show="Bookmarks.length > 0"><i class="icon-remove-sign"></i> Remove all bookmarks</a>
 	</div>
 </div>
 <p>&nbsp;</p>
@@ -34,20 +34,16 @@
 </div>
 
 <!-- Delete Confirmation modal -->
-<div id="ConfirmDeleteAllModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-sm">
-		<div class="modal-content alert-danger">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<div>Please confirm</div>
-			</div>
-			<div class="modal-body">
-				<h4><i class="icon-exclamation-sign icon-large"></i> Are you sure you want to remove all bookmarks?</h4>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-				<button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="deleteAllBookmarks()">Yes</button>
-			</div>
-		</div>
+<script id="confirmDeleteAllModal.html" type="text/ng-template">
+	<div class="modal-header">
+		<button type="button" class="close" ng-click="close()" aria-hidden="true">&times;</button>
+		<div><strong>Please confirm</strong></div>
 	</div>
-</div>
+	<div class="modal-body">
+		<h4><i class="icon-exclamation-sign icon-large"></i> Are you sure you want to remove all bookmarks?</h4>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" ng-click="close()">No</button>
+		<button type="button" class="btn btn-danger" ng-click="deleteAllBookmarks()">Yes</button>
+	</div>
+</script>
