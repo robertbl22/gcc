@@ -29,12 +29,12 @@ app.animation('.rb-zoom-in', ['AnimationSvc', function (AnimationSvc) {
 			});
 		},
 		leave: function (element, done) {
-			var opts = {
+			/*var opts = {
 				element: element,
 				parent: element.parent(),
 				//elementsToHide: $('.rb-hide-while-transition-animating'),
 				callback: done
-			};
+			};*/
 
 			//AnimationSvc.leave.freezeLayout(opts);
 			TweenMax.fromTo(element[0], 0.8, {
@@ -60,12 +60,12 @@ app.animation('.rb-zoom-in', ['AnimationSvc', function (AnimationSvc) {
 app.animation('.rb-zoom-out', ['AnimationSvc', function (AnimationSvc) {
 	return {
 		enter: function (element, done) {
-			var opts = {
+			/*var opts = {
 				element: element,
 				parent: element.parent(),
 				//elementsToHide: $('.rb-hide-while-transition-animating'),
 				callback: done
-			};
+			};*/
 
 			//AnimationSvc.leave.freezeLayout(opts);
 			TweenMax.fromTo(element[0], 0.8, {

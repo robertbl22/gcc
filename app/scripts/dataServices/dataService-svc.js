@@ -8,6 +8,7 @@ IMPORTANT NOTE:
 
 angular.module('gccApp')
 .factory('DataService', function(
+	/*jshint camelcase: false */
 	localData_CorridorsSvc,
 	localData_CountiesSvc,
 	selectGeorgia_CountiesSvc,

@@ -52,6 +52,9 @@
 						</td>
 						<td ng-show="property.RAIL_SERVED==='Y'">
 							{{property.RAIL_PROVIDER_1}}
+							<span ng-show="property.RAIL_PROVIDER_3">
+								, {{property.RAIL_PROVIDER_3}}
+							</span>
 						</td>
 						<td ng-show="property.RAIL_SERVED==='N'">
 							None
@@ -130,7 +133,7 @@
 						</td>
 						<td>
 							{{property.ELECTRIC_PROVIDER_1}}<br/>
-							{{property.TRANS_VOLTAGE}} V
+							{{property.TRANS_VOLTAGE}} kV
 						</td>
 					</tr>
 					<tr ng-show="property.WATER_ON_SITE">
